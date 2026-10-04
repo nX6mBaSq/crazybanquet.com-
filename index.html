@@ -22,7 +22,7 @@
   </svg>
 </template>
 <title>CRAZY BANQUET Vol.4｜関西最大級のナイトクラブフェス</title>
-<meta name="description" content="2026.08.02(日) OPEN 20:00、PICCADILLY PREMIUM(大阪・梅田)にて開催。週末の夜をアップデートする、最高の遊び場がここに！今聴くべき注目のアーティストがオールジャンルで魅せる！関西最大級のナイトクラブフェス！">
+<meta name="description" content="2026.11.08(日) 20:00〜翌3:00、PICCADILLY PREMIUM(大阪・梅田)にて開催。CRAZY BANQUET＝狂宴。極上のサウンドと、限界まで振り切る気愛と熱量で、いつもの夜を超える一夜をお届けします。オールジャンルの注目アーティストが集結する、関西最大級のナイトクラブフェス。">
 <link rel="icon" type="image/png" href="./uploads/favicon.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,11 +32,13 @@
   body{margin:0;background:#0A0E14;}
   @keyframes glowPulse{0%,100%{box-shadow:0 0 18px 0 rgba(57,255,143,0.35),0 0 32px 0 rgba(0,194,255,0.25);}50%{box-shadow:0 0 28px 4px rgba(57,255,143,0.55),0 0 44px 6px rgba(0,194,255,0.4);}}
   @keyframes driftGrid{0%{background-position:0 0;}100%{background-position:0 -80px;}}
+  /* アーティスト写真：白黒で統一 */
+  .artist-photo img{filter:grayscale(1) contrast(1.15) brightness(0.9);}
 </style>
 </helmet>
 
 <div style="background:#0A0E14; min-height:100vh; display:flex; justify-content:center; font-family:'Noto Sans JP',sans-serif;">
-<div style="width:100%; max-width:428px; min-width:375px; background:#0A0E14; position:relative; overflow:hidden; color:#F2F4F5;">
+<div style="width:100%; max-width:428px; min-width:320px; background:#0A0E14; position:relative; overflow:hidden; color:#F2F4F5;">
 
   <!-- background grid decoration -->
   <div style="position:absolute; inset:0; background-image:linear-gradient(rgba(57,255,143,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(0,194,255,0.06) 1px, transparent 1px); background-size:40px 40px; animation:driftGrid 12s linear infinite; pointer-events:none; z-index:0;"></div>
@@ -46,11 +48,11 @@
     <div style="font-family:'Chakra Petch',sans-serif; font-size:13px; letter-spacing:0.35em; color:#8FF0C2; font-weight:600;">KANSAI LARGEST NIGHT FES</div>
     <img src="./uploads/logo-landscape.png" alt="CRAZY BANQUET" style="width: 100%; display:block; padding:24px 0px;">
     <!-- <h1 style="font-family:'Chakra Petch',sans-serif; font-weight:700; font-size:44px; line-height:1.05; letter-spacing:0.06em; margin:0; background:linear-gradient(135deg,#39FF8F,#00C2FF); -webkit-background-clip:text; background-clip:text; color:transparent; filter:drop-shadow(0 0 18px rgba(57,255,143,0.45)) drop-shadow(0 0 28px rgba(0,194,255,0.35));">CRAZY<br/>BANQUET</h1> -->
-    <p style="font-size:17px; font-weight:700; margin:0; color:#F2F4F5;">週末の夜を、アップデートせよ。</p>
-    <p style="font-size:13px; line-height:1.7; margin:0; color:#B7BEC7; max-width:280px;">今聴くべき注目アーティストが、<br>オールジャンルで魅せる。</p>
+    <p style="font-size:17px; font-weight:700; margin:0; color:#F2F4F5;">ここでしか味わえない、狂宴の夜へ。</p>
+    <p style="font-size:13px; line-height:1.7; margin:0; color:#B7BEC7; max-width:280px;">極上のサウンドと、限界まで振り切る気愛と熱量。<br>CRAZY BANQUETが贈る、一夜限りの狂宴。</p>
 
     <div style="margin-top:8px; font-family:'Chakra Petch',sans-serif; font-size:14px; letter-spacing:0.04em; color:#F2F4F5; display:flex; flex-direction:column; gap:4px;">
-      <div>2026.08.02 SUN &nbsp;OPEN 20:00</div>
+      <div>2026.11.08 SUN &nbsp;20:00 - 3:00</div>
       <div style="color:#9BA4AE; font-family:'Noto Sans JP',sans-serif; font-size:13px;">PICCADILLY PREMIUM（大阪・梅田）</div>
     </div>
 
@@ -61,8 +63,8 @@
   <section data-screen-label="CONCEPT" ref="{{ setConceptRef }}" style="position:relative; z-index:1; padding:36px 24px; opacity:{{ conceptStyle.opacity }}; transform:{{ conceptStyle.transform }}; transition:opacity 0.8s ease, transform 0.8s ease;">
     <div style="height:1px; width:48px; background:linear-gradient(90deg,#39FF8F,#00C2FF); margin-bottom:18px;"></div>
     <div style="font-family:'Chakra Petch',sans-serif; font-size:12px; letter-spacing:0.3em; color:#7FD9FF; font-weight:600; margin-bottom:8px;">CONCEPT</div>
-    <p style="font-size:26px; font-weight:900; line-height:1.45; letter-spacing:0.01em; margin:0 0 14px; background:linear-gradient(135deg,#39FF8F,#00C2FF); -webkit-background-clip:text; background-clip:text; color:transparent; filter:drop-shadow(0 0 14px rgba(57,255,143,0.4)) drop-shadow(0 0 22px rgba(0,194,255,0.3));">関西最大の狂言を体感せよ！</p>
-    <p style="font-size:13.5px; line-height:1.8; margin:0; color:#9BA4AE;">週末の夜をアップデートする、最高の遊び場がここに！今聴くべき注目のアーティストがオールジャンルで魅せる！関西最大級のナイトクラブフェス！</p>
+    <p style="font-size:26px; font-weight:900; line-height:1.45; letter-spacing:0.01em; margin:0 0 14px; background:linear-gradient(135deg,#39FF8F,#00C2FF); -webkit-background-clip:text; background-clip:text; color:transparent; filter:drop-shadow(0 0 14px rgba(57,255,143,0.4)) drop-shadow(0 0 22px rgba(0,194,255,0.3));">いつもの夜を超える、<br>狂宴を体感せよ。</p>
+    <p style="font-size:13.5px; line-height:1.8; margin:0; color:#9BA4AE;">CRAZY BANQUET＝狂宴。どこでも聴ける曲、どこにでもある空間とは一線を画す、ここだけの夜をお届けします。<br>極上のサウンドと、出演者全員が限界まで振り切る気愛と熱量。そのすべてを、ぜひ全身で。<br>仲間と共に、この狂った宴を存分にお楽しみください。</p>
   </section>
 
   <!-- VIDEO -->
@@ -85,55 +87,71 @@
 
   <!-- LINEUP -->
   <section data-screen-label="LINEUP" ref="{{ setLineupRef }}" style="position:relative; z-index:1; padding:12px 24px 40px; opacity:{{ lineupStyle.opacity }}; transform:{{ lineupStyle.transform }}; transition:opacity 0.8s ease, transform 0.8s ease;">
-    <h2 style="font-family:'Chakra Petch',sans-serif; font-size:22px; letter-spacing:0.08em; font-weight:700; margin:0 0 20px; color:#F2F4F5;">LINE UP</h2>
+    <div style="display:flex; justify-content:space-between; align-items:baseline; gap:12px; margin:0 0 20px;">
+      <h2 style="font-family:'Chakra Petch',sans-serif; font-size:22px; letter-spacing:0.08em; font-weight:700; margin:0; color:#F2F4F5;">LINE UP</h2>
+      <span style="font-size:10.5px; letter-spacing:0.04em; color:#8B939C;">※各枠内は A to Z 順</span>
+    </div>
 
     <div style="font-size:11px; letter-spacing:0.12em; color:#39FF8F; font-weight:700; margin-bottom:10px;">SPECIAL GUEST</div>
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:28px;">
-      <sc-for list="{{ specialGuests }}" as="a" hint-placeholder-count="2">
+    <div style="display:grid; grid-template-columns:1fr; gap:12px; margin-bottom:28px;">
+      <sc-for list="{{ specialGuests }}" as="a" hint-placeholder-count="1">
         <div style="display:flex; flex-direction:column; gap:8px;">
-          <!-- <div style="aspect-ratio:1; border-radius:12px; background:linear-gradient(160deg,#12201B,#0A1620); border:1px solid rgba(57,255,143,0.4); box-shadow:0 0 20px rgba(57,255,143,0.18); display:flex; align-items:center; justify-content:center;">
-            <span style="font-family:'Chakra Petch',sans-serif; font-size:26px; font-weight:700; background:linear-gradient(135deg,#39FF8F,#00C2FF); -webkit-background-clip:text; background-clip:text; color:transparent;">{{ a.initials }}</span>
-          </div> -->
-          <!-- 変更後：画像を敷き詰める -->
-          <div style="aspect-ratio:1; border-radius:12px; overflow:hidden; border:1px solid rgba(57,255,143,0.4); box-shadow:0 0 20px rgba(57,255,143,0.18);">
-            <img src="{{ a.image }}" alt="{{ a.name }}" style="width:100%; height:100%; object-fit:cover; display:block;">
+          <!-- 写真が届いたら、下の div を MAIN ACT と同じ <img src="{{ a.image }}"> 形式に差し替える -->
+          <div style="aspect-ratio:16/10; border-radius:12px; background:linear-gradient(160deg,#12201B,#0A1620); border:1px solid rgba(57,255,143,0.5); box-shadow:0 0 28px rgba(57,255,143,0.25); display:flex; align-items:center; justify-content:center;">
+            <span style="font-family:'Chakra Petch',sans-serif; font-size:32px; font-weight:700; letter-spacing:0.06em; background:linear-gradient(135deg,#39FF8F,#00C2FF); -webkit-background-clip:text; background-clip:text; color:transparent;">{{ a.name }}</span>
           </div>
+          <div style="font-size:14px; font-weight:700; text-align:center; color:#F2F4F5;">{{ a.name }}</div>
+        </div>
+      </sc-for>
+    </div>
+
+    <div style="font-size:11px; letter-spacing:0.12em; color:#39FF8F; font-weight:700; margin-bottom:10px;">GUEST DJ</div>
+    <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:12px; margin-bottom:28px;">
+      <sc-for list="{{ guestDjs }}" as="a" hint-placeholder-count="1">
+        <div style="width:calc((100% - 12px) / 2); display:flex; flex-direction:column; gap:8px;">
+          <!-- 写真あり：画像を敷き詰める -->
+          <sc-if value="{{ a.image }}">
+            <div class="artist-photo" style="aspect-ratio:1; border-radius:12px; overflow:hidden; border:1px solid rgba(57,255,143,0.4); box-shadow:0 0 20px rgba(57,255,143,0.18);">
+              <img src="{{ a.image }}" alt="{{ a.name }}" style="width:100%; height:100%; object-fit:cover; display:block;">
+            </div>
+          </sc-if>
+          <!-- 写真なし（placeholder: true）：イニシャルを表示 -->
+          <sc-if value="{{ a.placeholder }}">
+            <div style="aspect-ratio:1; border-radius:12px; background:linear-gradient(160deg,#12201B,#0A1620); border:1px solid rgba(57,255,143,0.4); box-shadow:0 0 20px rgba(57,255,143,0.18); display:flex; align-items:center; justify-content:center;">
+              <span style="font-family:'Chakra Petch',sans-serif; font-size:26px; font-weight:700; background:linear-gradient(135deg,#39FF8F,#00C2FF); -webkit-background-clip:text; background-clip:text; color:transparent;">{{ a.initials }}</span>
+            </div>
+          </sc-if>
           <div style="font-size:13px; font-weight:700; text-align:center; color:#F2F4F5;">{{ a.name }}</div>
         </div>
       </sc-for>
     </div>
 
-    <div style="font-size:11px; letter-spacing:0.12em; color:#7FD9FF; font-weight:700; margin-bottom:10px;">GUEST DJ</div>
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:24px;">
-      <sc-for list="{{ guestDjs }}" as="a" hint-placeholder-count="2">
-        <div style="display:flex; flex-direction:column; gap:6px;">
-          <div style="aspect-ratio:1; border-radius:10px; overflow:hidden; background:#0E141C; border:1px solid rgba(0,194,255,0.35);">
-            <img src="{{ a.image }}" alt="{{ a.name }}" style="width:100%; height:100%; object-fit:cover; display:block;">
-            <!-- <span style="font-family:'Chakra Petch',sans-serif; font-size:20px; font-weight:600; color:#7FD9FF;">{{ a.initials }}</span> -->
-          </div>
-          <div style="font-size:12px; font-weight:500; text-align:center; color:#D8DCE1;">{{ a.name }}</div>
-        </div>
-      </sc-for>
-    </div>
-
-    <div style="font-size:11px; letter-spacing:0.12em; color:#9BA4AE; font-weight:700; margin-bottom:10px;">ORGANIZER</div>
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:24px;">
-      <sc-for list="{{ organizers }}" as="a" hint-placeholder-count="1">
-        <div style="display:flex; flex-direction:column; gap:6px;">
-          <div style="aspect-ratio:1; border-radius:10px; overflow:hidden; background:#0E141C; border:1px solid rgba(242,244,245,0.15);">
-            <img src="{{ a.image }}" alt="{{ a.name }}" style="width:100%; height:100%; object-fit:cover; display:block;">
-            <!-- <span style="font-family:'Chakra Petch',sans-serif; font-size:20px; font-weight:600; color:#F2F4F5;">{{ a.initials }}</span> -->
-          </div>
-          <div style="font-size:12px; font-weight:500; text-align:center; color:#D8DCE1;">{{ a.name }}</div>
+    <div style="font-size:11px; letter-spacing:0.12em; color:#39FF8F; font-weight:700; margin-bottom:10px;">MAIN ACT</div>
+    <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:12px; margin-bottom:28px;">
+      <sc-for list="{{ mainActs }}" as="a" hint-placeholder-count="4">
+        <div style="width:calc((100% - 12px) / 2); display:flex; flex-direction:column; gap:8px;">
+          <!-- 写真あり：画像を敷き詰める -->
+          <sc-if value="{{ a.image }}">
+            <div class="artist-photo" style="aspect-ratio:1; border-radius:12px; overflow:hidden; border:1px solid rgba(57,255,143,0.4); box-shadow:0 0 20px rgba(57,255,143,0.18);">
+              <img src="{{ a.image }}" alt="{{ a.name }}" style="width:100%; height:100%; object-fit:cover; display:block;">
+            </div>
+          </sc-if>
+          <!-- 写真なし（placeholder: true）：イニシャルを表示 -->
+          <sc-if value="{{ a.placeholder }}">
+            <div style="aspect-ratio:1; border-radius:12px; background:linear-gradient(160deg,#12201B,#0A1620); border:1px solid rgba(57,255,143,0.4); box-shadow:0 0 20px rgba(57,255,143,0.18); display:flex; align-items:center; justify-content:center;">
+              <span style="font-family:'Chakra Petch',sans-serif; font-size:26px; font-weight:700; background:linear-gradient(135deg,#39FF8F,#00C2FF); -webkit-background-clip:text; background-clip:text; color:transparent;">{{ a.initials }}</span>
+            </div>
+          </sc-if>
+          <div style="font-size:13px; font-weight:700; text-align:center; color:#F2F4F5;">{{ a.name }}</div>
         </div>
       </sc-for>
     </div>
 
     <div style="font-size:11px; letter-spacing:0.12em; color:#9BA4AE; font-weight:700; margin-bottom:10px;">DJs</div>
-    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; margin-bottom:24px;">
-      <sc-for list="{{ djs }}" as="a" hint-placeholder-count="6">
-        <div style="display:flex; flex-direction:column; gap:5px;">
-          <div style="aspect-ratio:1; border-radius:8px; overflow:hidden; background:#0E141C; border:1px solid rgba(242,244,245,0.12); display:flex; align-items:center; justify-content:center;">
+    <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:8px; margin-bottom:28px;">
+      <sc-for list="{{ djs }}" as="a" hint-placeholder-count="5">
+        <div style="width:calc((100% - 16px) / 3); display:flex; flex-direction:column; gap:5px;">
+          <div class="artist-photo" style="aspect-ratio:1; border-radius:8px; overflow:hidden; background:#0E141C; border:1px solid rgba(242,244,245,0.12); display:flex; align-items:center; justify-content:center;">
             <img src="{{ a.image }}" alt="{{ a.name }}" style="width:100%; height:100%; object-fit:cover; display:block;">
             <!-- <span style="font-family:'Chakra Petch',sans-serif; font-size:15px; font-weight:600; color:#B7BEC7;">{{ a.initials }}</span> -->
           </div>
@@ -143,14 +161,19 @@
     </div>
 
     <div style="font-size:11px; letter-spacing:0.12em; color:#9BA4AE; font-weight:700; margin-bottom:10px;">MC</div>
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+    <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:8px;">
       <sc-for list="{{ mcs }}" as="a" hint-placeholder-count="2">
-        <div style="display:flex; flex-direction:column; gap:6px;">
-          <div style="aspect-ratio:1; border-radius:10px; overflow:hidden; background:#0E141C; border:1px solid rgba(242,244,245,0.12); display:flex; align-items:center; justify-content:center;">
-            <img src="{{ a.image }}" alt="{{ a.name }}" style="width:100%; height:100%; object-fit:cover; display:block;">
-            <!-- <span style="font-family:'Chakra Petch',sans-serif; font-size:18px; font-weight:600; color:#D8DCE1;">{{ a.initials }}</span> -->
+        <div style="width:calc((100% - 16px) / 3); display:flex; flex-direction:column; gap:5px;">
+          <div class="artist-photo" style="aspect-ratio:1; border-radius:8px; overflow:hidden; background:#0E141C; border:1px solid rgba(242,244,245,0.12); display:flex; align-items:center; justify-content:center;">
+            <sc-if value="{{ a.image }}">
+              <img src="{{ a.image }}" alt="{{ a.name }}" style="width:100%; height:100%; object-fit:cover; display:block;">
+            </sc-if>
+            <!-- 写真なし（placeholder: true）：イニシャルを表示 -->
+            <sc-if value="{{ a.placeholder }}">
+              <span style="font-family:'Chakra Petch',sans-serif; font-size:15px; font-weight:600; color:#B7BEC7;">{{ a.initials }}</span>
+            </sc-if>
           </div>
-          <div style="font-size:11px; font-weight:500; text-align:center; color:#B7BEC7;">{{ a.name }}</div>
+          <div style="font-size:10.5px; font-weight:500; text-align:center; color:#9BA4AE;">{{ a.name }}</div>
         </div>
       </sc-for>
     </div>
@@ -162,7 +185,7 @@
     <div style="display:flex; flex-direction:column; gap:10px;">
       <div style="border-radius:14px; background:#0E141C; border:1px solid rgba(255,255,255,0.08); padding:16px 18px; display:flex; justify-content:space-between; align-items:center;">
         <span style="font-size:12px; color:#9BA4AE; letter-spacing:0.08em;">DATE</span>
-        <span style="font-size:14px; font-weight:700; color:#F2F4F5;">2026.08.02 (SUN) OPEN 20:00</span>
+        <span style="font-size:14px; font-weight:700; color:#F2F4F5;">2026.11.08 (SUN) 20:00 - 3:00</span>
       </div>
       <div style="border-radius:14px; background:#0E141C; border:1px solid rgba(255,255,255,0.08); padding:16px 18px; display:flex; flex-direction:column; gap:8px;">
         <span style="font-size:12px; color:#9BA4AE; letter-spacing:0.08em;">CHARGE（当日精算）</span>
@@ -274,27 +297,27 @@ class Component extends DCLogic {
       noticeStyle: this.revealStyle('notice'),
       followStyle: this.revealStyle('follow'),
       specialGuests: [
-        { name: 'KDH', initials: 'KDH', image: './uploads/kdh.webp' },
-        { name: 'CYBERJAPAN DANCERS', initials: 'CJD', image: './uploads/cyberJapanDancers.webp'  },
+        { name: 'RETRO VISION', initials: 'RV' },
       ],
       guestDjs: [
-        { name: 'Lily', initials: 'LI', image: './uploads/lily.webp'  },
-        { name: 'KAIRI', initials: 'KR', image: './uploads/kairi.webp'  },
+        { name: 'NATSUMI', initials: 'NA', placeholder: true },
       ],
-      organizers: [
+      mainActs: [
+        { name: 'CYBERJAPAN DANCERS', initials: 'CJD', image: './uploads/cyberJapanDancers.webp'  },
         { name: 'DJ-G', initials: 'DG', image: './uploads/dj-g.webp'   },
+        { name: 'KAIRI', initials: 'KR', image: './uploads/kairi.webp'  },
+        { name: 'Lily', initials: 'LI', image: './uploads/lily.webp'  },
       ],
       djs: [
-        { name: 'SARA', initials: 'SA', image: './uploads/sara.webp'   },
-        { name: 'めぇめぇ', initials: 'めぇ', image: './uploads/meeMee.webp'   },
-        { name: 'Mion', initials: 'MI', image: './uploads/mion.webp'   },
-        { name: 'SERIKA', initials: 'SE', image: './uploads/serika.webp'   },
         { name: 'Liz', initials: 'LZ', image: './uploads/liz.webp'   },
-        { name: 'KANAME', initials: 'KN', image: './uploads/kaname.webp'   },
+        { name: 'Mion', initials: 'MI', image: './uploads/mion.webp'   },
+        { name: 'SARA', initials: 'SA', image: './uploads/sara.webp'   },
+        { name: 'SERIKA', initials: 'SE', image: './uploads/serika.webp'   },
+        { name: 'めぇめぇ', initials: 'めぇ', image: './uploads/meeMee.webp'   },
       ],
       mcs: [
-        { name: 'AMI', initials: 'AM', image: './uploads/mcAmi.webp' },
         { name: 'Casparia', initials: 'CA', image: './uploads/casparia.webp' },
+        { name: 'cocos', initials: 'CO', placeholder: true },
       ],
     };
   }
