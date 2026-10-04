@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<template id="__bundler_thumbnail" data-bg-color="#0A0E14">
+  <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#39FF8F"/>
+        <stop offset="1" stop-color="#00C2FF"/>
+      </linearGradient>
+    </defs>
+    <rect width="200" height="200" fill="#0A0E14"/>
+    <text x="100" y="95" font-family="sans-serif" font-weight="700" font-size="34" fill="url(#g)" text-anchor="middle">CRAZY</text>
+    <text x="100" y="130" font-family="sans-serif" font-weight="700" font-size="34" fill="url(#g)" text-anchor="middle">BANQUET</text>
+  </svg>
+</template>
+<title>CRAZY BANQUET Vol.4｜関西最大級のナイトクラブフェス</title>
+<meta name="description" content="2026.08.02(日) OPEN 20:00、PICCADILLY PREMIUM(大阪・梅田)にて開催。週末の夜をアップデートする、最高の遊び場がここに！今聴くべき注目のアーティストがオールジャンルで魅せる！関西最大級のナイトクラブフェス！">
+<link rel="icon" type="image/png" href="./uploads/favicon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  body{margin:0;background:#0A0E14;}
+  @keyframes glowPulse{0%,100%{box-shadow:0 0 18px 0 rgba(57,255,143,0.35),0 0 32px 0 rgba(0,194,255,0.25);}50%{box-shadow:0 0 28px 4px rgba(57,255,143,0.55),0 0 44px 6px rgba(0,194,255,0.4);}}
+  @keyframes driftGrid{0%{background-position:0 0;}100%{background-position:0 -80px;}}
+</style>
+</helmet>
+
+<div style="background:#0A0E14; min-height:100vh; display:flex; justify-content:center; font-family:'Noto Sans JP',sans-serif;">
+<div style="width:100%; max-width:428px; min-width:375px; background:#0A0E14; position:relative; overflow:hidden; color:#F2F4F5;">
+
+  <!-- background grid decoration -->
+  <div style="position:absolute; inset:0; background-image:linear-gradient(rgba(57,255,143,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(0,194,255,0.06) 1px, transparent 1px); background-size:40px 40px; animation:driftGrid 12s linear infinite; pointer-events:none; z-index:0;"></div>
+
+  <!-- HERO -->
+  <section data-screen-label="HERO" style="position:relative; z-index:1; padding:56px 24px 48px; display:flex; flex-direction:column; align-items:center; text-align:center; gap:18px;">
+    <div style="font-family:'Chakra Petch',sans-serif; font-size:13px; letter-spacing:0.35em; color:#8FF0C2; font-weight:600;">KANSAI LARGEST NIGHT FES</div>
+    <img src="./uploads/logo-landscape.png" alt="CRAZY BANQUET" style="width: 100%; display:block; padding:24px 0px;">
+    <!-- <h1 style="font-family:'Chakra Petch',sans-serif; font-weight:700; font-size:44px; line-height:1.05; letter-spacing:0.06em; margin:0; background:linear-gradient(135deg,#39FF8F,#00C2FF); -webkit-background-clip:text; background-clip:text; color:transparent; filter:drop-shadow(0 0 18px rgba(57,255,143,0.45)) drop-shadow(0 0 28px rgba(0,194,255,0.35));">CRAZY<br/>BANQUET</h1> -->
+    <p style="font-size:17px; font-weight:700; margin:0; color:#F2F4F5;">週末の夜を、アップデートせよ。</p>
+    <p style="font-size:13px; line-height:1.7; margin:0; color:#B7BEC7; max-width:280px;">今聴くべき注目アーティストが、<br>オールジャンルで魅せる。</p>
+
+    <div style="margin-top:8px; font-family:'Chakra Petch',sans-serif; font-size:14px; letter-spacing:0.04em; color:#F2F4F5; display:flex; flex-direction:column; gap:4px;">
+      <div>2026.08.02 SUN &nbsp;OPEN 20:00</div>
+      <div style="color:#9BA4AE; font-family:'Noto Sans JP',sans-serif; font-size:13px;">PICCADILLY PREMIUM（大阪・梅田）</div>
+    </div>
+
+    <a href="#access" style="margin-top:20px; width:100%; max-width:260px; box-sizing:border-box; text-align:center; padding:16px 0; border-radius:999px; background:linear-gradient(135deg,#39FF8F,#00C2FF); color:#04110B; font-weight:700; font-size:15px; letter-spacing:0.05em; text-decoration:none; animation:glowPulse 2.6s ease-in-out infinite;" style-hover="filter:brightness(1.05);">アクセスを見る</a>
+  </section>
+
+  <!-- CONCEPT -->
+  <section data-screen-label="CONCEPT" ref="{{ setConceptRef }}" style="position:relative; z-index:1; padding:36px 24px; opacity:{{ conceptStyle.opacity }}; transform:{{ conceptStyle.transform }}; transition:opacity 0.8s ease, transform 0.8s ease;">
+    <div style="height:1px; width:48px; background:linear-gradient(90deg,#39FF8F,#00C2FF); margin-bottom:18px;"></div>
+    <div style="font-family:'Chakra Petch',sans-serif; font-size:12px; letter-spacing:0.3em; color:#7FD9FF; font-weight:600; margin-bottom:8px;">CONCEPT</div>
+    <p style="font-size:26px; font-weight:900; line-height:1.45; letter-spacing:0.01em; margin:0 0 14px; background:linear-gradient(135deg,#39FF8F,#00C2FF); -webkit-background-clip:text; background-clip:text; color:transparent; filter:drop-shadow(0 0 14px rgba(57,255,143,0.4)) drop-shadow(0 0 22px rgba(0,194,255,0.3));">関西最大の狂言を体感せよ！</p>
+    <p style="font-size:13.5px; line-height:1.8; margin:0; color:#9BA4AE;">週末の夜をアップデートする、最高の遊び場がここに！今聴くべき注目のアーティストがオールジャンルで魅せる！関西最大級のナイトクラブフェス！</p>
+  </section>
+
+  <!-- VIDEO -->
+  <section data-screen-label="VIDEO" ref="{{ setVideoRef }}" style="position:relative; z-index:1; padding:12px 24px 40px; opacity:{{ videoStyle.opacity }}; transform:{{ videoStyle.transform }}; transition:opacity 0.8s ease, transform 0.8s ease;">
+    <h2 style="font-family:'Chakra Petch',sans-serif; font-size:22px; letter-spacing:0.08em; font-weight:700; margin:0 0 16px; color:#F2F4F5;">PROMOTION VIDEO</h2>
+    <div style="border-radius:14px; overflow:hidden; border:1px solid rgba(255,255,255,0.08); box-shadow:0 0 24px rgba(0,194,255,0.15);">
+      <div style="aspect-ratio:16/9;">
+        <iframe
+          src="https://player.vimeo.com/video/1213042101?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0"
+          title="CRAZY BANQUET Vol.4｜関西最大級のナイトクラブフェス"
+          width="100%" height="100%" style="border:0; display:block;"
+          loading="lazy"
+          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- LINEUP -->
+  <section data-screen-label="LINEUP" ref="{{ setLineupRef }}" style="position:relative; z-index:1; padding:12px 24px 40px; opacity:{{ lineupStyle.opacity }}; transform:{{ lineupStyle.transform }}; transition:opacity 0.8s ease, transform 0.8s ease;">
+    <h2 style="font-family:'Chakra Petch',sans-serif; font-size:22px; letter-spacing:0.08em; font-weight:700; margin:0 0 20px; color:#F2F4F5;">LINE UP</h2>
+
+    <div style="font-size:11px; letter-spacing:0.12em; color:#39FF8F; font-weight:700; margin-bottom:10px;">SPECIAL GUEST</div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:28px;">
+      <sc-for list="{{ specialGuests }}" as="a" hint-placeholder-count="2">
+        <div style="display:flex; flex-direction:column; gap:8px;">
+          <!-- <div style="aspect-ratio:1; border-radius:12px; background:linear-gradient(160deg,#12201B,#0A1620); border:1px solid rgba(57,255,143,0.4); box-shadow:0 0 20px rgba(57,255,143,0.18); display:flex; align-items:center; justify-content:center;">
+            <span style="font-family:'Chakra Petch',sans-serif; font-size:26px; font-weight:700; background:linear-gradient(135deg,#39FF8F,#00C2FF); -webkit-background-clip:text; background-clip:text; color:transparent;">{{ a.initials }}</span>
+          </div> -->
+          <!-- 変更後：画像を敷き詰める -->
+          <div style="aspect-ratio:1; border-radius:12px; overflow:hidden; border:1px solid rgba(57,255,143,0.4); box-shadow:0 0 20px rgba(57,255,143,0.18);">
+            <img src="{{ a.image }}" alt="{{ a.name }}" style="width:100%; height:100%; object-fit:cover; display:block;">
+          </div>
+          <div style="font-size:13px; font-weight:700; text-align:center; color:#F2F4F5;">{{ a.name }}</div>
+        </div>
+      </sc-for>
+    </div>
+
+    <div style="font-size:11px; letter-spacing:0.12em; color:#7FD9FF; font-weight:700; margin-bottom:10px;">GUEST DJ</div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:24px;">
+      <sc-for list="{{ guestDjs }}" as="a" hint-placeholder-count="2">
+        <div style="display:flex; flex-direction:column; gap:6px;">
+          <div style="aspect-ratio:1; border-radius:10px; overflow:hidden; background:#0E141C; border:1px solid rgba(0,194,255,0.35);">
+            <img src="{{ a.image }}" alt="{{ a.name }}" style="width:100%; height:100%; object-fit:cover; display:block;">
+            <!-- <span style="font-family:'Chakra Petch',sans-serif; font-size:20px; font-weight:600; color:#7FD9FF;">{{ a.initials }}</span> -->
+          </div>
+          <div style="font-size:12px; font-weight:500; text-align:center; color:#D8DCE1;">{{ a.name }}</div>
+        </div>
+      </sc-for>
+    </div>
+
+    <div style="font-size:11px; letter-spacing:0.12em; color:#9BA4AE; font-weight:700; margin-bottom:10px;">ORGANIZER</div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:24px;">
+      <sc-for list="{{ organizers }}" as="a" hint-placeholder-count="1">
+        <div style="display:flex; flex-direction:column; gap:6px;">
+          <div style="aspect-ratio:1; border-radius:10px; overflow:hidden; background:#0E141C; border:1px solid rgba(242,244,245,0.15);">
+            <img src="{{ a.image }}" alt="{{ a.name }}" style="width:100%; height:100%; object-fit:cover; display:block;">
+            <!-- <span style="font-family:'Chakra Petch',sans-serif; font-size:20px; font-weight:600; color:#F2F4F5;">{{ a.initials }}</span> -->
+          </div>
+          <div style="font-size:12px; font-weight:500; text-align:center; color:#D8DCE1;">{{ a.name }}</div>
+        </div>
+      </sc-for>
+    </div>
+
+    <div style="font-size:11px; letter-spacing:0.12em; color:#9BA4AE; font-weight:700; margin-bottom:10px;">DJs</div>
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; margin-bottom:24px;">
+      <sc-for list="{{ djs }}" as="a" hint-placeholder-count="6">
+        <div style="display:flex; flex-direction:column; gap:5px;">
+          <div style="aspect-ratio:1; border-radius:8px; overflow:hidden; background:#0E141C; border:1px solid rgba(242,244,245,0.12); display:flex; align-items:center; justify-content:center;">
+            <img src="{{ a.image }}" alt="{{ a.name }}" style="width:100%; height:100%; object-fit:cover; display:block;">
+            <!-- <span style="font-family:'Chakra Petch',sans-serif; font-size:15px; font-weight:600; color:#B7BEC7;">{{ a.initials }}</span> -->
+          </div>
+          <div style="font-size:10.5px; font-weight:500; text-align:center; color:#9BA4AE;">{{ a.name }}</div>
+        </div>
+      </sc-for>
+    </div>
+
+    <div style="font-size:11px; letter-spacing:0.12em; color:#9BA4AE; font-weight:700; margin-bottom:10px;">MC</div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+      <sc-for list="{{ mcs }}" as="a" hint-placeholder-count="2">
+        <div style="display:flex; flex-direction:column; gap:6px;">
+          <div style="aspect-ratio:1; border-radius:10px; overflow:hidden; background:#0E141C; border:1px solid rgba(242,244,245,0.12); display:flex; align-items:center; justify-content:center;">
+            <img src="{{ a.image }}" alt="{{ a.name }}" style="width:100%; height:100%; object-fit:cover; display:block;">
+            <!-- <span style="font-family:'Chakra Petch',sans-serif; font-size:18px; font-weight:600; color:#D8DCE1;">{{ a.initials }}</span> -->
+          </div>
+          <div style="font-size:11px; font-weight:500; text-align:center; color:#B7BEC7;">{{ a.name }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- EVENT DETAILS -->
+  <section data-screen-label="DETAILS" ref="{{ setDetailsRef }}" style="position:relative; z-index:1; padding:12px 24px 40px; opacity:{{ detailsStyle.opacity }}; transform:{{ detailsStyle.transform }}; transition:opacity 0.8s ease, transform 0.8s ease;">
+    <h2 style="font-family:'Chakra Petch',sans-serif; font-size:22px; letter-spacing:0.08em; font-weight:700; margin:0 0 16px; color:#F2F4F5;">EVENT DETAILS</h2>
+    <div style="display:flex; flex-direction:column; gap:10px;">
+      <div style="border-radius:14px; background:#0E141C; border:1px solid rgba(255,255,255,0.08); padding:16px 18px; display:flex; justify-content:space-between; align-items:center;">
+        <span style="font-size:12px; color:#9BA4AE; letter-spacing:0.08em;">DATE</span>
+        <span style="font-size:14px; font-weight:700; color:#F2F4F5;">2026.08.02 (SUN) OPEN 20:00</span>
+      </div>
+      <div style="border-radius:14px; background:#0E141C; border:1px solid rgba(255,255,255,0.08); padding:16px 18px; display:flex; flex-direction:column; gap:8px;">
+        <span style="font-size:12px; color:#9BA4AE; letter-spacing:0.08em;">CHARGE（当日精算）</span>
+        <div style="display:flex; gap:10px;">
+          <div style="flex:1; text-align:center; padding:10px 0; border-radius:10px; background:rgba(57,255,143,0.08); border:1px solid rgba(57,255,143,0.3);">
+            <div style="font-size:11px; color:#8FF0C2;">WOMEN</div>
+            <div style="font-size:16px; font-weight:700; color:#F2F4F5;">¥1,000</div>
+          </div>
+          <div style="flex:1; text-align:center; padding:10px 0; border-radius:10px; background:rgba(0,194,255,0.08); border:1px solid rgba(0,194,255,0.3);">
+            <div style="font-size:11px; color:#7FD9FF;">MEN</div>
+            <div style="font-size:16px; font-weight:700; color:#F2F4F5;">¥2,000</div>
+          </div>
+        </div>
+      </div>
+      <div style="border-radius:14px; background:#0E141C; border:1px solid rgba(255,255,255,0.08); padding:16px 18px; display:flex; justify-content:space-between; align-items:center;">
+        <span style="font-size:12px; color:#9BA4AE; letter-spacing:0.08em;">VENUE</span>
+        <span style="font-size:14px; font-weight:700; color:#F2F4F5; text-align:right;">PICCADILLY PREMIUM</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACCESS -->
+  <section id="access" data-screen-label="ACCESS" ref="{{ setAccessRef }}" style="position:relative; z-index:1; padding:12px 24px 40px; opacity:{{ accessStyle.opacity }}; transform:{{ accessStyle.transform }}; transition:opacity 0.8s ease, transform 0.8s ease;">
+    <h2 style="font-family:'Chakra Petch',sans-serif; font-size:22px; letter-spacing:0.08em; font-weight:700; margin:0 0 16px; color:#F2F4F5;">ACCESS</h2>
+    <div style="border-radius:14px; overflow:hidden; border:1px solid rgba(255,255,255,0.08); margin-bottom:14px;">
+      <div style="aspect-ratio:16/10;">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6560.275460093739!2d135.50229059999998!3d34.70170590000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000e6eb452f8843%3A0x5cd6f768720bed24!2sPICCADILLY%20PREMIUM!5e0!3m2!1sja!2sjp!4v1784945637468!5m2!1sja!2sjp" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        <!-- <span style="font-family:'Chakra Petch',sans-serif; font-size:11px; letter-spacing:0.1em; color:#5C6670;">MAP PLACEHOLDER</span> -->
+      </div>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:6px; margin-bottom:16px;">
+      <div style="font-size:14px; font-weight:700; color:#F2F4F5;">PICCADILLY PREMIUM</div>
+      <div style="font-size:12.5px; line-height:1.7; color:#9BA4AE;">大阪市北区太融寺町8-17 プラザ梅田ビル 8F</div>
+    </div>
+    <a href="https://maps.app.goo.gl/c61w8pfJKxQez51X8" target="_blank" rel="noopener" style="display:block; text-align:center; padding:14px 0; border-radius:999px; border:1px solid rgba(0,194,255,0.4); color:#7FD9FF; font-size:13px; font-weight:700; letter-spacing:0.03em; text-decoration:none;">Google マップで開く</a>
+  </section>
+
+  <!-- NOTICE -->
+  <section data-screen-label="NOTICE" ref="{{ setNoticeRef }}" style="position:relative; z-index:1; padding:12px 24px 40px; opacity:{{ noticeStyle.opacity }}; transform:{{ noticeStyle.transform }}; transition:opacity 0.8s ease, transform 0.8s ease;">
+    <h2 style="font-family:'Chakra Petch',sans-serif; font-size:16px; letter-spacing:0.08em; font-weight:700; margin:0 0 12px; color:#B7BEC7;">NOTICE</h2>
+    <div style="display:flex; flex-direction:column; gap:8px; font-size:12px; line-height:1.8; color:#8B939C;">
+      <p style="margin:0;">・ご入場は18歳以上の方に限らせていただきます。</p>
+      <p style="margin:0;">・入場時に顔写真付き身分証明書のご提示をお願いいたします。</p>
+      <p style="margin:0;">・料金は当日精算制です（WOMEN ¥1,000 / MEN ¥2,000）。</p>
+    </div>
+  </section>
+
+  <!-- FOLLOW / FOOTER -->
+  <section data-screen-label="FOOTER" ref="{{ setFollowRef }}" style="position:relative; z-index:1; padding:36px 24px 48px; display:flex; flex-direction:column; align-items:center; gap:20px; text-align:center; opacity:{{ followStyle.opacity }}; transform:{{ followStyle.transform }}; transition:opacity 0.8s ease, transform 0.8s ease; border-top:1px solid rgba(255,255,255,0.06);">
+    <div style="font-family:'Chakra Petch',sans-serif; font-size:13px; letter-spacing:0.1em; color:#F2F4F5;">最新情報はInstagramでチェック</div>
+    <a href="https://www.instagram.com/dj_g_platinum" target="_blank" rel="noopener" style="width:100%; max-width:260px; box-sizing:border-box; text-align:center; padding:16px 0; border-radius:999px; background:linear-gradient(135deg,#39FF8F,#00C2FF); color:#04110B; font-weight:700; font-size:15px; letter-spacing:0.03em; text-decoration:none; display:flex; align-items:center; justify-content:center; gap:8px;">
+      <span>Instagramをフォロー</span>
+    </a>
+    <!-- <div style="margin-top:12px; font-size:11px; color:#5C6670; letter-spacing:0.05em;">ORGANIZED BY DJ-G</div> -->
+    <div style="font-size:10.5px; color:#3E464F;">© 2026 CRAZY BANQUET</div>
+  </section>
+
+</div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { revealed: {} };
+
+  observer = null;
+
+  ensureObserver() {
+    if (this.observer) return this.observer;
+    this.observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const key = entry.target.dataset.revealKey;
+          this.setState((s) => ({ revealed: { ...s.revealed, [key]: true } }));
+          this.observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    return this.observer;
+  }
+
+  makeRefSetter(key) {
+    return (el) => {
+      if (!el || this.state.revealed[key]) return;
+      el.dataset.revealKey = key;
+      this.ensureObserver().observe(el);
+    };
+  }
+
+  revealStyle(key) {
+    const on = !!this.state.revealed[key];
+    return { opacity: on ? 1 : 0, transform: on ? 'translateY(0)' : 'translateY(24px)' };
+  }
+
+  renderVals() {
+    return {
+      setConceptRef: this.makeRefSetter('concept'),
+      setVideoRef: this.makeRefSetter('video'),
+      setLineupRef: this.makeRefSetter('lineup'),
+      setDetailsRef: this.makeRefSetter('details'),
+      setAccessRef: this.makeRefSetter('access'),
+      setNoticeRef: this.makeRefSetter('notice'),
+      setFollowRef: this.makeRefSetter('follow'),
+      conceptStyle: this.revealStyle('concept'),
+      videoStyle: this.revealStyle('video'),
+      lineupStyle: this.revealStyle('lineup'),
+      detailsStyle: this.revealStyle('details'),
+      accessStyle: this.revealStyle('access'),
+      noticeStyle: this.revealStyle('notice'),
+      followStyle: this.revealStyle('follow'),
+      specialGuests: [
+        { name: 'KDH', initials: 'KDH', image: './uploads/kdh.webp' },
+        { name: 'CYBERJAPAN DANCERS', initials: 'CJD', image: './uploads/cyberJapanDancers.webp'  },
+      ],
+      guestDjs: [
+        { name: 'Lily', initials: 'LI', image: './uploads/lily.webp'  },
+        { name: 'KAIRI', initials: 'KR', image: './uploads/kairi.webp'  },
+      ],
+      organizers: [
+        { name: 'DJ-G', initials: 'DG', image: './uploads/dj-g.webp'   },
+      ],
+      djs: [
+        { name: 'SARA', initials: 'SA', image: './uploads/sara.webp'   },
+        { name: 'めぇめぇ', initials: 'めぇ', image: './uploads/meeMee.webp'   },
+        { name: 'Mion', initials: 'MI', image: './uploads/mion.webp'   },
+        { name: 'SERIKA', initials: 'SE', image: './uploads/serika.webp'   },
+        { name: 'Liz', initials: 'LZ', image: './uploads/liz.webp'   },
+        { name: 'KANAME', initials: 'KN', image: './uploads/kaname.webp'   },
+      ],
+      mcs: [
+        { name: 'AMI', initials: 'AM', image: './uploads/mcAmi.webp' },
+        { name: 'Casparia', initials: 'CA', image: './uploads/casparia.webp' },
+      ],
+    };
+  }
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CRAZY BANQUET｜関西最大級のナイトクラブフェス</title>
+<meta name="description" content="CRAZY BANQUET Vol.4 にご来場いただき、ありがとうございました。">
+<link rel="icon" type="image/png" href="./uploads/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #0A0E14;
+    height: 100%;
+    overflow: hidden;
+  }
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #F2F4F5;
+  }
+
+  @keyframes glowPulse {
+    0%, 100% { box-shadow: 0 0 18px 0 rgba(57,255,143,0.35), 0 0 32px 0 rgba(0,194,255,0.25); }
+    50% { box-shadow: 0 0 28px 4px rgba(57,255,143,0.55), 0 0 44px 6px rgba(0,194,255,0.4); }
+  }
+  @keyframes textGlow {
+    0%, 100% { filter: drop-shadow(0 0 18px rgba(57,255,143,0.45)) drop-shadow(0 0 30px rgba(0,194,255,0.35)); }
+    50% { filter: drop-shadow(0 0 28px rgba(57,255,143,0.65)) drop-shadow(0 0 44px rgba(0,194,255,0.5)); }
+  }
+  @keyframes driftGrid {
+    0% { background-position: 0 0; }
+    100% { background-position: 0 -80px; }
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .stage {
+    position: relative;
+    width: 100%;
+    height: 100svh;
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    background: #0A0E14;
+  }
+  .frame {
+    width: 100%;
+    max-width: 428px;
+    min-width: 320px;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .bg-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(57,255,143,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,194,255,0.06) 1px, transparent 1px);
+    background-size: 40px 40px;
+    animation: driftGrid 12s linear infinite;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .bg-radial {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 50% 18%, rgba(57,255,143,0.16), transparent 45%),
+      radial-gradient(circle at 50% 85%, rgba(0,194,255,0.14), transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .content {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: clamp(10px, 3vh, 22px);
+    padding: 6vh 24px;
+  }
+
+  .eyebrow {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.35em;
+    color: #8FF0C2;
+    font-weight: 600;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.1s forwards;
+  }
+
+  .logo {
+    width: min(58%, 220px);
+    display: block;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.25s forwards;
+  }
+
+  .thanks {
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: 700;
+    font-size: clamp(40px, 13vw, 64px);
+    line-height: 1.02;
+    letter-spacing: 0.04em;
+    margin: 0;
+    background: linear-gradient(135deg, #39FF8F, #00C2FF);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: textGlow 2.8s ease-in-out infinite, fadeUp 0.9s ease 0.4s backwards;
+  }
+
+  .line {
+    height: 1px;
+    width: 48px;
+    background: linear-gradient(90deg, #39FF8F, #00C2FF);
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.55s forwards;
+  }
+
+  .see-you {
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: 600;
+    font-size: clamp(15px, 4.2vw, 19px);
+    letter-spacing: 0.28em;
+    margin: 0;
+    color: #F2F4F5;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.65s forwards;
+  }
+
+  .message {
+    font-size: 13.5px;
+    line-height: 1.9;
+    margin: 0;
+    color: #9BA4AE;
+    max-width: 280px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.8s forwards;
+  }
+
+  .cta {
+    margin-top: 4px;
+    width: 100%;
+    max-width: 240px;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 15px 0;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #39FF8F, #00C2FF);
+    color: #04110B;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    animation: glowPulse 2.6s ease-in-out infinite, fadeUp 0.8s ease 0.95s backwards;
+  }
+
+  .footer {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 0 24px calc(20px + env(safe-area-inset-bottom));
+    font-size: 10.5px;
+    color: #3E464F;
+    letter-spacing: 0.04em;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 1.05s forwards;
+  }
+</style>
+</head>
+<body>
+
+<div class="stage">
+  <div class="frame">
+    <div class="bg-grid"></div>
+    <div class="bg-radial"></div>
+
+    <div class="content">
+      <div class="eyebrow">KANSAI LARGEST NIGHT FES</div>
+      <img class="logo" src="./uploads/logo-landscape.png" alt="CRAZY BANQUET">
+
+      <h1 class="thanks">THANK<br>YOU</h1>
+
+      <div class="line"></div>
+      <p class="see-you">SEE YOU NEXT</p>
+
+      <p class="message">ご来場・ご参加ありがとうございました。<br>次回の開催もお楽しみに。</p>
+
+      <a class="cta" href="https://www.instagram.com/dj_g_platinum" target="_blank" rel="noopener">Instagramをフォロー</a>
+    </div>
+
+    <div class="footer">© 2026 CRAZY BANQUET</div>
+  </div>
+</div>
+
+</body>
+</html>
