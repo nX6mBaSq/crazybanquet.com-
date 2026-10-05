@@ -1,328 +1,703 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
-</head>
-<body>
-<x-dc>
-<helmet>
-<template id="__bundler_thumbnail" data-bg-color="#0A0E14">
-  <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0" stop-color="#39FF8F"/>
-        <stop offset="1" stop-color="#00C2FF"/>
-      </linearGradient>
-    </defs>
-    <rect width="200" height="200" fill="#0A0E14"/>
-    <text x="100" y="95" font-family="sans-serif" font-weight="700" font-size="34" fill="url(#g)" text-anchor="middle">CRAZY</text>
-    <text x="100" y="130" font-family="sans-serif" font-weight="700" font-size="34" fill="url(#g)" text-anchor="middle">BANQUET</text>
-  </svg>
-</template>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>CRAZY BANQUET Vol.4｜関西最大級のナイトクラブフェス</title>
 <meta name="description" content="2026.11.08(日) 20:00〜翌3:00、PICCADILLY PREMIUM(大阪・梅田)にて開催。CRAZY BANQUET＝狂宴。極上のサウンドと、限界まで振り切る気愛と熱量で、いつもの夜を超える一夜をお届けします。オールジャンルの注目アーティストが集結する、関西最大級のナイトクラブフェス。">
-<link rel="icon" type="image/png" href="./uploads/favicon.png">
+<meta name="theme-color" content="#0A0E14">
+<meta name="format-detection" content="telephone=no">
+<link rel="canonical" href="https://crazybanquet.com/">
+
+<!-- OGP / SNSシェア -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CRAZY BANQUET">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:url" content="https://crazybanquet.com/">
+<meta property="og:title" content="CRAZY BANQUET Vol.4｜関西最大級のナイトクラブフェス">
+<meta property="og:description" content="2026.11.08(日) 20:00〜翌3:00 / PICCADILLY PREMIUM(大阪・梅田)。いつもの夜を超える、狂宴を体感せよ。">
+<meta property="og:image" content="https://crazybanquet.com/uploads/ogp.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="CRAZY BANQUET Vol.4 presented by DJ-G">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" type="image/png" sizes="48x48" href="./uploads/favicon-48.png">
+<link rel="icon" type="image/png" sizes="192x192" href="./uploads/favicon-192.png">
+<link rel="apple-touch-icon" href="./uploads/apple-touch-icon.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+<!-- Google 検索のイベント表示用 構造化データ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MusicEvent",
+  "name": "CRAZY BANQUET Vol.4",
+  "description": "CRAZY BANQUET＝狂宴。オールジャンルの注目アーティストが集結する、関西最大級のナイトクラブフェス。",
+  "url": "https://crazybanquet.com/",
+  "image": ["https://crazybanquet.com/uploads/ogp.jpg"],
+  "startDate": "2026-11-08T20:00:00+09:00",
+  "endDate": "2026-11-09T03:00:00+09:00",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "typicalAgeRange": "18-",
+  "location": {
+    "@type": "Place",
+    "name": "PICCADILLY PREMIUM",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "太融寺町8-17 プラザ梅田ビル 8F",
+      "addressLocality": "大阪市北区",
+      "addressRegion": "大阪府",
+      "addressCountry": "JP"
+    }
+  },
+  "offers": [
+    { "@type": "Offer", "name": "WOMEN（当日精算）", "price": "1000", "priceCurrency": "JPY", "url": "https://crazybanquet.com/", "availability": "https://schema.org/InStock" },
+    { "@type": "Offer", "name": "MEN（当日精算）", "price": "2000", "priceCurrency": "JPY", "url": "https://crazybanquet.com/", "availability": "https://schema.org/InStock" }
+  ],
+  "organizer": { "@type": "Person", "name": "DJ-G", "url": "https://www.instagram.com/dj_g_platinum" },
+  "performer": [
+    { "@type": "MusicGroup", "name": "RETRO VISION" },
+    { "@type": "Person", "name": "NATSUMI" },
+    { "@type": "PerformingGroup", "name": "CYBERJAPAN DANCERS" },
+    { "@type": "Person", "name": "DJ-G" },
+    { "@type": "Person", "name": "KAIRI" },
+    { "@type": "Person", "name": "Lily" },
+    { "@type": "Person", "name": "Liz" },
+    { "@type": "Person", "name": "Mion" },
+    { "@type": "Person", "name": "SARA" },
+    { "@type": "Person", "name": "SERIKA" },
+    { "@type": "Person", "name": "めぇめぇ" },
+    { "@type": "Person", "name": "Casparia" },
+    { "@type": "Person", "name": "cocos" }
+  ]
+}
+</script>
+
+<script>document.documentElement.classList.add('js');</script>
+
 <style>
-  body{margin:0;background:#0A0E14;}
-  @keyframes glowPulse{0%,100%{box-shadow:0 0 18px 0 rgba(57,255,143,0.35),0 0 32px 0 rgba(0,194,255,0.25);}50%{box-shadow:0 0 28px 4px rgba(57,255,143,0.55),0 0 44px 6px rgba(0,194,255,0.4);}}
+  :root{
+    color-scheme:dark;
+
+    /* ---- ベース（夜の深い青黒）。面は 3 段階で奥行きをつける ---- */
+    --bg-rgb:10,14,20;
+    --bg:#0A0E14;          /* ページ背景 */
+    --surface:#0F1620;     /* カード */
+    --surface-2:#141D2A;   /* カード上の一段明るい面・ホバー */
+
+    /* ---- 文字（背景に対するコントラスト比） ---- */
+    --text-rgb:242,244,245;
+    --text:#F2F4F5;        /* 見出し・本文強調  17.5:1 */
+    --text-sub:#B7BEC7;    /* 本文              10.3:1 */
+    --text-muted:#9BA4AE;  /* 補足               7.7:1 */
+    --text-faint:#8B939C;  /* 注記               6.2:1 */
+    --text-dim:#7C858F;    /* コピーライト等     4.9:1（AA） */
+
+    /* ---- アクセント：グリーン＝ブランド・ラベル / ブルー＝リンク・操作 ---- */
+    --green-rgb:57,255,143;
+    --blue-rgb:0,194,255;
+    --green:#39FF8F;       /* 光・線・グラデーション用（小さな文字には使わない） */
+    --green-soft:#8FF0C2;  /* ラベル文字 */
+    --blue:#00C2FF;
+    --blue-soft:#7FD9FF;   /* リンク文字・フォーカス */
+    --on-accent:#04110B;   /* グラデーション上の文字 */
+    --grad:linear-gradient(135deg,var(--green),var(--blue));
+    --grad-placeholder:linear-gradient(160deg,#12201B,#0A1620);
+
+    /* ---- 線 ---- */
+    --line-soft:rgba(255,255,255,0.06);
+    --border:rgba(255,255,255,0.08);
+    --line-strong:rgba(255,255,255,0.14);
+
+    /* 欧文ディスプレイ書体。和文が混ざった場合は Noto Sans JP にフォールバック */
+    --font-display:'Chakra Petch','Noto Sans JP',sans-serif;
+    --font-body:'Noto Sans JP',sans-serif;
+  }
+
+  *,*::before,*::after{box-sizing:border-box;}
+  html{scroll-behavior:smooth; scroll-padding-top:56px; -webkit-text-size-adjust:100%;}
+  body{margin:0; background:var(--bg); color:var(--text); font-family:var(--font-body); font-size:14px; line-height:1.8; letter-spacing:0.03em; font-kerning:normal; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;}
+
+  /* ---------- 和文組版 ---------- */
+  /* 禁則は厳格に。対応ブラウザでは文節単位で改行し、和欧間に自動でアキを入れる */
+  body{line-break:strict; overflow-wrap:break-word; text-autospace:normal; hanging-punctuation:allow-end;}
+  @supports (word-break:auto-phrase){ body{word-break:auto-phrase;} }
+  h1,h2,h3{text-wrap:balance;}
+  p,li,dd{text-wrap:pretty;}
+  .palt{font-feature-settings:"palt" 1;}
+  .num{font-family:var(--font-display); font-variant-numeric:tabular-nums; letter-spacing:0.04em;}
+  img{max-width:100%;}
+  a{color:inherit;}
+  :focus-visible{outline:2px solid var(--blue-soft); outline-offset:3px;}
+  ::selection{background:rgba(var(--green-rgb),0.3); color:var(--text);}
+  html{scrollbar-color:#2A3441 var(--bg);}
+
+  @keyframes glowPulse{0%,100%{box-shadow:0 0 18px 0 rgba(var(--green-rgb),0.35),0 0 32px 0 rgba(var(--blue-rgb),0.25);}50%{box-shadow:0 0 28px 4px rgba(var(--green-rgb),0.55),0 0 44px 6px rgba(var(--blue-rgb),0.4);}}
   @keyframes driftGrid{0%{background-position:0 0;}100%{background-position:0 -80px;}}
-  /* アーティスト写真：白黒で統一 */
-  .artist-photo img{filter:grayscale(1) contrast(1.15) brightness(0.9);}
+
+  .skip-link{position:absolute; left:8px; top:-48px; z-index:100; padding:8px 14px; border-radius:8px; background:var(--text); color:var(--bg); font-size:13px; font-weight:700; text-decoration:none;}
+  .skip-link:focus{top:8px;}
+
+  /* ---------- Layout ---------- */
+  .stage{position:relative; min-height:100vh; display:flex; justify-content:center;}
+  .frame{width:100%; max-width:428px; min-width:320px; position:relative; z-index:1; overflow-x:clip; background:var(--bg);}
+  /* グリッドは画面全体に固定（スクロールしても背景として流れ続ける） */
+  .bg-grid{position:fixed; inset:0; background-image:linear-gradient(rgba(var(--green-rgb),0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(var(--blue-rgb),0.06) 1px, transparent 1px); background-size:40px 40px; animation:driftGrid 12s linear infinite; pointer-events:none; z-index:0;}
+  .frame .bg-grid{position:absolute;}
+  .bg-grid.is-global,.bg-radial,.side{display:none;}
+
+  .section{position:relative; z-index:1; padding:12px 24px 40px;}
+
+  /* ---------- Section nav（スマホ：ヒーロー直下 → 上部に追従） ---------- */
+  .site-nav{position:sticky; top:0; z-index:10; background:rgba(var(--bg-rgb),0.82); -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px); border-top:1px solid var(--line-soft); border-bottom:1px solid var(--line-soft);}
+  .site-nav ul{list-style:none; margin:0; padding:0 8px; display:flex; justify-content:space-around;}
+  .site-nav a{position:relative; display:block; padding:14px 6px; font-family:var(--font-display); font-size:12px; font-weight:600; letter-spacing:0.14em; color:var(--text-sub); text-decoration:none; transition:color .2s;}
+  .site-nav a::after{content:""; position:absolute; left:6px; right:6px; bottom:8px; height:2px; border-radius:2px; background:var(--grad); transform:scaleX(0); transition:transform .25s ease;}
+  .site-nav a:hover,.site-nav a.is-active{color:var(--text);}
+  .site-nav a.is-active::after{transform:scaleX(1);}
+
+  /* ---------- Common type ---------- */
+  .heading{font-family:var(--font-display); font-size:22px; line-height:1.3; letter-spacing:0.08em; font-weight:700; margin:0 0 16px; color:var(--text);}
+  .grad-text{background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent;}
+  .btn-primary{display:block; width:100%; max-width:260px; text-align:center; padding:16px 0; border-radius:999px; background:var(--grad); color:var(--on-accent); font-weight:700; font-size:15px; line-height:1.5; letter-spacing:0.1em; text-decoration:none; animation:glowPulse 2.6s ease-in-out infinite; transition:filter .2s;}
+  .btn-primary:hover{filter:brightness(1.05);}
+  .btn-outline{display:block; text-align:center; padding:14px 0; border-radius:999px; border:1px solid rgba(var(--blue-rgb),0.4); color:var(--blue-soft); font-size:13.5px; font-weight:700; line-height:1.5; letter-spacing:0.08em; text-decoration:none; transition:background .2s;}
+  .btn-outline:hover{background:rgba(var(--blue-rgb),0.08);}
+
+  /* ---------- HERO ---------- */
+  /* ファーストビュー：画面いっぱい（下端にメニューが見える高さ） */
+  .hero{min-height:min(calc(100vh - 46px), 780px); min-height:min(calc(100svh - 46px), 780px); padding:48px 24px 64px; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; gap:18px;}
+  .scroll-cue{position:absolute; left:50%; bottom:14px; transform:translateX(-50%); padding-left:0.3em; display:flex; flex-direction:column; align-items:center; gap:6px; font-family:var(--font-display); font-size:10px; letter-spacing:0.3em; color:var(--text-faint); text-decoration:none;}
+  .scroll-cue::after{content:""; width:1px; height:28px; background:linear-gradient(var(--green),transparent); animation:cueDrop 1.8s ease-in-out infinite; transform-origin:top;}
+  @keyframes cueDrop{0%{transform:scaleY(0); opacity:1;}60%{transform:scaleY(1); opacity:1;}100%{transform:scaleY(1); opacity:0;}}
+  .hero-eyebrow{margin:0 -0.35em 0 0; font-family:var(--font-display); font-size:12px; line-height:1.5; letter-spacing:0.35em; color:var(--green-soft); font-weight:600;}
+  .hero h1{margin:0; width:100%; padding:24px 0;}
+  .hero h1 img{width:100%; height:auto; display:block;}
+  .hero-catch{font-size:18px; font-weight:700; line-height:1.6; letter-spacing:0.08em; margin:0;}
+  .hero-lead{font-size:13.5px; line-height:1.9; letter-spacing:0.05em; margin:0; color:var(--text-sub); max-width:320px; word-break:keep-all; overflow-wrap:anywhere;}
+  .hero-meta{margin:8px 0 0; display:flex; flex-direction:column; align-items:center; gap:2px; line-height:1.5;}
+  .hero-date{font-size:22px; font-weight:700; letter-spacing:0.06em;}
+  .hero-date .dow{font-size:14px; font-weight:600; letter-spacing:0.12em; color:var(--green-soft); margin-left:0.4em;}
+  .hero-time{font-size:15px; font-weight:500; color:var(--text-sub);}
+  .hero-meta .venue{margin-top:4px; font-size:13px; letter-spacing:0.05em; color:var(--text-muted);}
+  .hero .btn-primary{margin-top:20px;}
+
+  /* ---------- CONCEPT ---------- */
+  .concept{padding:36px 24px;}
+  .concept-rule{height:1px; width:48px; background:linear-gradient(90deg,var(--green),var(--blue)); margin-bottom:18px;}
+  .concept-label{font-family:var(--font-display); font-size:12px; line-height:1.5; letter-spacing:0.3em; color:var(--green-soft); font-weight:600; margin:0 0 8px;}
+  .concept-catch{font-size:28px; font-weight:900; line-height:1.5; letter-spacing:0.04em; margin:0 0 20px; filter:drop-shadow(0 0 14px rgba(var(--green-rgb),0.4)) drop-shadow(0 0 22px rgba(var(--blue-rgb),0.3));}
+  .concept-body{font-size:14px; line-height:2; letter-spacing:0.05em; margin:0; color:var(--text-muted);}
+  .concept-body + .concept-body{margin-top:0.9em;}
+
+  /* ---------- VIDEO ---------- */
+  .video-frame{border-radius:14px; overflow:hidden; border:1px solid var(--border); box-shadow:0 0 24px rgba(var(--blue-rgb),0.15); aspect-ratio:16/9; background:var(--surface);}
+  .video-frame iframe{width:100%; height:100%; border:0; display:block;}
+  .video-facade{position:relative; display:block; width:100%; height:100%; color:var(--text); text-decoration:none;}
+  .video-facade img{width:100%; height:100%; object-fit:cover; display:block; transition:transform .6s ease, filter .4s ease;}
+  .video-facade::after{content:""; position:absolute; inset:0; background:linear-gradient(180deg, transparent 55%, rgba(var(--bg-rgb),0.55));}
+  .video-play{position:absolute; left:50%; top:50%; z-index:1; width:68px; height:68px; margin:-34px 0 0 -34px; border-radius:50%; background:var(--grad); box-shadow:0 0 0 6px rgba(var(--green-rgb),0.15), 0 0 32px rgba(var(--blue-rgb),0.45); transition:transform .25s ease;}
+  .video-play::before{content:""; position:absolute; left:27px; top:22px; border-style:solid; border-width:12px 0 12px 19px; border-color:transparent transparent transparent var(--on-accent);}
+  .video-duration{position:absolute; right:12px; bottom:10px; z-index:1; font-size:12px; font-weight:600; letter-spacing:0.08em; color:var(--text);}
+  .video-facade:hover .video-play,.video-facade:focus-visible .video-play{transform:scale(1.08);}
+  .video-facade:hover img{transform:scale(1.03); filter:brightness(1.1);}
+  .visually-hidden{position:absolute !important; width:1px; height:1px; margin:-1px; padding:0; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0;}
+
+  /* ---------- LINEUP ---------- */
+  .lineup-head{display:flex; justify-content:space-between; align-items:baseline; gap:12px; margin:0 0 20px;}
+  .lineup-head .heading{margin:0;}
+  .lineup-note{font-size:11px; line-height:1.5; letter-spacing:0.04em; color:var(--text-faint);}
+  .tier-label{font-family:var(--font-display); font-size:12px; line-height:1.5; letter-spacing:0.2em; color:var(--green-soft); font-weight:700; margin:0 0 12px;}
+  .tier-label.is-sub{color:var(--text-muted);}
+  .artists{list-style:none; margin:0 0 28px; padding:0; display:flex; flex-wrap:wrap; justify-content:center; gap:12px;}
+  .artists:last-child{margin-bottom:0;}
+  .artist{width:calc((100% - 12px) / 2); display:flex; flex-direction:column; gap:8px;}
+  .artist-photo{position:relative; aspect-ratio:1; border-radius:12px; overflow:hidden; border:1px solid rgba(var(--green-rgb),0.4); box-shadow:0 0 20px rgba(var(--green-rgb),0.18); background:var(--grad-placeholder); display:flex; align-items:center; justify-content:center;}
+  .artist-photo picture{display:contents;}
+  .artist-photo img{width:100%; height:100%; object-fit:cover; display:block; filter:grayscale(1) contrast(1.15) brightness(0.9);}
+  .artist-photo:has(img)::after{content:""; position:absolute; inset:0; pointer-events:none; background:linear-gradient(180deg, transparent 55%, rgba(var(--bg-rgb),0.45)), linear-gradient(135deg, rgba(var(--green-rgb),0.10), rgba(var(--blue-rgb),0.12)); mix-blend-mode:multiply; transition:opacity .5s ease;}
+  /* 写真未着の出演者：斜線パターンで「グラフィック」として見せる */
+  .artist-photo.is-placeholder{background:repeating-linear-gradient(135deg, rgba(var(--green-rgb),0.06) 0 1px, transparent 1px 9px), var(--grad-placeholder);}
+  .artists.is-small .artist-photo.is-placeholder{background:repeating-linear-gradient(135deg, rgba(var(--text-rgb),0.05) 0 1px, transparent 1px 9px), var(--surface);}
+  /* マウス操作の端末では、ホバーで写真がカラーに戻る */
+  @media (hover:hover){
+    .artist-photo img{transition:filter .5s ease, transform .6s ease;}
+    .artist:hover .artist-photo img{filter:grayscale(0) contrast(1.05); transform:scale(1.04);}
+    .artist:hover .artist-photo::after{opacity:0;}
+  }
+  .artist-initials{font-family:var(--font-display); font-size:26px; font-weight:700; line-height:1.2; letter-spacing:0.06em; text-align:center; padding:0 8px;}
+  .artist-name{font-family:var(--font-display); font-size:14px; font-weight:700; line-height:1.4; letter-spacing:0.06em; text-align:center; text-wrap:balance;}
+
+  .artists.is-special{gap:12px;}
+  .artists.is-special .artist{width:100%;}
+  .artists.is-special .artist-photo{aspect-ratio:16/10; border-color:rgba(var(--green-rgb),0.5); box-shadow:0 0 28px rgba(var(--green-rgb),0.25);}
+  .artists.is-special .artist-initials{font-size:32px; letter-spacing:0.06em;}
+  .artists.is-special .artist-name{font-size:16px; letter-spacing:0.08em;}
+
+  /* GUEST DJ：SPECIAL GUEST と MAIN ACT の中間に位置づける横長カード */
+  .artists.is-guest{flex-direction:column; gap:10px;}
+  .artists.is-guest .artist{width:100%; flex-direction:row; align-items:center; gap:18px; padding:12px; border-radius:16px; background:linear-gradient(120deg, rgba(var(--green-rgb),0.07), rgba(var(--blue-rgb),0.05) 60%, transparent), var(--surface); border:1px solid rgba(var(--green-rgb),0.4); box-shadow:0 0 24px rgba(var(--green-rgb),0.15);}
+  .artists.is-guest .artist-photo{width:42%; flex-shrink:0; border-radius:10px; border-color:rgba(var(--green-rgb),0.3); box-shadow:none;}
+  .artists.is-guest .artist-body{display:flex; flex-direction:column; gap:10px; min-width:0;}
+  .artists.is-guest .artist-name{font-size:22px; letter-spacing:0.08em; text-align:left; text-wrap:wrap;}
+  .artist-rule{display:block; width:40px; height:2px; border-radius:2px; background:var(--grad);}
+
+  .artists.is-small{gap:8px;}
+  .artists.is-small .artist{width:calc((100% - 16px) / 3); gap:5px;}
+  .artists.is-small .artist-photo{border-radius:8px; background:var(--surface); border-color:rgba(var(--text-rgb),0.12); box-shadow:none;}
+  .artists.is-small .artist-initials{font-size:15px; font-weight:600; color:var(--text-sub);}
+  .artists.is-small .artist-name{font-size:12px; font-weight:600; letter-spacing:0.04em; color:var(--text-sub);}
+
+  /* ---------- DETAILS ---------- */
+  .details{display:flex; flex-direction:column; gap:10px; margin:0;}
+  .detail-row{border-radius:14px; background:var(--surface); border:1px solid var(--border); padding:16px 18px; display:flex; justify-content:space-between; align-items:center; gap:12px;}
+  .detail-row dt{font-family:var(--font-display); font-size:12px; font-weight:600; line-height:1.5; color:var(--text-muted); letter-spacing:0.16em; flex-shrink:0;}
+  .dt-note{font-family:var(--font-body); font-size:11px; font-weight:500; letter-spacing:0.06em; margin-left:0.6em;}
+  .detail-row dd{margin:0; font-size:15px; font-weight:700; line-height:1.5; letter-spacing:0.04em; text-align:right;}
+  .detail-row dd.num{font-size:16px;}
+  .venue-link{text-decoration:none;}
+  .detail-row.is-stacked{flex-direction:column; align-items:stretch; gap:8px;}
+  .detail-row .prices{display:flex; gap:10px; margin:0; text-align:center;}
+  .price{flex:1; padding:10px 0; border-radius:10px;}
+  .price-label{font-family:var(--font-display); font-size:11px; font-weight:600; line-height:1.5; letter-spacing:0.18em;}
+  .price-value{font-size:22px; font-weight:700; line-height:1.3;}
+  .price-value .yen{font-size:0.7em; margin-right:0.1em;}
+  .price.is-women{background:rgba(var(--green-rgb),0.08); border:1px solid rgba(var(--green-rgb),0.3);}
+  .price.is-women .price-label{color:var(--green-soft);}
+  .price.is-men{background:rgba(var(--blue-rgb),0.08); border:1px solid rgba(var(--blue-rgb),0.3);}
+  .price.is-men .price-label{color:var(--blue-soft);}
+
+  /* ---------- ACCESS ---------- */
+  .map-frame{border-radius:14px; overflow:hidden; border:1px solid var(--border); margin-bottom:14px; aspect-ratio:16/10; background:var(--surface);}
+  .map-frame iframe{width:100%; height:100%; border:0; display:block;}
+  .venue-info{display:flex; flex-direction:column; gap:6px; margin:0 0 16px; font-style:normal;}
+  .venue-name{font-family:var(--font-display); font-size:16px; font-weight:700; line-height:1.4; letter-spacing:0.06em;}
+  .venue-address{font-size:13px; line-height:1.8; letter-spacing:0.04em; color:var(--text-muted);}
+
+  /* ---------- NOTICE ---------- */
+  .notice .heading{font-size:16px; margin-bottom:12px; color:var(--text-sub);}
+  .notice ul{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:6px; font-size:12.5px; line-height:1.8; letter-spacing:0.04em; color:var(--text-faint);}
+  .notice li{padding-left:1em; text-indent:-1em;}
+  .notice li::before{content:"・";}
+
+  /* ---------- FOOTER ---------- */
+  .footer{position:relative; z-index:1; padding:36px 24px calc(48px + env(safe-area-inset-bottom)); display:flex; flex-direction:column; align-items:center; gap:20px; text-align:center; border-top:1px solid var(--line-soft);}
+  .footer-lead{font-size:13.5px; font-weight:500; line-height:1.6; letter-spacing:0.08em; margin:0;}
+  .footer .btn-primary{animation:none;}
+  .copyright{font-family:var(--font-display); font-size:11px; letter-spacing:0.12em; color:var(--text-dim); margin:0;}
+  .copyright small{font-size:inherit;}
+
+  /* ---------- Scroll reveal（JS有効時のみ隠す） ---------- */
+  .js .reveal{opacity:0; transform:translateY(24px); transition:opacity 0.8s ease, transform 0.8s ease;}
+  .js .reveal.is-visible{opacity:1; transform:none;}
+
+  /* ---------- タブレット：中央カラムを浮かせて輪郭をつける ---------- */
+  @media (min-width:600px){
+    .frame{border-left:1px solid rgba(var(--green-rgb),0.12); border-right:1px solid rgba(var(--blue-rgb),0.12); box-shadow:0 0 60px rgba(0,0,0,0.6), 0 0 80px rgba(var(--blue-rgb),0.06);}
+    .frame .bg-grid{display:none;}
+    .bg-grid.is-global{display:block;}
+    .bg-radial{display:block; position:fixed; inset:0; pointer-events:none; z-index:0; background:radial-gradient(circle at 20% 30%, rgba(var(--green-rgb),0.08), transparent 40%), radial-gradient(circle at 80% 75%, rgba(var(--blue-rgb),0.08), transparent 45%);}
+  }
+
+  /* ---------- PC：左にイベント情報、右にメニューを固定 ---------- */
+  @media (min-width:1080px){
+    html{scroll-padding-top:0;}
+    .stage{display:grid; grid-template-columns:minmax(0,1fr) 428px minmax(0,1fr); align-items:start;}
+    .frame{grid-column:2; grid-row:1;}
+    .site-nav{display:none;}
+    .hero{min-height:min(100vh, 960px); min-height:min(100svh, 960px);}
+
+    .side{position:sticky; top:0; z-index:1; height:100vh; display:flex; flex-direction:column; justify-content:center; padding:48px clamp(32px,4vw,72px);}
+    /* 左パネル（開催概要）はページ読み込み時にフェードイン */
+    .side-brand{grid-column:1; grid-row:1; align-items:flex-end; text-align:right; gap:14px; animation:sideIn .8s ease .2s both;}
+    @keyframes sideIn{from{opacity:0; transform:translateX(-16px);}to{opacity:1; transform:none;}}
+    .side-menu{grid-column:3; grid-row:1; align-items:flex-start; gap:36px;}
+
+    .side-eyebrow{margin:0; font-family:var(--font-display); font-size:12px; letter-spacing:0.35em; color:var(--green-soft); font-weight:600;}
+    .side-logo{width:min(100%,340px); height:auto; display:block; margin:4px 0 6px;}
+    .side-date{margin:0; font-family:var(--font-display); font-size:22px; font-weight:700; letter-spacing:0.04em;}
+    .side-time{margin:0; font-family:var(--font-display); font-size:15px; letter-spacing:0.08em; color:var(--text-sub);}
+    .side-venue{margin:0 0 10px; font-size:13px; color:var(--text-muted);}
+    .side-brand .btn-outline{width:220px;}
+
+    .side-nav ul{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:4px; border-left:1px solid var(--border);}
+    .side-nav a{position:relative; display:block; padding:8px 0 8px 20px; font-family:var(--font-display); font-size:14px; font-weight:600; letter-spacing:0.18em; color:var(--text-faint); text-decoration:none; transition:color .2s, padding .2s;}
+    .side-nav a::before{content:""; position:absolute; left:-1px; top:6px; bottom:6px; width:2px; background:var(--grad); transform:scaleY(0); transition:transform .25s ease;}
+    .side-nav a:hover{color:var(--text);}
+    .side-nav a.is-active{color:var(--text); padding-left:26px;}
+    .side-nav a.is-active::before{transform:scaleY(1);}
+    .side-sns{font-family:var(--font-display); font-size:12px; letter-spacing:0.16em; color:var(--blue-soft); text-decoration:none; border-bottom:1px solid rgba(var(--blue-rgb),0.4); padding-bottom:4px;}
+    .side-sns:hover{color:var(--text);}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    .bg-grid,.btn-primary,.scroll-cue::after{animation:none;}
+    .artist-photo img,.video-facade img{transition:none; transform:none !important;}
+    .side-brand{animation:none;}
+    .js .reveal{transform:none; transition:opacity 0.4s ease;}
+  }
 </style>
-</helmet>
+</head>
+<body>
+<a class="skip-link" href="#main">本文へスキップ</a>
 
-<div style="background:#0A0E14; min-height:100vh; display:flex; justify-content:center; font-family:'Noto Sans JP',sans-serif;">
-<div style="width:100%; max-width:428px; min-width:320px; background:#0A0E14; position:relative; overflow:hidden; color:#F2F4F5;">
+<div class="stage">
+<div class="bg-grid is-global" aria-hidden="true"></div>
+<div class="bg-radial" aria-hidden="true"></div>
 
-  <!-- background grid decoration -->
-  <div style="position:absolute; inset:0; background-image:linear-gradient(rgba(57,255,143,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(0,194,255,0.06) 1px, transparent 1px); background-size:40px 40px; animation:driftGrid 12s linear infinite; pointer-events:none; z-index:0;"></div>
+<div class="frame">
 
-  <!-- HERO -->
-  <section data-screen-label="HERO" style="position:relative; z-index:1; padding:56px 24px 48px; display:flex; flex-direction:column; align-items:center; text-align:center; gap:18px;">
-    <div style="font-family:'Chakra Petch',sans-serif; font-size:13px; letter-spacing:0.35em; color:#8FF0C2; font-weight:600;">KANSAI LARGEST NIGHT FES</div>
-    <img src="./uploads/logo-landscape.png" alt="CRAZY BANQUET" style="width: 100%; display:block; padding:24px 0px;">
-    <!-- <h1 style="font-family:'Chakra Petch',sans-serif; font-weight:700; font-size:44px; line-height:1.05; letter-spacing:0.06em; margin:0; background:linear-gradient(135deg,#39FF8F,#00C2FF); -webkit-background-clip:text; background-clip:text; color:transparent; filter:drop-shadow(0 0 18px rgba(57,255,143,0.45)) drop-shadow(0 0 28px rgba(0,194,255,0.35));">CRAZY<br/>BANQUET</h1> -->
-    <p style="font-size:17px; font-weight:700; margin:0; color:#F2F4F5;">ここでしか味わえない、狂宴の夜へ。</p>
-    <p style="font-size:13px; line-height:1.7; margin:0; color:#B7BEC7; max-width:280px;">極上のサウンドと、限界まで振り切る気愛と熱量。<br>CRAZY BANQUETが贈る、一夜限りの狂宴。</p>
+  <div class="bg-grid" aria-hidden="true"></div>
 
-    <div style="margin-top:8px; font-family:'Chakra Petch',sans-serif; font-size:14px; letter-spacing:0.04em; color:#F2F4F5; display:flex; flex-direction:column; gap:4px;">
-      <div>2026.11.08 SUN &nbsp;20:00 - 3:00</div>
-      <div style="color:#9BA4AE; font-family:'Noto Sans JP',sans-serif; font-size:13px;">PICCADILLY PREMIUM（大阪・梅田）</div>
-    </div>
+  <header class="section hero">
+    <p class="hero-eyebrow">KANSAI LARGEST NIGHT FES</p>
+    <h1>
+      <picture>
+        <source type="image/avif" srcset="./uploads/resized/logo-640.avif 640w, ./uploads/resized/logo-960.avif 960w" sizes="(min-width: 428px) 380px, calc(100vw - 48px)">
+        <img src="./uploads/resized/logo-640.webp" srcset="./uploads/resized/logo-640.webp 640w, ./uploads/resized/logo-960.webp 960w" sizes="(min-width: 428px) 380px, calc(100vw - 48px)" alt="CRAZY BANQUET Vol.4" width="1306" height="458" fetchpriority="high">
+      </picture>
+    </h1>
+    <p class="hero-catch palt">ここでしか味わえない、狂宴の夜へ。</p>
+    <p class="hero-lead">極上のサウンドと、<wbr>限界まで振り切る<wbr>気愛と熱量。<br>CRAZY BANQUETが贈る、<wbr>一夜限りの狂宴。</p>
+    <p class="hero-meta">
+      <span class="hero-date num"><time datetime="2026-11-08">2026.11.08</time><span class="dow">SUN</span></span>
+      <span class="hero-time num"><time datetime="2026-11-08T20:00+09:00">20:00</time> – <time datetime="2026-11-09T03:00+09:00">3:00</time></span>
+      <span class="venue">PICCADILLY PREMIUM（大阪・梅田）</span>
+    </p>
+    <a class="btn-primary" href="#access">アクセスを見る</a>
+    <a class="scroll-cue" href="#concept" aria-label="コンセプトへスクロール">SCROLL</a>
+  </header>
 
-    <a href="#access" style="margin-top:20px; width:100%; max-width:260px; box-sizing:border-box; text-align:center; padding:16px 0; border-radius:999px; background:linear-gradient(135deg,#39FF8F,#00C2FF); color:#04110B; font-weight:700; font-size:15px; letter-spacing:0.05em; text-decoration:none; animation:glowPulse 2.6s ease-in-out infinite;" style-hover="filter:brightness(1.05);">アクセスを見る</a>
-  </section>
+  <nav class="site-nav" aria-label="ページ内メニュー">
+    <ul>
+      <li><a href="#movie" data-nav>MOVIE</a></li>
+      <li><a href="#lineup" data-nav>LINE UP</a></li>
+      <li><a href="#details" data-nav>INFO</a></li>
+      <li><a href="#access" data-nav>ACCESS</a></li>
+    </ul>
+  </nav>
 
-  <!-- CONCEPT -->
-  <section data-screen-label="CONCEPT" ref="{{ setConceptRef }}" style="position:relative; z-index:1; padding:36px 24px; opacity:{{ conceptStyle.opacity }}; transform:{{ conceptStyle.transform }}; transition:opacity 0.8s ease, transform 0.8s ease;">
-    <div style="height:1px; width:48px; background:linear-gradient(90deg,#39FF8F,#00C2FF); margin-bottom:18px;"></div>
-    <div style="font-family:'Chakra Petch',sans-serif; font-size:12px; letter-spacing:0.3em; color:#7FD9FF; font-weight:600; margin-bottom:8px;">CONCEPT</div>
-    <p style="font-size:26px; font-weight:900; line-height:1.45; letter-spacing:0.01em; margin:0 0 14px; background:linear-gradient(135deg,#39FF8F,#00C2FF); -webkit-background-clip:text; background-clip:text; color:transparent; filter:drop-shadow(0 0 14px rgba(57,255,143,0.4)) drop-shadow(0 0 22px rgba(0,194,255,0.3));">いつもの夜を超える、<br>狂宴を体感せよ。</p>
-    <p style="font-size:13.5px; line-height:1.8; margin:0; color:#9BA4AE;">CRAZY BANQUET＝狂宴。どこでも聴ける曲、どこにでもある空間とは一線を画す、ここだけの夜をお届けします。<br>極上のサウンドと、出演者全員が限界まで振り切る気愛と熱量。そのすべてを、ぜひ全身で。<br>仲間と共に、この狂った宴を存分にお楽しみください。</p>
-  </section>
+  <main id="main">
 
-  <!-- VIDEO -->
-  <section data-screen-label="VIDEO" ref="{{ setVideoRef }}" style="position:relative; z-index:1; padding:12px 24px 40px; opacity:{{ videoStyle.opacity }}; transform:{{ videoStyle.transform }}; transition:opacity 0.8s ease, transform 0.8s ease;">
-    <h2 style="font-family:'Chakra Petch',sans-serif; font-size:22px; letter-spacing:0.08em; font-weight:700; margin:0 0 16px; color:#F2F4F5;">PROMOTION VIDEO</h2>
-    <div style="border-radius:14px; overflow:hidden; border:1px solid rgba(255,255,255,0.08); box-shadow:0 0 24px rgba(0,194,255,0.15);">
-      <div style="aspect-ratio:16/9;">
-        <iframe
-          src="https://player.vimeo.com/video/1213042101?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;title=0&amp;byline=0&amp;portrait=0"
-          title="CRAZY BANQUET Vol.4｜関西最大級のナイトクラブフェス"
-          width="100%" height="100%" style="border:0; display:block;"
-          loading="lazy"
-          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen>
-        </iframe>
+    <!-- CONCEPT -->
+    <section id="concept" class="section concept reveal" aria-labelledby="concept-title">
+      <div class="concept-rule" aria-hidden="true"></div>
+      <h2 id="concept-title" class="concept-label">CONCEPT</h2>
+      <p class="concept-catch grad-text palt">いつもの夜を超える、<br>狂宴を体感せよ。</p>
+      <p class="concept-body">CRAZY BANQUET＝狂宴。どこでも聴ける曲、どこにでもある空間とは一線を画す、ここだけの夜をお届けします。</p>
+      <p class="concept-body">極上のサウンドと、出演者全員が限界まで振り切る気愛と熱量。そのすべてを、ぜひ全身で。</p>
+      <p class="concept-body">仲間と共に、この狂った宴を存分にお楽しみください。</p>
+    </section>
+
+    <!-- VIDEO -->
+    <section id="movie" class="section reveal" aria-labelledby="movie-title">
+      <h2 id="movie-title" class="heading">PROMOTION VIDEO</h2>
+      <!-- サムネイルを表示し、再生ボタンが押されたときに Vimeo プレイヤーを読み込む（JS 無効時は Vimeo のページへ） -->
+      <div class="video-frame">
+        <a class="video-facade" href="https://vimeo.com/1213042101" data-vimeo-id="1213042101" target="_blank" rel="noopener">
+          <picture>
+            <source type="image/avif" srcset="./uploads/resized/video-poster-760.avif 760w, ./uploads/resized/video-poster-1280.avif 1280w" sizes="(min-width: 428px) 380px, calc(100vw - 48px)">
+            <img src="./uploads/resized/video-poster-760.webp" srcset="./uploads/resized/video-poster-760.webp 760w, ./uploads/resized/video-poster-1280.webp 1280w" sizes="(min-width: 428px) 380px, calc(100vw - 48px)" alt="" width="1280" height="720" loading="lazy" decoding="async">
+          </picture>
+          <span class="video-play" aria-hidden="true"></span>
+          <span class="video-duration num">0:27</span>
+          <span class="visually-hidden">プロモーションビデオを再生（27秒）</span>
+        </a>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- LINEUP -->
-  <section data-screen-label="LINEUP" ref="{{ setLineupRef }}" style="position:relative; z-index:1; padding:12px 24px 40px; opacity:{{ lineupStyle.opacity }}; transform:{{ lineupStyle.transform }}; transition:opacity 0.8s ease, transform 0.8s ease;">
-    <div style="display:flex; justify-content:space-between; align-items:baseline; gap:12px; margin:0 0 20px;">
-      <h2 style="font-family:'Chakra Petch',sans-serif; font-size:22px; letter-spacing:0.08em; font-weight:700; margin:0; color:#F2F4F5;">LINE UP</h2>
-      <span style="font-size:10.5px; letter-spacing:0.04em; color:#8B939C;">※各枠内は A to Z 順</span>
-    </div>
+    <!-- LINEUP（各枠内は A to Z 順。写真がない出演者は .artist-photo 内にイニシャルを表示） -->
+    <section id="lineup" class="section reveal" aria-labelledby="lineup-title">
+      <div class="lineup-head">
+        <h2 id="lineup-title" class="heading">LINE UP</h2>
+        <span class="lineup-note">※各枠内は A to Z 順</span>
+      </div>
 
-    <div style="font-size:11px; letter-spacing:0.12em; color:#39FF8F; font-weight:700; margin-bottom:10px;">SPECIAL GUEST</div>
-    <div style="display:grid; grid-template-columns:1fr; gap:12px; margin-bottom:28px;">
-      <sc-for list="{{ specialGuests }}" as="a" hint-placeholder-count="1">
-        <div style="display:flex; flex-direction:column; gap:8px;">
-          <!-- 写真が届いたら、下の div を MAIN ACT と同じ <img src="{{ a.image }}"> 形式に差し替える -->
-          <div style="aspect-ratio:16/10; border-radius:12px; background:linear-gradient(160deg,#12201B,#0A1620); border:1px solid rgba(57,255,143,0.5); box-shadow:0 0 28px rgba(57,255,143,0.25); display:flex; align-items:center; justify-content:center;">
-            <span style="font-family:'Chakra Petch',sans-serif; font-size:32px; font-weight:700; letter-spacing:0.06em; background:linear-gradient(135deg,#39FF8F,#00C2FF); -webkit-background-clip:text; background-clip:text; color:transparent;">{{ a.name }}</span>
+      <h3 class="tier-label">SPECIAL GUEST</h3>
+      <ul class="artists is-special">
+        <li class="artist">
+          <!-- 写真が届いたら tools/build-images.py で画像を生成し、MAIN ACT と同じ <picture> に差し替える（is-placeholder も外す） -->
+          <div class="artist-photo is-placeholder"><span class="artist-initials grad-text" aria-hidden="true">RETRO VISION</span></div>
+          <span class="artist-name">RETRO VISION</span>
+        </li>
+      </ul>
+
+      <h3 class="tier-label">GUEST DJ</h3>
+      <!-- 横長カード：写真（正方形）＋名前。写真を入れる場合の sizes は "(min-width: 428px) 150px, 40vw" -->
+      <ul class="artists is-guest">
+        <li class="artist">
+          <div class="artist-photo is-placeholder"><span class="artist-initials grad-text" aria-hidden="true">NA</span></div>
+          <div class="artist-body">
+            <span class="artist-name">NATSUMI</span>
+            <span class="artist-rule" aria-hidden="true"></span>
           </div>
-          <div style="font-size:14px; font-weight:700; text-align:center; color:#F2F4F5;">{{ a.name }}</div>
-        </div>
-      </sc-for>
-    </div>
+        </li>
+      </ul>
 
-    <div style="font-size:11px; letter-spacing:0.12em; color:#39FF8F; font-weight:700; margin-bottom:10px;">GUEST DJ</div>
-    <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:12px; margin-bottom:28px;">
-      <sc-for list="{{ guestDjs }}" as="a" hint-placeholder-count="1">
-        <div style="width:calc((100% - 12px) / 2); display:flex; flex-direction:column; gap:8px;">
-          <!-- 写真あり：画像を敷き詰める -->
-          <sc-if value="{{ a.image }}">
-            <div class="artist-photo" style="aspect-ratio:1; border-radius:12px; overflow:hidden; border:1px solid rgba(57,255,143,0.4); box-shadow:0 0 20px rgba(57,255,143,0.18);">
-              <img src="{{ a.image }}" alt="{{ a.name }}" style="width:100%; height:100%; object-fit:cover; display:block;">
+      <h3 class="tier-label">MAIN ACT</h3>
+      <ul class="artists">
+        <li class="artist">
+          <div class="artist-photo">
+            <picture>
+              <source type="image/avif" srcset="./uploads/resized/cyberJapanDancers-360.avif 360w, ./uploads/resized/cyberJapanDancers-640.avif 640w" sizes="(min-width: 428px) 184px, calc((100vw - 60px) / 2)">
+              <img src="./uploads/resized/cyberJapanDancers-360.webp" srcset="./uploads/resized/cyberJapanDancers-360.webp 360w, ./uploads/resized/cyberJapanDancers-640.webp 640w" sizes="(min-width: 428px) 184px, calc((100vw - 60px) / 2)" alt="" width="640" height="640" loading="lazy" decoding="async">
+            </picture>
+          </div>
+          <span class="artist-name">CYBERJAPAN DANCERS</span>
+        </li>
+        <li class="artist">
+          <div class="artist-photo">
+            <picture>
+              <source type="image/avif" srcset="./uploads/resized/dj-g-360.avif 360w, ./uploads/resized/dj-g-640.avif 640w" sizes="(min-width: 428px) 184px, calc((100vw - 60px) / 2)">
+              <img src="./uploads/resized/dj-g-360.webp" srcset="./uploads/resized/dj-g-360.webp 360w, ./uploads/resized/dj-g-640.webp 640w" sizes="(min-width: 428px) 184px, calc((100vw - 60px) / 2)" alt="" width="640" height="640" loading="lazy" decoding="async">
+            </picture>
+          </div>
+          <span class="artist-name">DJ-G</span>
+        </li>
+        <li class="artist">
+          <div class="artist-photo">
+            <picture>
+              <source type="image/avif" srcset="./uploads/resized/kairi-360.avif 360w, ./uploads/resized/kairi-640.avif 640w" sizes="(min-width: 428px) 184px, calc((100vw - 60px) / 2)">
+              <img src="./uploads/resized/kairi-360.webp" srcset="./uploads/resized/kairi-360.webp 360w, ./uploads/resized/kairi-640.webp 640w" sizes="(min-width: 428px) 184px, calc((100vw - 60px) / 2)" alt="" width="640" height="640" loading="lazy" decoding="async">
+            </picture>
+          </div>
+          <span class="artist-name">KAIRI</span>
+        </li>
+        <li class="artist">
+          <div class="artist-photo">
+            <picture>
+              <source type="image/avif" srcset="./uploads/resized/lily-360.avif 360w, ./uploads/resized/lily-640.avif 640w" sizes="(min-width: 428px) 184px, calc((100vw - 60px) / 2)">
+              <img src="./uploads/resized/lily-360.webp" srcset="./uploads/resized/lily-360.webp 360w, ./uploads/resized/lily-640.webp 640w" sizes="(min-width: 428px) 184px, calc((100vw - 60px) / 2)" alt="" width="640" height="640" loading="lazy" decoding="async">
+            </picture>
+          </div>
+          <span class="artist-name">Lily</span>
+        </li>
+      </ul>
+
+      <h3 class="tier-label is-sub">DJs</h3>
+      <ul class="artists is-small">
+        <li class="artist">
+          <div class="artist-photo">
+            <picture>
+              <source type="image/avif" srcset="./uploads/resized/liz-360.avif 360w, ./uploads/resized/liz-640.avif 640w" sizes="(min-width: 428px) 121px, calc((100vw - 64px) / 3)">
+              <img src="./uploads/resized/liz-360.webp" srcset="./uploads/resized/liz-360.webp 360w, ./uploads/resized/liz-640.webp 640w" sizes="(min-width: 428px) 121px, calc((100vw - 64px) / 3)" alt="" width="640" height="640" loading="lazy" decoding="async">
+            </picture>
+          </div>
+          <span class="artist-name">Liz</span>
+        </li>
+        <li class="artist">
+          <div class="artist-photo">
+            <picture>
+              <source type="image/avif" srcset="./uploads/resized/mion-360.avif 360w, ./uploads/resized/mion-640.avif 640w" sizes="(min-width: 428px) 121px, calc((100vw - 64px) / 3)">
+              <img src="./uploads/resized/mion-360.webp" srcset="./uploads/resized/mion-360.webp 360w, ./uploads/resized/mion-640.webp 640w" sizes="(min-width: 428px) 121px, calc((100vw - 64px) / 3)" alt="" width="640" height="640" loading="lazy" decoding="async">
+            </picture>
+          </div>
+          <span class="artist-name">Mion</span>
+        </li>
+        <li class="artist">
+          <div class="artist-photo">
+            <picture>
+              <source type="image/avif" srcset="./uploads/resized/sara-360.avif 360w, ./uploads/resized/sara-640.avif 640w" sizes="(min-width: 428px) 121px, calc((100vw - 64px) / 3)">
+              <img src="./uploads/resized/sara-360.webp" srcset="./uploads/resized/sara-360.webp 360w, ./uploads/resized/sara-640.webp 640w" sizes="(min-width: 428px) 121px, calc((100vw - 64px) / 3)" alt="" width="640" height="640" loading="lazy" decoding="async">
+            </picture>
+          </div>
+          <span class="artist-name">SARA</span>
+        </li>
+        <li class="artist">
+          <div class="artist-photo">
+            <picture>
+              <source type="image/avif" srcset="./uploads/resized/serika-360.avif 360w, ./uploads/resized/serika-640.avif 640w" sizes="(min-width: 428px) 121px, calc((100vw - 64px) / 3)">
+              <img src="./uploads/resized/serika-360.webp" srcset="./uploads/resized/serika-360.webp 360w, ./uploads/resized/serika-640.webp 640w" sizes="(min-width: 428px) 121px, calc((100vw - 64px) / 3)" alt="" width="640" height="640" loading="lazy" decoding="async">
+            </picture>
+          </div>
+          <span class="artist-name">SERIKA</span>
+        </li>
+        <li class="artist">
+          <div class="artist-photo">
+            <picture>
+              <source type="image/avif" srcset="./uploads/resized/meeMee-360.avif 360w, ./uploads/resized/meeMee-640.avif 640w" sizes="(min-width: 428px) 121px, calc((100vw - 64px) / 3)">
+              <img src="./uploads/resized/meeMee-360.webp" srcset="./uploads/resized/meeMee-360.webp 360w, ./uploads/resized/meeMee-640.webp 640w" sizes="(min-width: 428px) 121px, calc((100vw - 64px) / 3)" alt="" width="640" height="640" loading="lazy" decoding="async">
+            </picture>
+          </div>
+          <span class="artist-name">めぇめぇ</span>
+        </li>
+      </ul>
+
+      <h3 class="tier-label is-sub">MC</h3>
+      <ul class="artists is-small">
+        <li class="artist">
+          <div class="artist-photo">
+            <picture>
+              <source type="image/avif" srcset="./uploads/resized/casparia-360.avif 360w, ./uploads/resized/casparia-640.avif 640w" sizes="(min-width: 428px) 121px, calc((100vw - 64px) / 3)">
+              <img src="./uploads/resized/casparia-360.webp" srcset="./uploads/resized/casparia-360.webp 360w, ./uploads/resized/casparia-640.webp 640w" sizes="(min-width: 428px) 121px, calc((100vw - 64px) / 3)" alt="" width="640" height="640" loading="lazy" decoding="async">
+            </picture>
+          </div>
+          <span class="artist-name">Casparia</span>
+        </li>
+        <li class="artist">
+          <div class="artist-photo is-placeholder"><span class="artist-initials" aria-hidden="true">CO</span></div>
+          <span class="artist-name">cocos</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- EVENT DETAILS -->
+    <section id="details" class="section reveal" aria-labelledby="details-title">
+      <h2 id="details-title" class="heading">EVENT DETAILS</h2>
+      <dl class="details">
+        <div class="detail-row">
+          <dt>DATE</dt>
+          <dd class="num"><time datetime="2026-11-08">2026.11.08</time> SUN</dd>
+        </div>
+        <div class="detail-row">
+          <dt>TIME</dt>
+          <dd class="num"><time datetime="2026-11-08T20:00+09:00">20:00</time> – 翌<time datetime="2026-11-09T03:00+09:00">3:00</time></dd>
+        </div>
+        <div class="detail-row is-stacked">
+          <dt>CHARGE<span class="dt-note">当日精算</span></dt>
+          <dd class="prices">
+            <div class="price is-women">
+              <div class="price-label">WOMEN</div>
+              <div class="price-value num"><span class="yen">¥</span>1,000</div>
             </div>
-          </sc-if>
-          <!-- 写真なし（placeholder: true）：イニシャルを表示 -->
-          <sc-if value="{{ a.placeholder }}">
-            <div style="aspect-ratio:1; border-radius:12px; background:linear-gradient(160deg,#12201B,#0A1620); border:1px solid rgba(57,255,143,0.4); box-shadow:0 0 20px rgba(57,255,143,0.18); display:flex; align-items:center; justify-content:center;">
-              <span style="font-family:'Chakra Petch',sans-serif; font-size:26px; font-weight:700; background:linear-gradient(135deg,#39FF8F,#00C2FF); -webkit-background-clip:text; background-clip:text; color:transparent;">{{ a.initials }}</span>
+            <div class="price is-men">
+              <div class="price-label">MEN</div>
+              <div class="price-value num"><span class="yen">¥</span>2,000</div>
             </div>
-          </sc-if>
-          <div style="font-size:13px; font-weight:700; text-align:center; color:#F2F4F5;">{{ a.name }}</div>
+          </dd>
         </div>
-      </sc-for>
-    </div>
-
-    <div style="font-size:11px; letter-spacing:0.12em; color:#39FF8F; font-weight:700; margin-bottom:10px;">MAIN ACT</div>
-    <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:12px; margin-bottom:28px;">
-      <sc-for list="{{ mainActs }}" as="a" hint-placeholder-count="4">
-        <div style="width:calc((100% - 12px) / 2); display:flex; flex-direction:column; gap:8px;">
-          <!-- 写真あり：画像を敷き詰める -->
-          <sc-if value="{{ a.image }}">
-            <div class="artist-photo" style="aspect-ratio:1; border-radius:12px; overflow:hidden; border:1px solid rgba(57,255,143,0.4); box-shadow:0 0 20px rgba(57,255,143,0.18);">
-              <img src="{{ a.image }}" alt="{{ a.name }}" style="width:100%; height:100%; object-fit:cover; display:block;">
-            </div>
-          </sc-if>
-          <!-- 写真なし（placeholder: true）：イニシャルを表示 -->
-          <sc-if value="{{ a.placeholder }}">
-            <div style="aspect-ratio:1; border-radius:12px; background:linear-gradient(160deg,#12201B,#0A1620); border:1px solid rgba(57,255,143,0.4); box-shadow:0 0 20px rgba(57,255,143,0.18); display:flex; align-items:center; justify-content:center;">
-              <span style="font-family:'Chakra Petch',sans-serif; font-size:26px; font-weight:700; background:linear-gradient(135deg,#39FF8F,#00C2FF); -webkit-background-clip:text; background-clip:text; color:transparent;">{{ a.initials }}</span>
-            </div>
-          </sc-if>
-          <div style="font-size:13px; font-weight:700; text-align:center; color:#F2F4F5;">{{ a.name }}</div>
+        <div class="detail-row">
+          <dt>VENUE</dt>
+          <dd><a href="#access" class="venue-link">PICCADILLY PREMIUM</a></dd>
         </div>
-      </sc-for>
-    </div>
-
-    <div style="font-size:11px; letter-spacing:0.12em; color:#9BA4AE; font-weight:700; margin-bottom:10px;">DJs</div>
-    <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:8px; margin-bottom:28px;">
-      <sc-for list="{{ djs }}" as="a" hint-placeholder-count="5">
-        <div style="width:calc((100% - 16px) / 3); display:flex; flex-direction:column; gap:5px;">
-          <div class="artist-photo" style="aspect-ratio:1; border-radius:8px; overflow:hidden; background:#0E141C; border:1px solid rgba(242,244,245,0.12); display:flex; align-items:center; justify-content:center;">
-            <img src="{{ a.image }}" alt="{{ a.name }}" style="width:100%; height:100%; object-fit:cover; display:block;">
-            <!-- <span style="font-family:'Chakra Petch',sans-serif; font-size:15px; font-weight:600; color:#B7BEC7;">{{ a.initials }}</span> -->
-          </div>
-          <div style="font-size:10.5px; font-weight:500; text-align:center; color:#9BA4AE;">{{ a.name }}</div>
+        <div class="detail-row">
+          <dt>AGE</dt>
+          <dd>18歳以上（要身分証）</dd>
         </div>
-      </sc-for>
-    </div>
+      </dl>
+    </section>
 
-    <div style="font-size:11px; letter-spacing:0.12em; color:#9BA4AE; font-weight:700; margin-bottom:10px;">MC</div>
-    <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:8px;">
-      <sc-for list="{{ mcs }}" as="a" hint-placeholder-count="2">
-        <div style="width:calc((100% - 16px) / 3); display:flex; flex-direction:column; gap:5px;">
-          <div class="artist-photo" style="aspect-ratio:1; border-radius:8px; overflow:hidden; background:#0E141C; border:1px solid rgba(242,244,245,0.12); display:flex; align-items:center; justify-content:center;">
-            <sc-if value="{{ a.image }}">
-              <img src="{{ a.image }}" alt="{{ a.name }}" style="width:100%; height:100%; object-fit:cover; display:block;">
-            </sc-if>
-            <!-- 写真なし（placeholder: true）：イニシャルを表示 -->
-            <sc-if value="{{ a.placeholder }}">
-              <span style="font-family:'Chakra Petch',sans-serif; font-size:15px; font-weight:600; color:#B7BEC7;">{{ a.initials }}</span>
-            </sc-if>
-          </div>
-          <div style="font-size:10.5px; font-weight:500; text-align:center; color:#9BA4AE;">{{ a.name }}</div>
-        </div>
-      </sc-for>
-    </div>
-  </section>
-
-  <!-- EVENT DETAILS -->
-  <section data-screen-label="DETAILS" ref="{{ setDetailsRef }}" style="position:relative; z-index:1; padding:12px 24px 40px; opacity:{{ detailsStyle.opacity }}; transform:{{ detailsStyle.transform }}; transition:opacity 0.8s ease, transform 0.8s ease;">
-    <h2 style="font-family:'Chakra Petch',sans-serif; font-size:22px; letter-spacing:0.08em; font-weight:700; margin:0 0 16px; color:#F2F4F5;">EVENT DETAILS</h2>
-    <div style="display:flex; flex-direction:column; gap:10px;">
-      <div style="border-radius:14px; background:#0E141C; border:1px solid rgba(255,255,255,0.08); padding:16px 18px; display:flex; justify-content:space-between; align-items:center;">
-        <span style="font-size:12px; color:#9BA4AE; letter-spacing:0.08em;">DATE</span>
-        <span style="font-size:14px; font-weight:700; color:#F2F4F5;">2026.11.08 (SUN) 20:00 - 3:00</span>
+    <!-- ACCESS -->
+    <section id="access" class="section reveal" aria-labelledby="access-title">
+      <h2 id="access-title" class="heading">ACCESS</h2>
+      <div class="map-frame">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6560.275460093739!2d135.50229059999998!3d34.70170590000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000e6eb452f8843%3A0x5cd6f768720bed24!2sPICCADILLY%20PREMIUM!5e0!3m2!1sja!2sjp!4v1784945637468!5m2!1sja!2sjp" title="PICCADILLY PREMIUM の地図" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
       </div>
-      <div style="border-radius:14px; background:#0E141C; border:1px solid rgba(255,255,255,0.08); padding:16px 18px; display:flex; flex-direction:column; gap:8px;">
-        <span style="font-size:12px; color:#9BA4AE; letter-spacing:0.08em;">CHARGE（当日精算）</span>
-        <div style="display:flex; gap:10px;">
-          <div style="flex:1; text-align:center; padding:10px 0; border-radius:10px; background:rgba(57,255,143,0.08); border:1px solid rgba(57,255,143,0.3);">
-            <div style="font-size:11px; color:#8FF0C2;">WOMEN</div>
-            <div style="font-size:16px; font-weight:700; color:#F2F4F5;">¥1,000</div>
-          </div>
-          <div style="flex:1; text-align:center; padding:10px 0; border-radius:10px; background:rgba(0,194,255,0.08); border:1px solid rgba(0,194,255,0.3);">
-            <div style="font-size:11px; color:#7FD9FF;">MEN</div>
-            <div style="font-size:16px; font-weight:700; color:#F2F4F5;">¥2,000</div>
-          </div>
-        </div>
-      </div>
-      <div style="border-radius:14px; background:#0E141C; border:1px solid rgba(255,255,255,0.08); padding:16px 18px; display:flex; justify-content:space-between; align-items:center;">
-        <span style="font-size:12px; color:#9BA4AE; letter-spacing:0.08em;">VENUE</span>
-        <span style="font-size:14px; font-weight:700; color:#F2F4F5; text-align:right;">PICCADILLY PREMIUM</span>
-      </div>
-    </div>
-  </section>
+      <address class="venue-info">
+        <span class="venue-name">PICCADILLY PREMIUM</span>
+        <span class="venue-address">大阪市北区太融寺町8-17 プラザ梅田ビル 8F</span>
+      </address>
+      <a class="btn-outline" href="https://maps.app.goo.gl/c61w8pfJKxQez51X8" target="_blank" rel="noopener">Google マップで開く</a>
+    </section>
 
-  <!-- ACCESS -->
-  <section id="access" data-screen-label="ACCESS" ref="{{ setAccessRef }}" style="position:relative; z-index:1; padding:12px 24px 40px; opacity:{{ accessStyle.opacity }}; transform:{{ accessStyle.transform }}; transition:opacity 0.8s ease, transform 0.8s ease;">
-    <h2 style="font-family:'Chakra Petch',sans-serif; font-size:22px; letter-spacing:0.08em; font-weight:700; margin:0 0 16px; color:#F2F4F5;">ACCESS</h2>
-    <div style="border-radius:14px; overflow:hidden; border:1px solid rgba(255,255,255,0.08); margin-bottom:14px;">
-      <div style="aspect-ratio:16/10;">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6560.275460093739!2d135.50229059999998!3d34.70170590000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000e6eb452f8843%3A0x5cd6f768720bed24!2sPICCADILLY%20PREMIUM!5e0!3m2!1sja!2sjp!4v1784945637468!5m2!1sja!2sjp" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-        <!-- <span style="font-family:'Chakra Petch',sans-serif; font-size:11px; letter-spacing:0.1em; color:#5C6670;">MAP PLACEHOLDER</span> -->
-      </div>
-    </div>
-    <div style="display:flex; flex-direction:column; gap:6px; margin-bottom:16px;">
-      <div style="font-size:14px; font-weight:700; color:#F2F4F5;">PICCADILLY PREMIUM</div>
-      <div style="font-size:12.5px; line-height:1.7; color:#9BA4AE;">大阪市北区太融寺町8-17 プラザ梅田ビル 8F</div>
-    </div>
-    <a href="https://maps.app.goo.gl/c61w8pfJKxQez51X8" target="_blank" rel="noopener" style="display:block; text-align:center; padding:14px 0; border-radius:999px; border:1px solid rgba(0,194,255,0.4); color:#7FD9FF; font-size:13px; font-weight:700; letter-spacing:0.03em; text-decoration:none;">Google マップで開く</a>
-  </section>
+    <!-- NOTICE -->
+    <section id="notice" class="section notice reveal" aria-labelledby="notice-title">
+      <h2 id="notice-title" class="heading">NOTICE</h2>
+      <ul>
+        <li>ご入場は18歳以上の方に限らせていただきます。</li>
+        <li>入場時に顔写真付き身分証明書のご提示をお願いいたします。</li>
+        <li>料金は当日精算制です（WOMEN ¥1,000 / MEN ¥2,000）。</li>
+      </ul>
+    </section>
 
-  <!-- NOTICE -->
-  <section data-screen-label="NOTICE" ref="{{ setNoticeRef }}" style="position:relative; z-index:1; padding:12px 24px 40px; opacity:{{ noticeStyle.opacity }}; transform:{{ noticeStyle.transform }}; transition:opacity 0.8s ease, transform 0.8s ease;">
-    <h2 style="font-family:'Chakra Petch',sans-serif; font-size:16px; letter-spacing:0.08em; font-weight:700; margin:0 0 12px; color:#B7BEC7;">NOTICE</h2>
-    <div style="display:flex; flex-direction:column; gap:8px; font-size:12px; line-height:1.8; color:#8B939C;">
-      <p style="margin:0;">・ご入場は18歳以上の方に限らせていただきます。</p>
-      <p style="margin:0;">・入場時に顔写真付き身分証明書のご提示をお願いいたします。</p>
-      <p style="margin:0;">・料金は当日精算制です（WOMEN ¥1,000 / MEN ¥2,000）。</p>
-    </div>
-  </section>
+  </main>
 
-  <!-- FOLLOW / FOOTER -->
-  <section data-screen-label="FOOTER" ref="{{ setFollowRef }}" style="position:relative; z-index:1; padding:36px 24px 48px; display:flex; flex-direction:column; align-items:center; gap:20px; text-align:center; opacity:{{ followStyle.opacity }}; transform:{{ followStyle.transform }}; transition:opacity 0.8s ease, transform 0.8s ease; border-top:1px solid rgba(255,255,255,0.06);">
-    <div style="font-family:'Chakra Petch',sans-serif; font-size:13px; letter-spacing:0.1em; color:#F2F4F5;">最新情報はInstagramでチェック</div>
-    <a href="https://www.instagram.com/dj_g_platinum" target="_blank" rel="noopener" style="width:100%; max-width:260px; box-sizing:border-box; text-align:center; padding:16px 0; border-radius:999px; background:linear-gradient(135deg,#39FF8F,#00C2FF); color:#04110B; font-weight:700; font-size:15px; letter-spacing:0.03em; text-decoration:none; display:flex; align-items:center; justify-content:center; gap:8px;">
-      <span>Instagramをフォロー</span>
-    </a>
-    <!-- <div style="margin-top:12px; font-size:11px; color:#5C6670; letter-spacing:0.05em;">ORGANIZED BY DJ-G</div> -->
-    <div style="font-size:10.5px; color:#3E464F;">© 2026 CRAZY BANQUET</div>
-  </section>
+  <footer class="footer reveal">
+    <p class="footer-lead">最新情報はInstagramでチェック</p>
+    <a class="btn-primary" href="https://www.instagram.com/dj_g_platinum" target="_blank" rel="noopener">Instagramをフォロー</a>
+    <p class="copyright"><small>© 2026 CRAZY BANQUET</small></p>
+  </footer>
 
 </div>
+
+<!-- PC（1080px以上）のみ表示：左＝イベント情報 / 右＝メニュー -->
+<aside class="side side-brand" aria-label="開催概要">
+  <p class="side-eyebrow">KANSAI LARGEST NIGHT FES</p>
+  <picture>
+    <source type="image/avif" srcset="./uploads/resized/logo-640.avif 640w, ./uploads/resized/logo-960.avif 960w" sizes="340px">
+    <img class="side-logo" src="./uploads/resized/logo-640.webp" srcset="./uploads/resized/logo-640.webp 640w, ./uploads/resized/logo-960.webp 960w" sizes="340px" alt="" width="1306" height="458" decoding="async">
+  </picture>
+  <p class="side-date num">2026.11.08 SUN</p>
+  <p class="side-time num">OPEN 20:00 – 3:00</p>
+  <p class="side-venue">PICCADILLY PREMIUM（大阪・梅田）</p>
+  <a class="btn-outline" href="#access">アクセスを見る</a>
+</aside>
+
+<aside class="side side-menu" aria-label="サイドメニュー">
+  <nav class="side-nav" aria-label="ページ内メニュー（PC）">
+    <ul>
+      <li><a href="#concept" data-nav>CONCEPT</a></li>
+      <li><a href="#movie" data-nav>MOVIE</a></li>
+      <li><a href="#lineup" data-nav>LINE UP</a></li>
+      <li><a href="#details" data-nav>INFO</a></li>
+      <li><a href="#access" data-nav>ACCESS</a></li>
+      <li><a href="#notice" data-nav>NOTICE</a></li>
+    </ul>
+  </nav>
+  <a class="side-sns" href="https://www.instagram.com/dj_g_platinum" target="_blank" rel="noopener">INSTAGRAM ↗</a>
+</aside>
 </div>
 
-</x-dc>
-<script type="text/x-dc" data-dc-script>
-class Component extends DCLogic {
-  state = { revealed: {} };
-
-  observer = null;
-
-  ensureObserver() {
-    if (this.observer) return this.observer;
-    this.observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
+<script>
+  // スクロールに合わせて各セクションをフェードイン
+  (function () {
+    var targets = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)) {
+      targets.forEach(function (el) { el.classList.add('is-visible'); });
+      return;
+    }
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
         if (entry.isIntersecting) {
-          const key = entry.target.dataset.revealKey;
-          this.setState((s) => ({ revealed: { ...s.revealed, [key]: true } }));
-          this.observer.unobserve(entry.target);
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
         }
       });
     }, { threshold: 0.15 });
-    return this.observer;
-  }
+    targets.forEach(function (el) { observer.observe(el); });
+  })();
 
-  makeRefSetter(key) {
-    return (el) => {
-      if (!el || this.state.revealed[key]) return;
-      el.dataset.revealKey = key;
-      this.ensureObserver().observe(el);
+  // 動画：再生ボタンを押したら Vimeo プレイヤーに差し替えて自動再生
+  document.querySelectorAll('.video-facade').forEach(function (facade) {
+    facade.addEventListener('click', function (e) {
+      e.preventDefault();
+      var iframe = document.createElement('iframe');
+      iframe.src = 'https://player.vimeo.com/video/' + facade.dataset.vimeoId +
+        '?autoplay=1&badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0';
+      iframe.title = 'CRAZY BANQUET Vol.4 プロモーションビデオ';
+      iframe.allow = 'autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share';
+      iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+      iframe.allowFullscreen = true;
+      facade.replaceWith(iframe);
+      iframe.focus();
+    });
+  });
+
+  // 表示中のセクションに対応するメニューをハイライト
+  (function () {
+    if (!('IntersectionObserver' in window)) return;
+    var links = document.querySelectorAll('a[data-nav]');
+    var sections = document.querySelectorAll('main section[id]');
+    var setActive = function (id) {
+      links.forEach(function (a) {
+        var on = a.getAttribute('href') === '#' + id;
+        a.classList.toggle('is-active', on);
+        if (on) a.setAttribute('aria-current', 'location'); else a.removeAttribute('aria-current');
+      });
     };
-  }
-
-  revealStyle(key) {
-    const on = !!this.state.revealed[key];
-    return { opacity: on ? 1 : 0, transform: on ? 'translateY(0)' : 'translateY(24px)' };
-  }
-
-  renderVals() {
-    return {
-      setConceptRef: this.makeRefSetter('concept'),
-      setVideoRef: this.makeRefSetter('video'),
-      setLineupRef: this.makeRefSetter('lineup'),
-      setDetailsRef: this.makeRefSetter('details'),
-      setAccessRef: this.makeRefSetter('access'),
-      setNoticeRef: this.makeRefSetter('notice'),
-      setFollowRef: this.makeRefSetter('follow'),
-      conceptStyle: this.revealStyle('concept'),
-      videoStyle: this.revealStyle('video'),
-      lineupStyle: this.revealStyle('lineup'),
-      detailsStyle: this.revealStyle('details'),
-      accessStyle: this.revealStyle('access'),
-      noticeStyle: this.revealStyle('notice'),
-      followStyle: this.revealStyle('follow'),
-      specialGuests: [
-        { name: 'RETRO VISION', initials: 'RV' },
-      ],
-      guestDjs: [
-        { name: 'NATSUMI', initials: 'NA', placeholder: true },
-      ],
-      mainActs: [
-        { name: 'CYBERJAPAN DANCERS', initials: 'CJD', image: './uploads/cyberJapanDancers.webp'  },
-        { name: 'DJ-G', initials: 'DG', image: './uploads/dj-g.webp'   },
-        { name: 'KAIRI', initials: 'KR', image: './uploads/kairi.webp'  },
-        { name: 'Lily', initials: 'LI', image: './uploads/lily.webp'  },
-      ],
-      djs: [
-        { name: 'Liz', initials: 'LZ', image: './uploads/liz.webp'   },
-        { name: 'Mion', initials: 'MI', image: './uploads/mion.webp'   },
-        { name: 'SARA', initials: 'SA', image: './uploads/sara.webp'   },
-        { name: 'SERIKA', initials: 'SE', image: './uploads/serika.webp'   },
-        { name: 'めぇめぇ', initials: 'めぇ', image: './uploads/meeMee.webp'   },
-      ],
-      mcs: [
-        { name: 'Casparia', initials: 'CA', image: './uploads/casparia.webp' },
-        { name: 'cocos', initials: 'CO', placeholder: true },
-      ],
-    };
-  }
-}
-
+    var spy = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) setActive(entry.target.id);
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    sections.forEach(function (el) { spy.observe(el); });
+  })();
 </script>
 </body>
 </html>

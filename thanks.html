@@ -5,30 +5,68 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>CRAZY BANQUET｜関西最大級のナイトクラブフェス</title>
 <meta name="description" content="CRAZY BANQUET Vol.4 にご来場いただき、ありがとうございました。次回はさらに熱く、さらにクレイジーに。">
-<link rel="icon" type="image/png" href="./uploads/favicon.png">
+<meta name="theme-color" content="#0A0E14">
+<!-- イベント終了後にトップページとして使うまでは検索結果に出さない。index.html と差し替える際はこの行を削除 -->
+<meta name="robots" content="noindex">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CRAZY BANQUET">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="CRAZY BANQUET｜THANK YOU">
+<meta property="og:description" content="CRAZY BANQUET Vol.4 にご来場いただき、ありがとうございました。次回はさらに熱く、さらにクレイジーに。">
+<meta property="og:image" content="https://crazybanquet.com/uploads/ogp.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="48x48" href="./uploads/favicon-48.png">
+<link rel="icon" type="image/png" sizes="192x192" href="./uploads/favicon-192.png">
+<link rel="apple-touch-icon" href="./uploads/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
 <style>
+  /* 配色トークン（index.html と共通） */
+  :root {
+    color-scheme: dark;
+    --bg: #0A0E14;
+    --text: #F2F4F5;
+    --text-muted: #9BA4AE;
+    --text-dim: #7C858F;
+    --green-rgb: 57,255,143;
+    --blue-rgb: 0,194,255;
+    --green: #39FF8F;
+    --green-soft: #8FF0C2;
+    --blue: #00C2FF;
+    --on-accent: #04110B;
+    --grad: linear-gradient(135deg, var(--green), var(--blue));
+  }
   * { box-sizing: border-box; }
+  ::selection { background: rgba(var(--green-rgb), 0.3); color: var(--text); }
   html, body {
     margin: 0;
     padding: 0;
-    background: #0A0E14;
-    height: 100%;
-    overflow: hidden;
+    background: var(--bg);
   }
   body {
     font-family: 'Noto Sans JP', sans-serif;
-    color: #F2F4F5;
+    color: var(--text);
+    letter-spacing: 0.03em;
+    font-kerning: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* 和文組版：厳格な禁則・和欧間の自動アキ・（対応ブラウザでは）文節改行 */
+    line-break: strict;
+    overflow-wrap: break-word;
+    text-autospace: normal;
   }
+  @supports (word-break: auto-phrase) { body { word-break: auto-phrase; } }
 
   @keyframes glowPulse {
-    0%, 100% { box-shadow: 0 0 18px 0 rgba(57,255,143,0.35), 0 0 32px 0 rgba(0,194,255,0.25); }
-    50% { box-shadow: 0 0 28px 4px rgba(57,255,143,0.55), 0 0 44px 6px rgba(0,194,255,0.4); }
+    0%, 100% { box-shadow: 0 0 18px 0 rgba(var(--green-rgb),0.35), 0 0 32px 0 rgba(var(--blue-rgb),0.25); }
+    50% { box-shadow: 0 0 28px 4px rgba(var(--green-rgb),0.55), 0 0 44px 6px rgba(var(--blue-rgb),0.4); }
   }
   @keyframes textGlow {
-    0%, 100% { filter: drop-shadow(0 0 18px rgba(57,255,143,0.45)) drop-shadow(0 0 30px rgba(0,194,255,0.35)); }
-    50% { filter: drop-shadow(0 0 28px rgba(57,255,143,0.65)) drop-shadow(0 0 44px rgba(0,194,255,0.5)); }
+    0%, 100% { filter: drop-shadow(0 0 18px rgba(var(--green-rgb),0.45)) drop-shadow(0 0 30px rgba(var(--blue-rgb),0.35)); }
+    50% { filter: drop-shadow(0 0 28px rgba(var(--green-rgb),0.65)) drop-shadow(0 0 44px rgba(var(--blue-rgb),0.5)); }
   }
   @keyframes driftGrid {
     0% { background-position: 0 0; }
@@ -42,18 +80,18 @@
   .stage {
     position: relative;
     width: 100%;
-    height: 100svh;
-    height: 100dvh;
+    min-height: 100vh;
+    min-height: 100svh;
     display: flex;
     justify-content: center;
     overflow: hidden;
-    background: #0A0E14;
+    background: var(--bg);
   }
   .frame {
     width: 100%;
     max-width: 428px;
     min-width: 320px;
-    height: 100%;
+    min-height: 100%;
     position: relative;
     overflow: hidden;
     display: flex;
@@ -63,8 +101,8 @@
     position: absolute;
     inset: 0;
     background-image:
-      linear-gradient(rgba(57,255,143,0.06) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(0,194,255,0.06) 1px, transparent 1px);
+      linear-gradient(rgba(var(--green-rgb),0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(var(--blue-rgb),0.06) 1px, transparent 1px);
     background-size: 40px 40px;
     animation: driftGrid 12s linear infinite;
     pointer-events: none;
@@ -74,8 +112,8 @@
     position: absolute;
     inset: 0;
     background:
-      radial-gradient(circle at 50% 18%, rgba(57,255,143,0.16), transparent 45%),
-      radial-gradient(circle at 50% 85%, rgba(0,194,255,0.14), transparent 50%);
+      radial-gradient(circle at 50% 18%, rgba(var(--green-rgb),0.16), transparent 45%),
+      radial-gradient(circle at 50% 85%, rgba(var(--blue-rgb),0.14), transparent 50%);
     pointer-events: none;
     z-index: 0;
   }
@@ -97,13 +135,16 @@
     font-family: 'Chakra Petch', sans-serif;
     font-size: 12px;
     letter-spacing: 0.35em;
-    color: #8FF0C2;
+    margin-right: -0.35em;
+    color: var(--green-soft);
     font-weight: 600;
     opacity: 0;
     animation: fadeUp 0.8s ease 0.1s forwards;
   }
 
+  .content picture { display: contents; }
   .logo {
+    height: auto;
     width: min(58%, 220px);
     display: block;
     opacity: 0;
@@ -117,7 +158,7 @@
     line-height: 1.02;
     letter-spacing: 0.04em;
     margin: 0;
-    background: linear-gradient(135deg, #39FF8F, #00C2FF);
+    background: var(--grad);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -127,7 +168,7 @@
   .line {
     height: 1px;
     width: 48px;
-    background: linear-gradient(90deg, #39FF8F, #00C2FF);
+    background: linear-gradient(90deg, var(--green), var(--blue));
     opacity: 0;
     animation: fadeUp 0.8s ease 0.55s forwards;
   }
@@ -137,18 +178,19 @@
     font-weight: 600;
     font-size: clamp(15px, 4.2vw, 19px);
     letter-spacing: 0.28em;
-    margin: 0;
-    color: #F2F4F5;
+    margin: 0 -0.28em 0 0;
+    color: var(--text);
     opacity: 0;
     animation: fadeUp 0.8s ease 0.65s forwards;
   }
 
   .message {
-    font-size: 13.5px;
-    line-height: 1.9;
+    font-size: 14px;
+    line-height: 2;
+    letter-spacing: 0.06em;
     margin: 0;
-    color: #9BA4AE;
-    max-width: 280px;
+    color: var(--text-muted);
+    max-width: 320px;
     opacity: 0;
     animation: fadeUp 0.8s ease 0.8s forwards;
   }
@@ -161,13 +203,18 @@
     text-align: center;
     padding: 15px 0;
     border-radius: 999px;
-    background: linear-gradient(135deg, #39FF8F, #00C2FF);
-    color: #04110B;
+    background: var(--grad);
+    color: var(--on-accent);
     font-weight: 700;
     font-size: 14px;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.1em;
     text-decoration: none;
     animation: glowPulse 2.6s ease-in-out infinite, fadeUp 0.8s ease 0.95s backwards;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .bg-grid, .thanks, .cta { animation: none; }
+    .eyebrow, .logo, .line, .see-you, .message, .footer { animation: none; opacity: 1; }
   }
 
   .footer {
@@ -175,9 +222,10 @@
     z-index: 1;
     text-align: center;
     padding: 0 24px calc(20px + env(safe-area-inset-bottom));
-    font-size: 10.5px;
-    color: #3E464F;
-    letter-spacing: 0.04em;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 11px;
+    color: var(--text-dim);
+    letter-spacing: 0.12em;
     opacity: 0;
     animation: fadeUp 0.8s ease 1.05s forwards;
   }
@@ -187,12 +235,15 @@
 
 <div class="stage">
   <div class="frame">
-    <div class="bg-grid"></div>
-    <div class="bg-radial"></div>
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div class="bg-radial" aria-hidden="true"></div>
 
     <div class="content">
       <div class="eyebrow">KANSAI LARGEST NIGHT FES</div>
-      <img class="logo" src="./uploads/logo-landscape.png" alt="CRAZY BANQUET">
+      <picture>
+        <source type="image/avif" srcset="./uploads/resized/logo-640.avif 640w, ./uploads/resized/logo-960.avif 960w" sizes="220px">
+        <img class="logo" src="./uploads/resized/logo-640.webp" srcset="./uploads/resized/logo-640.webp 640w, ./uploads/resized/logo-960.webp 960w" sizes="220px" alt="CRAZY BANQUET" width="1306" height="458" fetchpriority="high">
+      </picture>
 
       <h1 class="thanks">THANK<br>YOU</h1>
 
