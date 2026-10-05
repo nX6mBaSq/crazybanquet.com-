@@ -138,23 +138,26 @@
   html{scrollbar-color:#2A3441 var(--bg);}
 
   @keyframes glowPulse{0%,100%{box-shadow:0 0 18px 0 rgba(var(--green-rgb),0.35),0 0 32px 0 rgba(var(--blue-rgb),0.25);}50%{box-shadow:0 0 28px 4px rgba(var(--green-rgb),0.55),0 0 44px 6px rgba(var(--blue-rgb),0.4);}}
-  @keyframes driftGrid{0%{background-position:0 0;}100%{background-position:0 -80px;}}
+  /* transform で動かす（再描画なしで GPU 合成のみ。スクロール時のカクつき防止） */
+  @keyframes driftGrid{from{transform:translate3d(0,0,0);}to{transform:translate3d(0,-80px,0);}}
 
   .skip-link{position:absolute; left:8px; top:-48px; z-index:100; padding:8px 14px; border-radius:8px; background:var(--text); color:var(--bg); font-size:13px; font-weight:700; text-decoration:none;}
   .skip-link:focus{top:8px;}
 
   /* ---------- Layout ---------- */
   .stage{position:relative; min-height:100vh; display:flex; justify-content:center;}
-  .frame{width:100%; max-width:428px; min-width:320px; position:relative; z-index:1; overflow-x:clip; background:var(--bg);}
+  .frame{width:100%; max-width:428px; min-width:320px; position:relative; z-index:1; overflow-x:clip;}
   /* グリッドは画面全体に固定（スクロールしても背景として流れ続ける） */
-  .bg-grid{position:fixed; inset:0; background-image:linear-gradient(rgba(var(--green-rgb),0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(var(--blue-rgb),0.06) 1px, transparent 1px); background-size:40px 40px; animation:driftGrid 12s linear infinite; pointer-events:none; z-index:0;}
-  .frame .bg-grid{position:absolute;}
-  .bg-grid.is-global,.bg-radial,.side{display:none;}
+  /* 背景グリッドは画面サイズの固定レイヤー。高さは lvh（最大ビューポート）で固定し、
+     iOS のアドレスバー伸縮でサイズが変わって再描画されるのを防ぐ */
+  .bg-grid{position:fixed; top:0; left:0; right:0; height:calc(100vh + 80px); height:calc(100lvh + 80px); will-change:transform; background-image:linear-gradient(rgba(var(--green-rgb),0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(var(--blue-rgb),0.06) 1px, transparent 1px); background-size:40px 40px; animation:driftGrid 12s linear infinite; pointer-events:none; z-index:0;}
+  .bg-radial,.side{display:none;}
 
   .section{position:relative; z-index:1; padding:12px 24px 40px;}
 
   /* ---------- Section nav（スマホ：ヒーロー直下 → 上部に追従） ---------- */
-  .site-nav{position:sticky; top:0; z-index:10; background:rgba(var(--bg-rgb),0.82); -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px); border-top:1px solid var(--line-soft); border-bottom:1px solid var(--line-soft);}
+  /* backdrop-filter（ぼかし）はスクロール中に毎フレーム再計算されカクつくため使わない */
+  .site-nav{position:sticky; top:0; z-index:10; transform:translateZ(0); background:rgba(var(--bg-rgb),0.94); border-top:1px solid var(--line-soft); border-bottom:1px solid var(--line-soft);}
   .site-nav ul{list-style:none; margin:0; padding:0 8px; display:flex; justify-content:space-around;}
   .site-nav a{position:relative; display:block; padding:14px 6px; font-family:var(--font-display); font-size:12px; font-weight:600; letter-spacing:0.14em; color:var(--text-sub); text-decoration:none; transition:color .2s;}
   .site-nav a::after{content:""; position:absolute; left:6px; right:6px; bottom:8px; height:2px; border-radius:2px; background:var(--grad); transform:scaleX(0); transition:transform .25s ease;}
@@ -171,7 +174,7 @@
 
   /* ---------- HERO ---------- */
   /* ファーストビュー：画面いっぱい（下端にメニューが見える高さ） */
-  .hero{min-height:min(calc(100vh - 46px), 780px); min-height:min(calc(100svh - 46px), 780px); padding:48px 24px 64px; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; gap:18px;}
+  .hero{min-height:min(calc(100vh - 46px), 780px); min-height:min(calc(100svh - 46px), 780px); padding:48px 24px 112px; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; gap:18px;}
   .scroll-cue{position:absolute; left:50%; bottom:14px; transform:translateX(-50%); padding-left:0.3em; display:flex; flex-direction:column; align-items:center; gap:6px; font-family:var(--font-display); font-size:10px; letter-spacing:0.3em; color:var(--text-faint); text-decoration:none;}
   .scroll-cue::after{content:""; width:1px; height:28px; background:linear-gradient(var(--green),transparent); animation:cueDrop 1.8s ease-in-out infinite; transform-origin:top;}
   @keyframes cueDrop{0%{transform:scaleY(0); opacity:1;}60%{transform:scaleY(1); opacity:1;}100%{transform:scaleY(1); opacity:0;}}
@@ -235,17 +238,22 @@
 
   .artists.is-special{gap:12px;}
   .artists.is-special .artist{width:100%;}
-  .artists.is-special .artist-photo{aspect-ratio:16/10; border-color:rgba(var(--green-rgb),0.5); box-shadow:0 0 28px rgba(var(--green-rgb),0.25);}
+  .artists.is-special .artist-photo{aspect-ratio:16/9; border-color:rgba(var(--green-rgb),0.5); box-shadow:0 0 28px rgba(var(--green-rgb),0.25);}
   .artists.is-special .artist-initials{font-size:32px; letter-spacing:0.06em;}
   .artists.is-special .artist-name{font-size:16px; letter-spacing:0.08em;}
 
-  /* GUEST DJ：SPECIAL GUEST と MAIN ACT の中間に位置づける横長カード */
-  .artists.is-guest{flex-direction:column; gap:10px;}
-  .artists.is-guest .artist{width:100%; flex-direction:row; align-items:center; gap:18px; padding:12px; border-radius:16px; background:linear-gradient(120deg, rgba(var(--green-rgb),0.07), rgba(var(--blue-rgb),0.05) 60%, transparent), var(--surface); border:1px solid rgba(var(--green-rgb),0.4); box-shadow:0 0 24px rgba(var(--green-rgb),0.15);}
-  .artists.is-guest .artist-photo{width:42%; flex-shrink:0; border-radius:10px; border-color:rgba(var(--green-rgb),0.3); box-shadow:none;}
-  .artists.is-guest .artist-body{display:flex; flex-direction:column; gap:10px; min-width:0;}
-  .artists.is-guest .artist-name{font-size:22px; letter-spacing:0.08em; text-align:left; text-wrap:wrap;}
-  .artist-rule{display:block; width:40px; height:2px; border-radius:2px; background:var(--grad);}
+  /* GUEST DJ：SPECIAL GUEST（全幅）と MAIN ACT（1/2幅）の中間サイズ
+     ・1:1 の写真 → 既定（中央寄せの大きめ正方形）
+     ・16:9 の写真 → ul に is-wide を追加（16:9・名前を写真に重ねる） */
+  .artists.is-guest .artist{width:64%; gap:10px;}
+  .artists.is-guest .artist-photo{border-color:rgba(var(--green-rgb),0.45); box-shadow:0 0 24px rgba(var(--green-rgb),0.22);}
+  .artists.is-guest .artist-initials{font-size:30px;}
+  .artists.is-guest .artist-name{font-size:16px; letter-spacing:0.08em;}
+
+  .artists.is-guest.is-wide .artist{position:relative; width:80%;}
+  .artists.is-guest.is-wide .artist-photo{aspect-ratio:16/9;}
+  .artists.is-guest.is-wide .artist-photo:has(img)::after{background:linear-gradient(180deg, transparent 45%, rgba(var(--bg-rgb),0.85)), linear-gradient(135deg, rgba(var(--green-rgb),0.10), rgba(var(--blue-rgb),0.12));}
+  .artists.is-guest.is-wide .artist-name{position:absolute; left:14px; bottom:10px; z-index:1; font-size:18px; text-align:left; pointer-events:none;}
 
   .artists.is-small{gap:8px;}
   .artists.is-small .artist{width:calc((100% - 16px) / 3); gap:5px;}
@@ -260,6 +268,8 @@
   .dt-note{font-family:var(--font-body); font-size:11px; font-weight:500; letter-spacing:0.06em; margin-left:0.6em;}
   .detail-row dd{margin:0; font-size:15px; font-weight:700; line-height:1.5; letter-spacing:0.04em; text-align:right;}
   .detail-row dd.num{font-size:16px;}
+  .dd-main,.dd-sub{display:block;}
+  .dd-sub{margin-top:2px; font-size:14px; font-weight:500; color:var(--text-sub);}
   .venue-link{text-decoration:none;}
   .detail-row.is-stacked{flex-direction:column; align-items:stretch; gap:8px;}
   .detail-row .prices{display:flex; gap:10px; margin:0; text-align:center;}
@@ -299,9 +309,8 @@
   /* ---------- タブレット：中央カラムを浮かせて輪郭をつける ---------- */
   @media (min-width:600px){
     .frame{border-left:1px solid rgba(var(--green-rgb),0.12); border-right:1px solid rgba(var(--blue-rgb),0.12); box-shadow:0 0 60px rgba(0,0,0,0.6), 0 0 80px rgba(var(--blue-rgb),0.06);}
-    .frame .bg-grid{display:none;}
-    .bg-grid.is-global{display:block;}
-    .bg-radial{display:block; position:fixed; inset:0; pointer-events:none; z-index:0; background:radial-gradient(circle at 20% 30%, rgba(var(--green-rgb),0.08), transparent 40%), radial-gradient(circle at 80% 75%, rgba(var(--blue-rgb),0.08), transparent 45%);}
+    .frame{background:var(--bg);}
+    .bg-radial{display:block; position:fixed; top:0; left:0; right:0; height:100vh; height:100lvh; pointer-events:none; z-index:0; background:radial-gradient(circle at 20% 30%, rgba(var(--green-rgb),0.08), transparent 40%), radial-gradient(circle at 80% 75%, rgba(var(--blue-rgb),0.08), transparent 45%);}
   }
 
   /* ---------- PC：左にイベント情報、右にメニューを固定 ---------- */
@@ -348,12 +357,11 @@
 <a class="skip-link" href="#main">本文へスキップ</a>
 
 <div class="stage">
-<div class="bg-grid is-global" aria-hidden="true"></div>
+<div class="bg-grid" aria-hidden="true"></div>
 <div class="bg-radial" aria-hidden="true"></div>
 
 <div class="frame">
 
-  <div class="bg-grid" aria-hidden="true"></div>
 
   <header class="section hero">
     <p class="hero-eyebrow">KANSAI LARGEST NIGHT FES</p>
@@ -422,21 +430,19 @@
       <h3 class="tier-label">SPECIAL GUEST</h3>
       <ul class="artists is-special">
         <li class="artist">
-          <!-- 写真が届いたら tools/build-images.py で画像を生成し、MAIN ACT と同じ <picture> に差し替える（is-placeholder も外す） -->
+          <!-- 写真枠は 16:9。写真が届いたら tools/build-images.py で画像を生成し、MAIN ACT と同じ <picture> に差し替える（is-placeholder も外す）。sizes は "(min-width: 428px) 380px, calc(100vw - 48px)" -->
           <div class="artist-photo is-placeholder"><span class="artist-initials grad-text" aria-hidden="true">RETRO VISION</span></div>
           <span class="artist-name">RETRO VISION</span>
         </li>
       </ul>
 
       <h3 class="tier-label">GUEST DJ</h3>
-      <!-- 横長カード：写真（正方形）＋名前。写真を入れる場合の sizes は "(min-width: 428px) 150px, 40vw" -->
+      <!-- 写真が 1:1 ならこのまま、16:9 なら ul に is-wide を追加。
+           写真の sizes は 1:1 → "(min-width: 428px) 243px, 64vw" / 16:9 → "(min-width: 428px) 304px, 80vw" -->
       <ul class="artists is-guest">
         <li class="artist">
           <div class="artist-photo is-placeholder"><span class="artist-initials grad-text" aria-hidden="true">NA</span></div>
-          <div class="artist-body">
-            <span class="artist-name">NATSUMI</span>
-            <span class="artist-rule" aria-hidden="true"></span>
-          </div>
+          <span class="artist-name">NATSUMI</span>
         </li>
       </ul>
 
@@ -553,11 +559,10 @@
       <dl class="details">
         <div class="detail-row">
           <dt>DATE</dt>
-          <dd class="num"><time datetime="2026-11-08">2026.11.08</time> SUN</dd>
-        </div>
-        <div class="detail-row">
-          <dt>TIME</dt>
-          <dd class="num"><time datetime="2026-11-08T20:00+09:00">20:00</time> – 翌<time datetime="2026-11-09T03:00+09:00">3:00</time></dd>
+          <dd class="num">
+            <span class="dd-main"><time datetime="2026-11-08">2026.11.08</time> SUN</span>
+            <span class="dd-sub"><time datetime="2026-11-08T20:00+09:00">20:00</time> – 翌<time datetime="2026-11-09T03:00+09:00">3:00</time></span>
+          </dd>
         </div>
         <div class="detail-row is-stacked">
           <dt>CHARGE<span class="dt-note">当日精算</span></dt>
@@ -575,10 +580,6 @@
         <div class="detail-row">
           <dt>VENUE</dt>
           <dd><a href="#access" class="venue-link">PICCADILLY PREMIUM</a></dd>
-        </div>
-        <div class="detail-row">
-          <dt>AGE</dt>
-          <dd>18歳以上（要身分証）</dd>
         </div>
       </dl>
     </section>

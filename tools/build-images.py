@@ -5,8 +5,9 @@
     python tools/build-images.py
 
 出演者写真を追加するときは:
-  1. 正方形の元画像を uploads/<名前>.webp（1080×1080 推奨）として置く
+  1. 元画像を uploads/<名前>.webp として置く（1:1 なら 1080×1080、16:9 なら 1920×1080 推奨）
   2. このスクリプトを実行 → uploads/resized/<名前>-360/-640 の .avif / .webp ができる
+     （16:9 など横長の写真は -1080 も生成）
   3. index.html の LINE UP に、既存の出演者と同じ <picture> を追加する
 """
 from pathlib import Path
@@ -37,7 +38,9 @@ def build_photos():
         if path.name in NON_PHOTOS:
             continue
         img = Image.open(path).convert("RGB")
-        for w in (360, 640):
+        # 16:9 などの横長写真は全幅（SPECIAL GUEST / GUEST DJ）で使うため 1080px も用意
+        widths = (360, 640) if img.width == img.height else (360, 640, 1080)
+        for w in widths:
             save_pair(resize_w(img, w), f"{path.stem}-{w}", webp_q=80, avif_q=60)
         print("photo :", path.name)
 
