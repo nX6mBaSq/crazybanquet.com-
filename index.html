@@ -700,6 +700,27 @@
     });
   })();
 
+  // ページ内リンクは URL に #lineup 等を残さずスクロールする。
+  // 残すと再読み込み・タブ復元・URL 共有時に、開いた瞬間そのセクションへ飛んでしまうため。
+  // 同じ理由で、開いたときは常にトップから表示する（スクロール位置の復元もしない）
+  (function () {
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+    if (location.hash) {
+      history.replaceState(null, '', location.pathname + location.search);
+      var toTop = function () { window.scrollTo(0, 0); };
+      toTop();
+      window.addEventListener('load', toTop, { once: true });
+    }
+    document.querySelectorAll('a[href^="#"]:not(.skip-link)').forEach(function (a) {
+      a.addEventListener('click', function (e) {
+        var target = document.getElementById(a.getAttribute('href').slice(1));
+        if (!target) return;
+        e.preventDefault();
+        target.scrollIntoView(); // CSS の scroll-behavior / scroll-padding-top に従う
+      });
+    });
+  })();
+
   // 表示中のセクションに対応するメニューをハイライト
   (function () {
     if (!('IntersectionObserver' in window)) return;
