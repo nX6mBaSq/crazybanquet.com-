@@ -203,6 +203,19 @@
   .concept-body{font-size:14px; line-height:2; letter-spacing:0.05em; margin:0; color:var(--text-muted);}
   .concept-body + .concept-body{margin-top:0.9em;}
 
+  /* ---------- MESSAGE（主催挨拶） ---------- */
+  .host{border-radius:16px; padding:20px; background:linear-gradient(135deg, rgba(var(--green-rgb),0.06), rgba(var(--blue-rgb),0.05)), var(--surface); border:1px solid var(--border);}
+  .host-profile{display:flex; align-items:center; gap:16px; margin:0 0 18px; padding-bottom:18px; border-bottom:1px solid var(--line-soft);}
+  .host-photo{width:84px; flex-shrink:0; aspect-ratio:1; border-radius:50%; overflow:hidden; border:1px solid rgba(var(--green-rgb),0.5); box-shadow:0 0 20px rgba(var(--green-rgb),0.2);}
+  .host-photo picture{display:contents;}
+  .host-photo img{width:100%; height:100%; object-fit:cover; display:block; filter:grayscale(1) contrast(1.15) brightness(0.9);}
+  .host-role{margin:0; font-family:var(--font-display); font-size:11px; font-weight:600; line-height:1.5; letter-spacing:0.2em; color:var(--green-soft);}
+  .host-name{margin:2px 0 4px; font-family:var(--font-display); font-size:22px; font-weight:700; line-height:1.3; letter-spacing:0.08em;}
+  .host-sns{font-family:var(--font-display); font-size:12px; letter-spacing:0.06em; color:var(--blue-soft); text-decoration:none;}
+  .host-sns:hover{text-decoration:underline;}
+  .host-body{margin:0; font-size:14px; line-height:2; letter-spacing:0.05em; color:var(--text-sub);}
+  .host-body + .host-body{margin-top:0.9em;}
+
   /* ---------- VIDEO ---------- */
   .video-frame{border-radius:14px; overflow:hidden; border:1px solid var(--border); box-shadow:0 0 24px rgba(var(--blue-rgb),0.15); aspect-ratio:16/9; background:var(--surface);}
   .video-frame iframe{width:100%; height:100%; border:0; display:block;}
@@ -222,9 +235,9 @@
   .lineup-note{font-size:11px; line-height:1.5; letter-spacing:0.04em; color:var(--text-faint);}
   .tier-label{font-family:var(--font-display); font-size:12px; line-height:1.5; letter-spacing:0.2em; color:var(--green-soft); font-weight:700; margin:0 0 12px;}
   .tier-label.is-sub{color:var(--text-muted);}
-  .artists{list-style:none; margin:0 0 28px; padding:0; display:flex; flex-wrap:wrap; justify-content:center; gap:12px;}
+  .artists{list-style:none; margin:0 0 28px; padding:0; display:flex; flex-wrap:wrap; justify-content:center; gap:8px;}
   .artists:last-child{margin-bottom:0;}
-  .artist{width:calc((100% - 12px) / 2); display:flex; flex-direction:column; gap:8px;}
+  .artist{width:calc((100% - 16px) / 3); display:flex; flex-direction:column; gap:6px;}
   .artist-photo{position:relative; aspect-ratio:1; border-radius:12px; overflow:hidden; border:1px solid rgba(var(--green-rgb),0.4); box-shadow:0 0 20px rgba(var(--green-rgb),0.18); background:var(--grad-placeholder); display:flex; align-items:center; justify-content:center;}
   .artist-photo picture{display:contents;}
   .artist-photo img{width:100%; height:100%; object-fit:cover; display:block; filter:grayscale(1) contrast(1.15) brightness(0.9);}
@@ -238,8 +251,8 @@
     .artist:hover .artist-photo img{filter:grayscale(0) contrast(1.05); transform:scale(1.04);}
     .artist:hover .artist-photo::after{opacity:0;}
   }
-  .artist-initials{font-family:var(--font-display); font-size:26px; font-weight:700; line-height:1.2; letter-spacing:0.06em; text-align:center; padding:0 8px;}
-  .artist-name{font-family:var(--font-display); font-size:14px; font-weight:700; line-height:1.4; letter-spacing:0.06em; text-align:center; text-wrap:balance;}
+  .artist-initials{font-family:var(--font-display); font-size:22px; font-weight:700; line-height:1.2; letter-spacing:0.06em; text-align:center; padding:0 8px;}
+  .artist-name{font-family:var(--font-display); font-size:13px; font-weight:700; line-height:1.4; letter-spacing:0.06em; text-align:center; text-wrap:balance;}
 
   .artists.is-special{gap:12px;}
   .artists.is-special .artist{width:100%;}
@@ -247,17 +260,20 @@
   .artists.is-special .artist-initials{font-size:32px; letter-spacing:0.06em;}
   .artists.is-special .artist-name{font-size:16px; letter-spacing:0.08em;}
 
-  /* SPECIAL GUEST DANCER / GUEST DJ：SPECIAL GUEST と MAIN ACT の中間。全幅の横長カード（左に正方形の写真、右に名前）。
+  /* SPECIAL GUEST DANCER：全幅の横長カード（左に正方形の写真、右に名前）。
      写真の高さを SPECIAL GUEST（16:9 全幅）より低く抑え、形の違いで格の差を見せる */
-  .artists.is-guest{gap:10px;}
   .artists.is-guest .artist{width:100%; flex-direction:row; align-items:center; gap:18px; padding:12px; border-radius:16px; background:linear-gradient(135deg, rgba(var(--green-rgb),0.08), rgba(var(--blue-rgb),0.06)), var(--surface); border:1px solid rgba(var(--green-rgb),0.3); box-shadow:0 0 22px rgba(var(--green-rgb),0.12);}
-  .artists.is-guest .artist-photo{width:34%; flex-shrink:0; border-radius:10px; border-color:rgba(var(--green-rgb),0.45); box-shadow:0 0 18px rgba(var(--green-rgb),0.2);}
+  .artists.is-guest .artist-photo{width:40%; flex-shrink:0; border-radius:10px; border-color:rgba(var(--green-rgb),0.45); box-shadow:0 0 18px rgba(var(--green-rgb),0.2);}
   .artists.is-guest .artist-initials{font-size:28px;}
   .artists.is-guest .artist-name{flex:1; min-width:0; font-size:20px; letter-spacing:0.08em; text-align:left;}
   .artists.is-guest .artist-name::before{content:""; display:block; width:28px; height:2px; margin-bottom:10px; border-radius:2px; background:var(--grad);}
 
-  .artists.is-small{gap:8px;}
-  .artists.is-small .artist{width:calc((100% - 16px) / 3); gap:5px;}
+  /* GUEST DJ 以下は全員 3 列の同じ大きさ。格の差は写真の枠・光と名前の濃さで出す
+     （GUEST DJ：強い光 ／ DJs・MC：光なし） */
+  .artists.is-featured .artist-photo{border-color:rgba(var(--green-rgb),0.7); box-shadow:0 0 26px rgba(var(--green-rgb),0.38), inset 0 0 0 1px rgba(var(--green-rgb),0.25);}
+  .artists.is-featured .artist-name{font-size:14px; letter-spacing:0.08em;}
+
+  .artists.is-small .artist{gap:5px;}
   .artists.is-small .artist-photo{border-radius:8px; background:var(--surface); border-color:rgba(var(--text-rgb),0.12); box-shadow:none;}
   .artists.is-small .artist-initials{font-size:15px; font-weight:600; color:var(--text-sub);}
   .artists.is-small .artist-name{font-size:12px; font-weight:600; letter-spacing:0.04em; color:var(--text-sub);}
@@ -408,6 +424,29 @@
       <p class="concept-body">仲間と共に、この狂った宴を存分にお楽しみください。</p>
     </section>
 
+    <!-- MESSAGE（主催挨拶）※文面は仮。本人の挨拶文が届いたら .host-body を差し替える -->
+    <section id="message" class="section reveal" aria-labelledby="message-title">
+      <h2 id="message-title" class="heading">MESSAGE</h2>
+      <div class="host">
+        <div class="host-profile">
+          <div class="host-photo">
+            <picture>
+              <source type="image/avif" srcset="./uploads/resized/dj-g-360.avif 360w" sizes="84px">
+              <img src="./uploads/resized/dj-g-360.webp" srcset="./uploads/resized/dj-g-360.webp 360w" sizes="84px" alt="" width="360" height="360" loading="lazy" decoding="async">
+            </picture>
+          </div>
+          <div>
+            <p class="host-role">ORGANIZER / DJ</p>
+            <p class="host-name">DJ-G</p>
+            <a class="host-sns" href="https://www.instagram.com/dj_g_platinum" target="_blank" rel="noopener">@dj_g_platinum ↗</a>
+          </div>
+        </div>
+        <p class="host-body">CRAZY BANQUET 主催の DJ-G です。VOLUME 5 を迎えられたのは、毎回足を運んでくださる皆さまのおかげです。</p>
+        <p class="host-body">今回も最高のゲストと仲間たちが集結しました。僕自身もブースに立ち、最後の一曲まで全力で盛り上げます。</p>
+        <p class="host-body">11月8日、梅田で会いましょう。</p>
+      </div>
+    </section>
+
     <!-- VIDEO -->
     <section id="movie" class="section reveal" aria-labelledby="movie-title">
       <h2 id="movie-title" class="heading">PROMOTION VIDEO</h2>
@@ -435,20 +474,20 @@
       <h3 class="tier-label">SPECIAL GUEST</h3>
       <ul class="artists is-special">
         <li class="artist">
-          <!-- 写真枠は 16:9。写真が届いたら tools/build-images.py で画像を生成し、MAIN ACT と同じ <picture> に差し替える（is-placeholder も外す）。sizes は "(min-width: 428px) 380px, calc(100vw - 48px)" -->
+          <!-- 写真枠は 16:9。写真が届いたら tools/build-images.py で画像を生成し、DJs と同じ <picture> に差し替える（is-placeholder も外す）。sizes は "(min-width: 428px) 380px, calc(100vw - 48px)" -->
           <div class="artist-photo is-placeholder"><span class="artist-initials grad-text" aria-hidden="true">RETRO VISION</span></div>
           <span class="artist-name">RETRO VISION</span>
         </li>
       </ul>
 
       <h3 class="tier-label">SPECIAL GUEST DANCER</h3>
-      <!-- 写真は 1:1 で表示（縦長・横長の写真も中央で切り抜き）。写真の sizes は "(min-width: 428px) 120px, calc(34vw - 25px)" -->
+      <!-- 写真は 1:1 で表示（縦長・横長の写真も中央で切り抜き）。写真の sizes は "(min-width: 428px) 142px, calc(40vw - 30px)" -->
       <ul class="artists is-guest">
         <li class="artist">
           <div class="artist-photo">
             <picture>
-              <source type="image/avif" srcset="./uploads/resized/cyberJapanDancers-360.avif 360w, ./uploads/resized/cyberJapanDancers-640.avif 640w" sizes="(min-width: 428px) 120px, calc(34vw - 25px)">
-              <img src="./uploads/resized/cyberJapanDancers-360.webp" srcset="./uploads/resized/cyberJapanDancers-360.webp 360w, ./uploads/resized/cyberJapanDancers-640.webp 640w" sizes="(min-width: 428px) 120px, calc(34vw - 25px)" alt="" width="640" height="640" loading="lazy" decoding="async">
+              <source type="image/avif" srcset="./uploads/resized/cyberJapanDancers-360.avif 360w, ./uploads/resized/cyberJapanDancers-640.avif 640w" sizes="(min-width: 428px) 142px, calc(40vw - 30px)">
+              <img src="./uploads/resized/cyberJapanDancers-360.webp" srcset="./uploads/resized/cyberJapanDancers-360.webp 360w, ./uploads/resized/cyberJapanDancers-640.webp 640w" sizes="(min-width: 428px) 142px, calc(40vw - 30px)" alt="" width="640" height="640" loading="lazy" decoding="async">
             </picture>
           </div>
           <span class="artist-name">CYBERJAPAN DANCERS</span>
@@ -456,12 +495,12 @@
       </ul>
 
       <h3 class="tier-label">GUEST DJ</h3>
-      <ul class="artists is-guest">
+      <ul class="artists is-featured">
         <li class="artist">
           <div class="artist-photo">
             <picture>
-              <source type="image/avif" srcset="./uploads/resized/kairi-360.avif 360w, ./uploads/resized/kairi-640.avif 640w" sizes="(min-width: 428px) 120px, calc(34vw - 25px)">
-              <img src="./uploads/resized/kairi-360.webp" srcset="./uploads/resized/kairi-360.webp 360w, ./uploads/resized/kairi-640.webp 640w" sizes="(min-width: 428px) 120px, calc(34vw - 25px)" alt="" width="640" height="640" loading="lazy" decoding="async">
+              <source type="image/avif" srcset="./uploads/resized/kairi-360.avif 360w, ./uploads/resized/kairi-640.avif 640w" sizes="(min-width: 428px) 121px, calc((100vw - 64px) / 3)">
+              <img src="./uploads/resized/kairi-360.webp" srcset="./uploads/resized/kairi-360.webp 360w, ./uploads/resized/kairi-640.webp 640w" sizes="(min-width: 428px) 121px, calc((100vw - 64px) / 3)" alt="" width="640" height="640" loading="lazy" decoding="async">
             </picture>
           </div>
           <span class="artist-name">KAIRI</span>
@@ -469,8 +508,8 @@
         <li class="artist">
           <div class="artist-photo">
             <picture>
-              <source type="image/avif" srcset="./uploads/resized/lily-360.avif 360w, ./uploads/resized/lily-640.avif 640w" sizes="(min-width: 428px) 120px, calc(34vw - 25px)">
-              <img src="./uploads/resized/lily-360.webp" srcset="./uploads/resized/lily-360.webp 360w, ./uploads/resized/lily-640.webp 640w" sizes="(min-width: 428px) 120px, calc(34vw - 25px)" alt="" width="640" height="640" loading="lazy" decoding="async">
+              <source type="image/avif" srcset="./uploads/resized/lily-360.avif 360w, ./uploads/resized/lily-640.avif 640w" sizes="(min-width: 428px) 121px, calc((100vw - 64px) / 3)">
+              <img src="./uploads/resized/lily-360.webp" srcset="./uploads/resized/lily-360.webp 360w, ./uploads/resized/lily-640.webp 640w" sizes="(min-width: 428px) 121px, calc((100vw - 64px) / 3)" alt="" width="640" height="640" loading="lazy" decoding="async">
             </picture>
           </div>
           <span class="artist-name">Lily</span>
@@ -481,21 +520,17 @@
         </li>
       </ul>
 
-      <h3 class="tier-label">MAIN ACT</h3>
-      <ul class="artists">
+      <h3 class="tier-label is-sub">DJs</h3>
+      <ul class="artists is-small">
         <li class="artist">
           <div class="artist-photo">
             <picture>
-              <source type="image/avif" srcset="./uploads/resized/dj-g-360.avif 360w, ./uploads/resized/dj-g-640.avif 640w" sizes="(min-width: 428px) 184px, calc((100vw - 60px) / 2)">
-              <img src="./uploads/resized/dj-g-360.webp" srcset="./uploads/resized/dj-g-360.webp 360w, ./uploads/resized/dj-g-640.webp 640w" sizes="(min-width: 428px) 184px, calc((100vw - 60px) / 2)" alt="" width="640" height="640" loading="lazy" decoding="async">
+              <source type="image/avif" srcset="./uploads/resized/dj-g-360.avif 360w, ./uploads/resized/dj-g-640.avif 640w" sizes="(min-width: 428px) 121px, calc((100vw - 64px) / 3)">
+              <img src="./uploads/resized/dj-g-360.webp" srcset="./uploads/resized/dj-g-360.webp 360w, ./uploads/resized/dj-g-640.webp 640w" sizes="(min-width: 428px) 121px, calc((100vw - 64px) / 3)" alt="" width="640" height="640" loading="lazy" decoding="async">
             </picture>
           </div>
           <span class="artist-name">DJ-G</span>
         </li>
-      </ul>
-
-      <h3 class="tier-label is-sub">DJs</h3>
-      <ul class="artists is-small">
         <li class="artist">
           <div class="artist-photo">
             <picture>
@@ -642,6 +677,7 @@
   <nav class="side-nav" aria-label="ページ内メニュー（PC）">
     <ul>
       <li><a href="#concept" data-nav>CONCEPT</a></li>
+      <li><a href="#message" data-nav>MESSAGE</a></li>
       <li><a href="#movie" data-nav>MOVIE</a></li>
       <li><a href="#lineup" data-nav>LINE UP</a></li>
       <li><a href="#details" data-nav>INFO</a></li>
