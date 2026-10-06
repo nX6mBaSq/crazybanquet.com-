@@ -62,11 +62,11 @@
   "organizer": { "@type": "Person", "name": "DJ-G", "url": "https://www.instagram.com/dj_g_platinum" },
   "performer": [
     { "@type": "MusicGroup", "name": "RETRO VISION" },
-    { "@type": "Person", "name": "NATSUMI" },
     { "@type": "PerformingGroup", "name": "CYBERJAPAN DANCERS" },
-    { "@type": "Person", "name": "DJ-G" },
     { "@type": "Person", "name": "KAIRI" },
     { "@type": "Person", "name": "Lily" },
+    { "@type": "Person", "name": "NATSUMI" },
+    { "@type": "Person", "name": "DJ-G" },
     { "@type": "Person", "name": "Liz" },
     { "@type": "Person", "name": "Mion" },
     { "@type": "Person", "name": "SARA" },
@@ -247,10 +247,11 @@
   .artists.is-special .artist-initials{font-size:32px; letter-spacing:0.06em;}
   .artists.is-special .artist-name{font-size:16px; letter-spacing:0.08em;}
 
-  /* GUEST DJ：SPECIAL GUEST と MAIN ACT の中間。全幅の横長カード（左に正方形の写真、右に名前）。
+  /* SPECIAL GUEST DANCER / GUEST DJ：SPECIAL GUEST と MAIN ACT の中間。全幅の横長カード（左に正方形の写真、右に名前）。
      写真の高さを SPECIAL GUEST（16:9 全幅）より低く抑え、形の違いで格の差を見せる */
+  .artists.is-guest{gap:10px;}
   .artists.is-guest .artist{width:100%; flex-direction:row; align-items:center; gap:18px; padding:12px; border-radius:16px; background:linear-gradient(135deg, rgba(var(--green-rgb),0.08), rgba(var(--blue-rgb),0.06)), var(--surface); border:1px solid rgba(var(--green-rgb),0.3); box-shadow:0 0 22px rgba(var(--green-rgb),0.12);}
-  .artists.is-guest .artist-photo{width:40%; flex-shrink:0; border-radius:10px; border-color:rgba(var(--green-rgb),0.45); box-shadow:0 0 18px rgba(var(--green-rgb),0.2);}
+  .artists.is-guest .artist-photo{width:34%; flex-shrink:0; border-radius:10px; border-color:rgba(var(--green-rgb),0.45); box-shadow:0 0 18px rgba(var(--green-rgb),0.2);}
   .artists.is-guest .artist-initials{font-size:28px;}
   .artists.is-guest .artist-name{flex:1; min-width:0; font-size:20px; letter-spacing:0.08em; text-align:left;}
   .artists.is-guest .artist-name::before{content:""; display:block; width:28px; height:2px; margin-bottom:10px; border-radius:2px; background:var(--grad);}
@@ -440,9 +441,40 @@
         </li>
       </ul>
 
-      <h3 class="tier-label">GUEST DJ</h3>
-      <!-- 写真は 1:1 で表示（縦長・横長の写真も中央で切り抜き）。写真の sizes は "(min-width: 428px) 142px, calc(40vw - 30px)" -->
+      <h3 class="tier-label">SPECIAL GUEST DANCER</h3>
+      <!-- 写真は 1:1 で表示（縦長・横長の写真も中央で切り抜き）。写真の sizes は "(min-width: 428px) 120px, calc(34vw - 25px)" -->
       <ul class="artists is-guest">
+        <li class="artist">
+          <div class="artist-photo">
+            <picture>
+              <source type="image/avif" srcset="./uploads/resized/cyberJapanDancers-360.avif 360w, ./uploads/resized/cyberJapanDancers-640.avif 640w" sizes="(min-width: 428px) 120px, calc(34vw - 25px)">
+              <img src="./uploads/resized/cyberJapanDancers-360.webp" srcset="./uploads/resized/cyberJapanDancers-360.webp 360w, ./uploads/resized/cyberJapanDancers-640.webp 640w" sizes="(min-width: 428px) 120px, calc(34vw - 25px)" alt="" width="640" height="640" loading="lazy" decoding="async">
+            </picture>
+          </div>
+          <span class="artist-name">CYBERJAPAN DANCERS</span>
+        </li>
+      </ul>
+
+      <h3 class="tier-label">GUEST DJ</h3>
+      <ul class="artists is-guest">
+        <li class="artist">
+          <div class="artist-photo">
+            <picture>
+              <source type="image/avif" srcset="./uploads/resized/kairi-360.avif 360w, ./uploads/resized/kairi-640.avif 640w" sizes="(min-width: 428px) 120px, calc(34vw - 25px)">
+              <img src="./uploads/resized/kairi-360.webp" srcset="./uploads/resized/kairi-360.webp 360w, ./uploads/resized/kairi-640.webp 640w" sizes="(min-width: 428px) 120px, calc(34vw - 25px)" alt="" width="640" height="640" loading="lazy" decoding="async">
+            </picture>
+          </div>
+          <span class="artist-name">KAIRI</span>
+        </li>
+        <li class="artist">
+          <div class="artist-photo">
+            <picture>
+              <source type="image/avif" srcset="./uploads/resized/lily-360.avif 360w, ./uploads/resized/lily-640.avif 640w" sizes="(min-width: 428px) 120px, calc(34vw - 25px)">
+              <img src="./uploads/resized/lily-360.webp" srcset="./uploads/resized/lily-360.webp 360w, ./uploads/resized/lily-640.webp 640w" sizes="(min-width: 428px) 120px, calc(34vw - 25px)" alt="" width="640" height="640" loading="lazy" decoding="async">
+            </picture>
+          </div>
+          <span class="artist-name">Lily</span>
+        </li>
         <li class="artist">
           <div class="artist-photo is-placeholder"><span class="artist-initials grad-text" aria-hidden="true">NA</span></div>
           <span class="artist-name">NATSUMI</span>
@@ -454,38 +486,11 @@
         <li class="artist">
           <div class="artist-photo">
             <picture>
-              <source type="image/avif" srcset="./uploads/resized/cyberJapanDancers-360.avif 360w, ./uploads/resized/cyberJapanDancers-640.avif 640w" sizes="(min-width: 428px) 184px, calc((100vw - 60px) / 2)">
-              <img src="./uploads/resized/cyberJapanDancers-360.webp" srcset="./uploads/resized/cyberJapanDancers-360.webp 360w, ./uploads/resized/cyberJapanDancers-640.webp 640w" sizes="(min-width: 428px) 184px, calc((100vw - 60px) / 2)" alt="" width="640" height="640" loading="lazy" decoding="async">
-            </picture>
-          </div>
-          <span class="artist-name">CYBERJAPAN DANCERS</span>
-        </li>
-        <li class="artist">
-          <div class="artist-photo">
-            <picture>
               <source type="image/avif" srcset="./uploads/resized/dj-g-360.avif 360w, ./uploads/resized/dj-g-640.avif 640w" sizes="(min-width: 428px) 184px, calc((100vw - 60px) / 2)">
               <img src="./uploads/resized/dj-g-360.webp" srcset="./uploads/resized/dj-g-360.webp 360w, ./uploads/resized/dj-g-640.webp 640w" sizes="(min-width: 428px) 184px, calc((100vw - 60px) / 2)" alt="" width="640" height="640" loading="lazy" decoding="async">
             </picture>
           </div>
           <span class="artist-name">DJ-G</span>
-        </li>
-        <li class="artist">
-          <div class="artist-photo">
-            <picture>
-              <source type="image/avif" srcset="./uploads/resized/kairi-360.avif 360w, ./uploads/resized/kairi-640.avif 640w" sizes="(min-width: 428px) 184px, calc((100vw - 60px) / 2)">
-              <img src="./uploads/resized/kairi-360.webp" srcset="./uploads/resized/kairi-360.webp 360w, ./uploads/resized/kairi-640.webp 640w" sizes="(min-width: 428px) 184px, calc((100vw - 60px) / 2)" alt="" width="640" height="640" loading="lazy" decoding="async">
-            </picture>
-          </div>
-          <span class="artist-name">KAIRI</span>
-        </li>
-        <li class="artist">
-          <div class="artist-photo">
-            <picture>
-              <source type="image/avif" srcset="./uploads/resized/lily-360.avif 360w, ./uploads/resized/lily-640.avif 640w" sizes="(min-width: 428px) 184px, calc((100vw - 60px) / 2)">
-              <img src="./uploads/resized/lily-360.webp" srcset="./uploads/resized/lily-360.webp 360w, ./uploads/resized/lily-640.webp 640w" sizes="(min-width: 428px) 184px, calc((100vw - 60px) / 2)" alt="" width="640" height="640" loading="lazy" decoding="async">
-            </picture>
-          </div>
-          <span class="artist-name">Lily</span>
         </li>
       </ul>
 
