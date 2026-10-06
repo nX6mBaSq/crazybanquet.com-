@@ -21,7 +21,7 @@ OUT = SRC / "resized"
 BG = (10, 14, 20, 255)  # サイトの背景色 #0A0E14
 
 # 正方形の写真として扱わないファイル
-NON_PHOTOS = {"logo-landscape.png", "favicon.png", "video-poster.jpg"}
+NON_PHOTOS = {"logo-landscape-volume5.png", "favicon.png", "video-poster.jpg"}
 
 
 def save_pair(img, stem, webp_q, avif_q):
@@ -46,10 +46,10 @@ def build_photos():
 
 
 def build_logo():
-    img = Image.open(SRC / "logo-landscape.png").convert("RGBA")
+    img = Image.open(SRC / "logo-landscape-volume5.png").convert("RGBA")
     for w in (640, 960):
         save_pair(resize_w(img, w), f"logo-{w}", webp_q=85, avif_q=70)
-    print("logo  : logo-landscape.png")
+    print("logo  : logo-landscape-volume5.png")
 
 
 def build_poster():
@@ -83,7 +83,7 @@ def build_ogp():
     for y in range(0, h, 40):
         d.line([(0, y), (w, y)], fill=(57, 255, 143, 22))
     ogp.alpha_composite(grid)
-    logo = resize_w(Image.open(SRC / "logo-landscape.png").convert("RGBA"), 900)
+    logo = resize_w(Image.open(SRC / "logo-landscape-volume5.png").convert("RGBA"), 900)
     ogp.alpha_composite(logo, ((w - logo.width) // 2, (h - logo.height) // 2))
     ogp.convert("RGB").save(SRC / "ogp.jpg", "JPEG", quality=88, optimize=True)
     print("ogp   : ogp.jpg")
