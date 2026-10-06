@@ -38,7 +38,7 @@ def build_photos():
         if path.name in NON_PHOTOS:
             continue
         img = Image.open(path).convert("RGB")
-        # 16:9 などの横長写真は全幅（SPECIAL GUEST / GUEST DJ）で使うため 1080px も用意
+        # 16:9 などの横長写真は全幅（SPECIAL GUEST）で使うため 1080px も用意
         widths = (360, 640) if img.width == img.height else (360, 640, 1080)
         for w in widths:
             save_pair(resize_w(img, w), f"{path.stem}-{w}", webp_q=80, avif_q=60)

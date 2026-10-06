@@ -120,7 +120,7 @@
   }
 
   *,*::before,*::after{box-sizing:border-box;}
-  html{scroll-behavior:smooth; scroll-padding-top:56px; -webkit-text-size-adjust:100%;}
+  html{scroll-behavior:smooth; scroll-padding-top:56px; -webkit-text-size-adjust:100%; overflow-x:clip;}
   body{margin:0; background:var(--bg); color:var(--text); font-family:var(--font-body); font-size:14px; line-height:1.8; letter-spacing:0.03em; font-kerning:normal; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;}
 
   /* ---------- 和文組版 ---------- */
@@ -146,7 +146,8 @@
 
   /* ---------- Layout ---------- */
   .stage{position:relative; min-height:100vh; display:flex; justify-content:center;}
-  .frame{width:100%; max-width:428px; min-width:320px; position:relative; z-index:1; overflow-x:clip;}
+  /* sticky メニューの祖先に overflow を付けるとスクロール追従がガタつくため、はみ出し防止は html 側で行う */
+  .frame{width:100%; max-width:428px; min-width:320px; position:relative; z-index:1;}
   /* グリッドは画面全体に固定（スクロールしても背景として流れ続ける） */
   /* 背景グリッドは画面サイズの固定レイヤー。高さは lvh（最大ビューポート）で固定し、
      iOS のアドレスバー伸縮でサイズが変わって再描画されるのを防ぐ */
@@ -156,8 +157,10 @@
   .section{position:relative; z-index:1; padding:12px 24px 40px;}
 
   /* ---------- Section nav（スマホ：ヒーロー直下 → 上部に追従） ---------- */
-  /* backdrop-filter（ぼかし）はスクロール中に毎フレーム再計算されカクつくため使わない */
-  .site-nav{position:sticky; top:0; z-index:10; transform:translateZ(0); background:rgba(var(--bg-rgb),0.94); border-top:1px solid var(--line-soft); border-bottom:1px solid var(--line-soft);}
+  /* backdrop-filter（ぼかし）はスクロール中に毎フレーム再計算されカクつくため使わない。
+     transform を付けると iOS Safari で sticky の位置計算がメインスレッドに落ちてガタつくため付けない。
+     背景は不透明にして、下を流れるコンテンツやグリッドとの再合成を避ける */
+  .site-nav{position:sticky; top:0; z-index:10; background:var(--bg); border-top:1px solid var(--line-soft); border-bottom:1px solid var(--line-soft);}
   .site-nav ul{list-style:none; margin:0; padding:0 8px; display:flex; justify-content:space-around;}
   .site-nav a{position:relative; display:block; padding:14px 6px; font-family:var(--font-display); font-size:12px; font-weight:600; letter-spacing:0.14em; color:var(--text-sub); text-decoration:none; transition:color .2s;}
   .site-nav a::after{content:""; position:absolute; left:6px; right:6px; bottom:8px; height:2px; border-radius:2px; background:var(--grad); transform:scaleX(0); transition:transform .25s ease;}
@@ -174,8 +177,8 @@
 
   /* ---------- HERO ---------- */
   /* ファーストビュー：画面いっぱい（下端にメニューが見える高さ） */
-  .hero{min-height:min(calc(100vh - 46px), 780px); min-height:min(calc(100svh - 46px), 780px); padding:48px 24px 112px; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; gap:18px;}
-  .scroll-cue{position:absolute; left:50%; bottom:14px; transform:translateX(-50%); padding-left:0.3em; display:flex; flex-direction:column; align-items:center; gap:6px; font-family:var(--font-display); font-size:10px; letter-spacing:0.3em; color:var(--text-faint); text-decoration:none;}
+  .hero{min-height:min(calc(100vh - 46px), 780px); min-height:min(calc(100svh - 46px), 780px); padding:48px 24px 96px; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; gap:18px;}
+  .scroll-cue{position:absolute; left:50%; bottom:14px; transform:translateX(-50%); padding-left:0.3em; display:flex; flex-direction:column; align-items:center; gap:6px; font-family:var(--font-display); font-size:10px; letter-spacing:0.3em; color:var(--text-muted); text-decoration:none;}
   .scroll-cue::after{content:""; width:1px; height:28px; background:linear-gradient(var(--green),transparent); animation:cueDrop 1.8s ease-in-out infinite; transform-origin:top;}
   @keyframes cueDrop{0%{transform:scaleY(0); opacity:1;}60%{transform:scaleY(1); opacity:1;}100%{transform:scaleY(1); opacity:0;}}
   .hero-eyebrow{margin:0 -0.35em 0 0; font-family:var(--font-display); font-size:12px; line-height:1.5; letter-spacing:0.35em; color:var(--green-soft); font-weight:600;}
@@ -183,8 +186,10 @@
   .hero h1 img{width:100%; height:auto; display:block;}
   .hero-catch{font-size:18px; font-weight:700; line-height:1.6; letter-spacing:0.08em; margin:0;}
   .hero-lead{font-size:13.5px; line-height:1.9; letter-spacing:0.05em; margin:0; color:var(--text-sub); max-width:320px; word-break:keep-all; overflow-wrap:anywhere;}
-  .hero-meta{margin:8px 0 0; display:flex; flex-direction:column; align-items:center; gap:2px; line-height:1.5;}
-  .hero-date{font-size:22px; font-weight:700; letter-spacing:0.06em;}
+  /* ボタンなしでも締まるよう、開催情報の上に短いグラデのラインを置いて区切る */
+  .hero-meta{margin:6px 0 0; display:flex; flex-direction:column; align-items:center; gap:2px; line-height:1.5;}
+  .hero-meta::before{content:""; width:40px; height:1px; margin-bottom:16px; background:linear-gradient(90deg,var(--green),var(--blue));}
+  .hero-date{font-size:24px; font-weight:700; letter-spacing:0.06em;}
   .hero-date .dow{font-size:14px; font-weight:600; letter-spacing:0.12em; color:var(--green-soft); margin-left:0.4em;}
   .hero-time{font-size:15px; font-weight:500; color:var(--text-sub);}
   .hero-meta .venue{margin-top:4px; font-size:13px; letter-spacing:0.05em; color:var(--text-muted);}
@@ -242,18 +247,13 @@
   .artists.is-special .artist-initials{font-size:32px; letter-spacing:0.06em;}
   .artists.is-special .artist-name{font-size:16px; letter-spacing:0.08em;}
 
-  /* GUEST DJ：SPECIAL GUEST（全幅）と MAIN ACT（1/2幅）の中間サイズ
-     ・1:1 の写真 → 既定（中央寄せの大きめ正方形）
-     ・16:9 の写真 → ul に is-wide を追加（16:9・名前を写真に重ねる） */
-  .artists.is-guest .artist{width:64%; gap:10px;}
-  .artists.is-guest .artist-photo{border-color:rgba(var(--green-rgb),0.45); box-shadow:0 0 24px rgba(var(--green-rgb),0.22);}
-  .artists.is-guest .artist-initials{font-size:30px;}
-  .artists.is-guest .artist-name{font-size:16px; letter-spacing:0.08em;}
-
-  .artists.is-guest.is-wide .artist{position:relative; width:80%;}
-  .artists.is-guest.is-wide .artist-photo{aspect-ratio:16/9;}
-  .artists.is-guest.is-wide .artist-photo:has(img)::after{background:linear-gradient(180deg, transparent 45%, rgba(var(--bg-rgb),0.85)), linear-gradient(135deg, rgba(var(--green-rgb),0.10), rgba(var(--blue-rgb),0.12));}
-  .artists.is-guest.is-wide .artist-name{position:absolute; left:14px; bottom:10px; z-index:1; font-size:18px; text-align:left; pointer-events:none;}
+  /* GUEST DJ：SPECIAL GUEST と MAIN ACT の中間。全幅の横長カード（左に正方形の写真、右に名前）。
+     写真の高さを SPECIAL GUEST（16:9 全幅）より低く抑え、形の違いで格の差を見せる */
+  .artists.is-guest .artist{width:100%; flex-direction:row; align-items:center; gap:18px; padding:12px; border-radius:16px; background:linear-gradient(135deg, rgba(var(--green-rgb),0.08), rgba(var(--blue-rgb),0.06)), var(--surface); border:1px solid rgba(var(--green-rgb),0.3); box-shadow:0 0 22px rgba(var(--green-rgb),0.12);}
+  .artists.is-guest .artist-photo{width:40%; flex-shrink:0; border-radius:10px; border-color:rgba(var(--green-rgb),0.45); box-shadow:0 0 18px rgba(var(--green-rgb),0.2);}
+  .artists.is-guest .artist-initials{font-size:28px;}
+  .artists.is-guest .artist-name{flex:1; min-width:0; font-size:20px; letter-spacing:0.08em; text-align:left;}
+  .artists.is-guest .artist-name::before{content:""; display:block; width:28px; height:2px; margin-bottom:10px; border-radius:2px; background:var(--grad);}
 
   .artists.is-small{gap:8px;}
   .artists.is-small .artist{width:calc((100% - 16px) / 3); gap:5px;}
@@ -267,9 +267,10 @@
   .detail-row dt{font-family:var(--font-display); font-size:12px; font-weight:600; line-height:1.5; color:var(--text-muted); letter-spacing:0.16em; flex-shrink:0;}
   .dt-note{font-family:var(--font-body); font-size:11px; font-weight:500; letter-spacing:0.06em; margin-left:0.6em;}
   .detail-row dd{margin:0; font-size:15px; font-weight:700; line-height:1.5; letter-spacing:0.04em; text-align:right;}
-  .detail-row dd.num{font-size:16px;}
-  .dd-main,.dd-sub{display:block;}
-  .dd-sub{margin-top:2px; font-size:14px; font-weight:500; color:var(--text-sub);}
+  .detail-row dd.num{font-size:clamp(14px,3.9vw,16px); letter-spacing:0.02em;}
+  /* 日付と時間は1行に並べる。収まらない極小画面では日付・時間の単位で折り返す */
+  .dd-main,.dd-sub{display:inline-block; white-space:nowrap;}
+  .dd-sub{margin-left:0.6em; font-size:0.875em; font-weight:500; color:var(--text-sub);}
   .venue-link{text-decoration:none;}
   .detail-row.is-stacked{flex-direction:column; align-items:stretch; gap:8px;}
   .detail-row .prices{display:flex; gap:10px; margin:0; text-align:center;}
@@ -378,7 +379,10 @@
       <span class="hero-time num"><time datetime="2026-11-08T20:00+09:00">20:00</time> – <time datetime="2026-11-09T03:00+09:00">3:00</time></span>
       <span class="venue">PICCADILLY PREMIUM（大阪・梅田）</span>
     </p>
-    <a class="btn-primary" href="#access">アクセスを見る</a>
+    <!-- CTA ボタンは一旦非表示。戻すときはこのコメントを外し、.hero の padding-bottom を 112px に戻す。
+         当日精算でチケット導線がないため「カレンダー追加」を想定（既定は .ics、Android は JS で Google カレンダーに差し替え）
+    <a class="btn-primary" href="./crazybanquet-vol4.ics" data-calendar>カレンダーに追加</a>
+    -->
     <a class="scroll-cue" href="#concept" aria-label="コンセプトへスクロール">SCROLL</a>
   </header>
 
@@ -437,8 +441,7 @@
       </ul>
 
       <h3 class="tier-label">GUEST DJ</h3>
-      <!-- 写真が 1:1 ならこのまま、16:9 なら ul に is-wide を追加。
-           写真の sizes は 1:1 → "(min-width: 428px) 243px, 64vw" / 16:9 → "(min-width: 428px) 304px, 80vw" -->
+      <!-- 写真は 1:1 で表示（縦長・横長の写真も中央で切り抜き）。写真の sizes は "(min-width: 428px) 142px, calc(40vw - 30px)" -->
       <ul class="artists is-guest">
         <li class="artist">
           <div class="artist-photo is-placeholder"><span class="artist-initials grad-text" aria-hidden="true">NA</span></div>
@@ -679,6 +682,23 @@
       iframe.focus();
     });
   });
+
+  // カレンダー追加：Android は .ics を開ける標準アプリがないことが多いため Google カレンダーの登録画面へ
+  (function () {
+    if (!/Android/i.test(navigator.userAgent)) return;
+    var params = new URLSearchParams({
+      action: 'TEMPLATE',
+      text: 'CRAZY BANQUET Vol.4',
+      dates: '20261108T110000Z/20261108T180000Z',
+      location: 'PICCADILLY PREMIUM, 大阪市北区太融寺町8-17 プラザ梅田ビル 8F',
+      details: '関西最大級のナイトクラブフェス。料金は当日精算（WOMEN ¥1,000 / MEN ¥2,000）。\nhttps://crazybanquet.com/'
+    });
+    document.querySelectorAll('a[data-calendar]').forEach(function (a) {
+      a.href = 'https://calendar.google.com/calendar/render?' + params.toString();
+      a.target = '_blank';
+      a.rel = 'noopener';
+    });
+  })();
 
   // 表示中のセクションに対応するメニューをハイライト
   (function () {
