@@ -218,17 +218,21 @@
   .host-body{margin:0; font-size:14px; line-height:2; letter-spacing:0.05em; color:var(--text-sub);}
   .host-body + .host-body{margin-top:0.9em;}
 
-  /* ---------- VIDEO ---------- */
-  .video-frame{border-radius:14px; overflow:hidden; border:1px solid var(--border); box-shadow:0 0 24px rgba(var(--blue-rgb),0.15); aspect-ratio:16/9; background:var(--surface);}
-  .video-frame iframe{width:100%; height:100%; border:0; display:block;}
-  .video-facade{position:relative; display:block; width:100%; height:100%; color:var(--text); text-decoration:none;}
-  .video-facade img{width:100%; height:100%; object-fit:cover; display:block; transition:transform .6s ease, filter .4s ease;}
-  .video-facade::after{content:""; position:absolute; inset:0; background:linear-gradient(180deg, transparent 55%, rgba(var(--bg-rgb),0.55));}
-  .video-play{position:absolute; left:50%; top:50%; z-index:1; width:68px; height:68px; margin:-34px 0 0 -34px; border-radius:50%; background:var(--grad); box-shadow:0 0 0 6px rgba(var(--green-rgb),0.15), 0 0 32px rgba(var(--blue-rgb),0.45); transition:transform .25s ease;}
-  .video-play::before{content:""; position:absolute; left:27px; top:22px; border-style:solid; border-width:12px 0 12px 19px; border-color:transparent transparent transparent var(--on-accent);}
-  .video-duration{position:absolute; right:12px; bottom:10px; z-index:1; font-size:12px; font-weight:600; letter-spacing:0.08em; color:var(--text);}
-  .video-facade:hover .video-play,.video-facade:focus-visible .video-play{transform:scale(1.08);}
-  .video-facade:hover img{transform:scale(1.03); filter:brightness(1.1);}
+  /* ---------- PARTY SNAP（横スワイプ） ---------- */
+  .snap-head{display:flex; justify-content:space-between; align-items:baseline; gap:12px; margin:0 0 8px;}
+  .snap-head .heading{margin:0;}
+  .snap-lead{margin:0 0 16px; font-size:13px; line-height:1.8; letter-spacing:0.05em; color:var(--text-muted);}
+  .snap-count{font-family:var(--font-display); font-size:12px; letter-spacing:0.12em; color:var(--text-faint);}
+  /* 画面端まで広げ、次の写真を右端に少し覗かせてスワイプできることを伝える */
+  .snaps{list-style:none; margin:0 -24px; padding:0 24px; display:flex; gap:10px; overflow-x:auto; scroll-snap-type:x mandatory; scroll-padding:0 24px; -webkit-overflow-scrolling:touch; scrollbar-width:none;}
+  .snaps::-webkit-scrollbar{display:none;}
+  .snap{flex:0 0 86%; scroll-snap-align:start;}
+  .snap-photo{position:relative; aspect-ratio:16/9; border-radius:12px; overflow:hidden; border:1px solid var(--border); background:var(--grad-placeholder); display:flex; align-items:center; justify-content:center;}
+  .snap-photo picture{display:contents;}
+  /* 出演者写真（モノクロ）と区別し、現場の熱量が伝わるようカラーのまま見せる */
+  .snap-photo img{width:100%; height:100%; object-fit:cover; display:block;}
+  .snap-photo.is-placeholder{background:repeating-linear-gradient(135deg, rgba(var(--green-rgb),0.06) 0 1px, transparent 1px 9px), var(--grad-placeholder);}
+  .snap-photo.is-placeholder span{font-family:var(--font-display); font-size:13px; font-weight:600; letter-spacing:0.2em; color:var(--text-faint);}
   .visually-hidden{position:absolute !important; width:1px; height:1px; margin:-1px; padding:0; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0;}
 
   /* ---------- LINEUP ---------- */
@@ -372,7 +376,7 @@
   @media (prefers-reduced-motion: reduce){
     html{scroll-behavior:auto;}
     .bg-grid,.btn-primary,.scroll-cue::after{animation:none;}
-    .artist-photo img,.video-facade img{transition:none; transform:none !important;}
+    .artist-photo img{transition:none; transform:none !important;}
     .side-brand{animation:none;}
     .js .reveal{transform:none; transition:opacity 0.4s ease;}
   }
@@ -412,8 +416,8 @@
 
   <nav class="site-nav" aria-label="ページ内メニュー">
     <ul>
-      <li><a href="#movie" data-nav>MOVIE</a></li>
       <li><a href="#lineup" data-nav>LINE UP</a></li>
+      <li><a href="#snap" data-nav>SNAP</a></li>
       <li><a href="#details" data-nav>INFO</a></li>
       <li><a href="#access" data-nav>ACCESS</a></li>
     </ul>
@@ -429,46 +433,6 @@
       <p class="concept-body">CRAZY BANQUET＝狂宴。どこでも聴ける曲、どこにでもある空間とは一線を画す、ここだけの夜をお届けします。</p>
       <p class="concept-body">極上のサウンドと、出演者全員が限界まで振り切る気愛と熱量。そのすべてを、ぜひ全身で。</p>
       <p class="concept-body">仲間と共に、この狂った宴を存分にお楽しみください。</p>
-    </section>
-
-    <!-- MESSAGE（主催挨拶） -->
-    <section id="message" class="section reveal" aria-labelledby="message-title">
-      <h2 id="message-title" class="heading">MESSAGE</h2>
-      <div class="host">
-        <div class="host-profile">
-          <div class="host-photo">
-            <picture>
-              <source type="image/avif" srcset="./uploads/resized/dj-g-360.avif 360w" sizes="84px">
-              <img src="./uploads/resized/dj-g-360.webp" srcset="./uploads/resized/dj-g-360.webp 360w" sizes="84px" alt="" width="360" height="360" loading="lazy" decoding="async">
-            </picture>
-          </div>
-          <div>
-            <p class="host-role">ORGANIZER / DJ</p>
-            <p class="host-name">DJ-G</p>
-            <a class="host-sns" href="https://www.instagram.com/dj_g_platinum" target="_blank" rel="noopener">@dj_g_platinum ↗</a>
-          </div>
-        </div>
-        <p class="host-body">何をしても楽しめなくなっていたある日、ふと「DJをやってみたい」と思い立ったのが始まり。50歳を過ぎて初めてCDJに触れ、好き勝手にやる狂った宴＝CRAZY BANQUET が生まれました。</p>
-        <p class="host-body">良きサウンドと、限界まで振り切る気愛と熱量を、ぜひ感じていってください。</p>
-        <p class="host-body">11月8日、梅田で会いましょう。</p>
-      </div>
-    </section>
-
-    <!-- VIDEO -->
-    <section id="movie" class="section reveal" aria-labelledby="movie-title">
-      <h2 id="movie-title" class="heading">PROMOTION VIDEO</h2>
-      <!-- サムネイルを表示し、再生ボタンが押されたときに Vimeo プレイヤーを読み込む（JS 無効時は Vimeo のページへ） -->
-      <div class="video-frame">
-        <a class="video-facade" href="https://vimeo.com/1213042101" data-vimeo-id="1213042101" target="_blank" rel="noopener">
-          <picture>
-            <source type="image/avif" srcset="./uploads/resized/video-poster-760.avif 760w, ./uploads/resized/video-poster-1280.avif 1280w" sizes="(min-width: 428px) 380px, calc(100vw - 48px)">
-            <img src="./uploads/resized/video-poster-760.webp" srcset="./uploads/resized/video-poster-760.webp 760w, ./uploads/resized/video-poster-1280.webp 1280w" sizes="(min-width: 428px) 380px, calc(100vw - 48px)" alt="" width="1280" height="720" loading="lazy" decoding="async">
-          </picture>
-          <span class="video-play" aria-hidden="true"></span>
-          <span class="video-duration num">0:27</span>
-          <span class="visually-hidden">プロモーションビデオを再生（27秒）</span>
-        </a>
-      </div>
     </section>
 
     <!-- LINEUP（各枠内は A to Z 順。写真がない出演者は .artist-photo 内にイニシャルを表示） -->
@@ -603,6 +567,54 @@
       </ul>
     </section>
 
+    <!-- PARTY SNAP（前回の様子・横スワイプ）※仮置き：写真が届いたら .snap-photo.is-placeholder を下の形に差し替える（16:9 にトリミング、6〜10枚目安）
+         <div class="snap-photo">
+           <picture>
+             <source type="image/avif" srcset="./uploads/resized/snap-01-640.avif 640w" sizes="(min-width: 428px) 330px, 86vw">
+             <img src="./uploads/resized/snap-01-640.webp" srcset="./uploads/resized/snap-01-640.webp 640w" sizes="(min-width: 428px) 330px, 86vw" alt="フロアの様子" width="640" height="360" loading="lazy" decoding="async">
+           </picture>
+         </div> -->
+    <section id="snap" class="section reveal" aria-labelledby="snap-title">
+      <div class="snap-head">
+        <h2 id="snap-title" class="heading">PARTY SNAP</h2>
+        <span class="snap-count num" aria-hidden="true"><span data-snap-current>1</span> / 8</span>
+      </div>
+      <p class="snap-lead">前回の狂宴を、写真で。</p>
+      <ul class="snaps" aria-label="前回のパーティースナップ（横にスクロール）">
+        <li class="snap"><div class="snap-photo is-placeholder"><span>SNAP 01</span></div></li>
+        <li class="snap"><div class="snap-photo is-placeholder"><span>SNAP 02</span></div></li>
+        <li class="snap"><div class="snap-photo is-placeholder"><span>SNAP 03</span></div></li>
+        <li class="snap"><div class="snap-photo is-placeholder"><span>SNAP 04</span></div></li>
+        <li class="snap"><div class="snap-photo is-placeholder"><span>SNAP 05</span></div></li>
+        <li class="snap"><div class="snap-photo is-placeholder"><span>SNAP 06</span></div></li>
+        <li class="snap"><div class="snap-photo is-placeholder"><span>SNAP 07</span></div></li>
+        <li class="snap"><div class="snap-photo is-placeholder"><span>SNAP 08</span></div></li>
+      </ul>
+    </section>
+
+    <!-- MESSAGE（主催挨拶） -->
+    <section id="message" class="section reveal" aria-labelledby="message-title">
+      <h2 id="message-title" class="heading">MESSAGE</h2>
+      <div class="host">
+        <div class="host-profile">
+          <div class="host-photo">
+            <picture>
+              <source type="image/avif" srcset="./uploads/resized/dj-g-360.avif 360w" sizes="84px">
+              <img src="./uploads/resized/dj-g-360.webp" srcset="./uploads/resized/dj-g-360.webp 360w" sizes="84px" alt="" width="360" height="360" loading="lazy" decoding="async">
+            </picture>
+          </div>
+          <div>
+            <p class="host-role">ORGANIZER / DJ</p>
+            <p class="host-name">DJ-G</p>
+            <a class="host-sns" href="https://www.instagram.com/dj_g_platinum" target="_blank" rel="noopener">@dj_g_platinum ↗</a>
+          </div>
+        </div>
+        <p class="host-body">何をしても楽しめなくなっていたある日、ふと「DJをやってみたい」と思い立ったのが始まり。50歳を過ぎて初めてCDJに触れ、好き勝手にやる狂った宴＝CRAZY BANQUET が生まれました。</p>
+        <p class="host-body">良きサウンドと、限界まで振り切る気愛と熱量を、ぜひ感じていってください。</p>
+        <p class="host-body">11月8日、梅田で会いましょう。</p>
+      </div>
+    </section>
+
     <!-- EVENT DETAILS -->
     <section id="details" class="section reveal" aria-labelledby="details-title">
       <h2 id="details-title" class="heading">EVENT DETAILS</h2>
@@ -684,9 +696,9 @@
   <nav class="side-nav" aria-label="ページ内メニュー（PC）">
     <ul>
       <li><a href="#concept" data-nav>CONCEPT</a></li>
-      <li><a href="#message" data-nav>MESSAGE</a></li>
-      <li><a href="#movie" data-nav>MOVIE</a></li>
       <li><a href="#lineup" data-nav>LINE UP</a></li>
+      <li><a href="#snap" data-nav>SNAP</a></li>
+      <li><a href="#message" data-nav>MESSAGE</a></li>
       <li><a href="#details" data-nav>INFO</a></li>
       <li><a href="#access" data-nav>ACCESS</a></li>
       <li><a href="#notice" data-nav>NOTICE</a></li>
@@ -715,20 +727,18 @@
     targets.forEach(function (el) { observer.observe(el); });
   })();
 
-  // 動画：再生ボタンを押したら Vimeo プレイヤーに差し替えて自動再生
-  document.querySelectorAll('.video-facade').forEach(function (facade) {
-    facade.addEventListener('click', function (e) {
-      e.preventDefault();
-      var iframe = document.createElement('iframe');
-      iframe.src = 'https://player.vimeo.com/video/' + facade.dataset.vimeoId +
-        '?autoplay=1&badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0';
-      iframe.title = 'CRAZY BANQUET Vol.4 プロモーションビデオ';
-      iframe.allow = 'autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share';
-      iframe.referrerPolicy = 'strict-origin-when-cross-origin';
-      iframe.allowFullscreen = true;
-      facade.replaceWith(iframe);
-      iframe.focus();
-    });
+  // パーティースナップ：横スクロール位置から「n / 全体」の表示を更新
+  document.querySelectorAll('.snaps').forEach(function (list) {
+    var current = list.closest('section').querySelector('[data-snap-current]');
+    var items = list.children;
+    if (!current || !items.length) return;
+    list.addEventListener('scroll', function () {
+      var step = items.length > 1 ? items[1].offsetLeft - items[0].offsetLeft : 1;
+      var index = Math.round(list.scrollLeft / step);
+      // 最後まで送ったときは右端の写真を現在位置とみなす
+      if (list.scrollLeft + list.clientWidth >= list.scrollWidth - 2) index = items.length - 1;
+      current.textContent = Math.min(index, items.length - 1) + 1;
+    }, { passive: true });
   });
 
   // カレンダー追加：Android は .ics を開ける標準アプリがないことが多いため Google カレンダーの登録画面へ
