@@ -367,8 +367,6 @@
     .side-nav a:hover{color:var(--text);}
     .side-nav a.is-active{color:var(--text); padding-left:26px;}
     .side-nav a.is-active::before{transform:scaleY(1);}
-    .side-sns{font-family:var(--font-display); font-size:12px; letter-spacing:0.16em; color:var(--blue-soft); text-decoration:none; border-bottom:1px solid rgba(var(--blue-rgb),0.4); padding-bottom:4px;}
-    .side-sns:hover{color:var(--text);}
   }
 
   @media (prefers-reduced-motion: reduce){
@@ -686,7 +684,7 @@
   <p class="side-date num">2026.11.08 SUN</p>
   <p class="side-time num">OPEN 20:00 – 3:00</p>
   <p class="side-venue">PICCADILLY PREMIUM（大阪・梅田）</p>
-  <a class="btn-outline" href="#access">アクセスを見る</a>
+  <a class="btn-outline" href="https://www.instagram.com/dj_g_platinum" target="_blank" rel="noopener">Instagramをフォロー</a>
 </aside>
 
 <aside class="side side-menu" aria-label="サイドメニュー">
@@ -701,7 +699,6 @@
       <li><a href="#notice" data-nav>NOTICE</a></li>
     </ul>
   </nav>
-  <a class="side-sns" href="https://www.instagram.com/dj_g_platinum" target="_blank" rel="noopener">INSTAGRAM ↗</a>
 </aside>
 </div>
 
@@ -778,22 +775,43 @@
 
   // 表示中のセクションに対応するメニューをハイライト
   (function () {
-    if (!('IntersectionObserver' in window)) return;
     var links = document.querySelectorAll('a[data-nav]');
     var sections = document.querySelectorAll('main section[id]');
+    if (!sections.length) return;
+    var current = null;
     var setActive = function (id) {
+      if (id === current) return;
+      current = id;
       links.forEach(function (a) {
         var on = a.getAttribute('href') === '#' + id;
         a.classList.toggle('is-active', on);
         if (on) a.setAttribute('aria-current', 'location'); else a.removeAttribute('aria-current');
       });
     };
-    var spy = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) setActive(entry.target.id);
+    // 画面中央を越えた最後のセクションをアクティブにする。
+    // 最下部まで来たら、短くて中央まで届かない最後のセクション（NOTICE）をアクティブにする。
+    var update = function () {
+      var doc = document.documentElement;
+      if (window.innerHeight + window.scrollY >= doc.scrollHeight - 2) {
+        setActive(sections[sections.length - 1].id);
+        return;
+      }
+      var line = window.innerHeight * 0.5;
+      var id = null;
+      sections.forEach(function (el) {
+        if (el.getBoundingClientRect().top <= line) id = el.id;
       });
-    }, { rootMargin: '-45% 0px -50% 0px' });
-    sections.forEach(function (el) { spy.observe(el); });
+      setActive(id);
+    };
+    var ticking = false;
+    var onScroll = function () {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(function () { ticking = false; update(); });
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    update();
   })();
 </script>
 </body>
