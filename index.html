@@ -563,28 +563,22 @@
       </ul>
     </section>
 
-    <!-- PARTY SNAP（前回の様子・横スワイプ）※仮置き：写真が届いたら .snap-photo.is-placeholder を下の形に差し替える（16:9 にトリミング、6〜10枚目安）
-         <div class="snap-photo">
-           <picture>
-             <source type="image/avif" srcset="./uploads/resized/snap-01-640.avif 640w" sizes="(min-width: 428px) 330px, 86vw">
-             <img src="./uploads/resized/snap-01-640.webp" srcset="./uploads/resized/snap-01-640.webp 640w" sizes="(min-width: 428px) 330px, 86vw" alt="フロアの様子" width="640" height="360" loading="lazy" decoding="async">
-           </picture>
-         </div> -->
+    <!-- PARTY SNAP（前回の様子・横スワイプ）元画像は uploads/snap-XX.webp（16:9）。枚数を変えたら snap-count の「/ 8」も合わせる -->
     <section id="snap" class="section reveal" aria-labelledby="snap-title">
       <div class="snap-head">
         <h2 id="snap-title" class="heading">PARTY SNAP</h2>
         <span class="snap-count num" aria-hidden="true"><span data-snap-current>1</span> / 8</span>
       </div>
-      <p class="snap-lead">前回の狂宴を、写真で。</p>
+      <p class="snap-lead">前回のCRAZY BANQUETを、写真で。</p>
       <ul class="snaps" aria-label="前回のパーティースナップ（横にスクロール）">
-        <li class="snap"><div class="snap-photo is-placeholder"><span>SNAP 01</span></div></li>
-        <li class="snap"><div class="snap-photo is-placeholder"><span>SNAP 02</span></div></li>
-        <li class="snap"><div class="snap-photo is-placeholder"><span>SNAP 03</span></div></li>
-        <li class="snap"><div class="snap-photo is-placeholder"><span>SNAP 04</span></div></li>
-        <li class="snap"><div class="snap-photo is-placeholder"><span>SNAP 05</span></div></li>
-        <li class="snap"><div class="snap-photo is-placeholder"><span>SNAP 06</span></div></li>
-        <li class="snap"><div class="snap-photo is-placeholder"><span>SNAP 07</span></div></li>
-        <li class="snap"><div class="snap-photo is-placeholder"><span>SNAP 08</span></div></li>
+        <li class="snap"><div class="snap-photo"><picture><source type="image/avif" srcset="./uploads/resized/snap-01-640.avif 640w, ./uploads/resized/snap-01-1080.avif 1080w" sizes="(min-width: 428px) 330px, 86vw"><img src="./uploads/resized/snap-01-640.webp" srcset="./uploads/resized/snap-01-640.webp 640w, ./uploads/resized/snap-01-1080.webp 1080w" sizes="(min-width: 428px) 330px, 86vw" alt="CRAZY BANQUET のロゴ前でポーズをとる2人" width="640" height="360" loading="lazy" decoding="async"></picture></div></li>
+        <li class="snap"><div class="snap-photo"><picture><source type="image/avif" srcset="./uploads/resized/snap-02-640.avif 640w, ./uploads/resized/snap-02-1080.avif 1080w" sizes="(min-width: 428px) 330px, 86vw"><img src="./uploads/resized/snap-02-640.webp" srcset="./uploads/resized/snap-02-640.webp 640w, ./uploads/resized/snap-02-1080.webp 1080w" sizes="(min-width: 428px) 330px, 86vw" alt="DJブース前で盛り上がる出演者たち" width="640" height="360" loading="lazy" decoding="async"></picture></div></li>
+        <li class="snap"><div class="snap-photo"><picture><source type="image/avif" srcset="./uploads/resized/snap-03-640.avif 640w, ./uploads/resized/snap-03-1080.avif 1080w" sizes="(min-width: 428px) 330px, 86vw"><img src="./uploads/resized/snap-03-640.webp" srcset="./uploads/resized/snap-03-640.webp 640w, ./uploads/resized/snap-03-1080.webp 1080w" sizes="(min-width: 428px) 330px, 86vw" alt="赤いライトの中でプレイするDJ" width="640" height="360" loading="lazy" decoding="async"></picture></div></li>
+        <li class="snap"><div class="snap-photo"><picture><source type="image/avif" srcset="./uploads/resized/snap-04-640.avif 640w, ./uploads/resized/snap-04-1080.avif 1080w" sizes="(min-width: 428px) 330px, 86vw"><img src="./uploads/resized/snap-04-640.webp" srcset="./uploads/resized/snap-04-640.webp 640w, ./uploads/resized/snap-04-1080.webp 1080w" sizes="(min-width: 428px) 330px, 86vw" alt="CYBER JAPAN DANCERS のパフォーマンス" width="640" height="360" loading="lazy" decoding="async"></picture></div></li>
+        <li class="snap"><div class="snap-photo"><picture><source type="image/avif" srcset="./uploads/resized/snap-05-640.avif 640w, ./uploads/resized/snap-05-1080.avif 1080w" sizes="(min-width: 428px) 330px, 86vw"><img src="./uploads/resized/snap-05-640.webp" srcset="./uploads/resized/snap-05-640.webp 640w, ./uploads/resized/snap-05-1080.webp 1080w" sizes="(min-width: 428px) 330px, 86vw" alt="両手を上げて盛り上がるDJ" width="640" height="360" loading="lazy" decoding="async"></picture></div></li>
+        <li class="snap"><div class="snap-photo"><picture><source type="image/avif" srcset="./uploads/resized/snap-06-640.avif 640w, ./uploads/resized/snap-06-1080.avif 1080w" sizes="(min-width: 428px) 330px, 86vw"><img src="./uploads/resized/snap-06-640.webp" srcset="./uploads/resized/snap-06-640.webp 640w, ./uploads/resized/snap-06-1080.webp 1080w" sizes="(min-width: 428px) 330px, 86vw" alt="マイクを持って煽るMCとDJブースの様子" width="640" height="360" loading="lazy" decoding="async"></picture></div></li>
+        <li class="snap"><div class="snap-photo"><picture><source type="image/avif" srcset="./uploads/resized/snap-07-640.avif 640w, ./uploads/resized/snap-07-1080.avif 1080w" sizes="(min-width: 428px) 330px, 86vw"><img src="./uploads/resized/snap-07-640.webp" srcset="./uploads/resized/snap-07-640.webp 640w, ./uploads/resized/snap-07-1080.webp 1080w" sizes="(min-width: 428px) 330px, 86vw" alt="フロアを見渡しながらプレイするDJ" width="640" height="360" loading="lazy" decoding="async"></picture></div></li>
+        <li class="snap"><div class="snap-photo"><picture><source type="image/avif" srcset="./uploads/resized/snap-08-640.avif 640w, ./uploads/resized/snap-08-1080.avif 1080w" sizes="(min-width: 428px) 330px, 86vw"><img src="./uploads/resized/snap-08-640.webp" srcset="./uploads/resized/snap-08-640.webp 640w, ./uploads/resized/snap-08-1080.webp 1080w" sizes="(min-width: 428px) 330px, 86vw" alt="2階席まで埋まったフロアの様子" width="640" height="360" loading="lazy" decoding="async"></picture></div></li>
       </ul>
     </section>
 
