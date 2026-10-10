@@ -441,8 +441,13 @@
       <h3 class="tier-label">SPECIAL GUEST</h3>
       <ul class="artists is-special">
         <li class="artist">
-          <!-- 写真枠は 16:9。写真が届いたら tools/build-images.py で画像を生成し、DJs と同じ <picture> に差し替える（is-placeholder も外す）。sizes は "(min-width: 428px) 380px, calc(100vw - 48px)" -->
-          <div class="artist-photo is-placeholder"><span class="artist-initials grad-text" aria-hidden="true">RETRO VISION</span></div>
+          <!-- 写真枠は 16:9 -->
+          <div class="artist-photo">
+            <picture>
+              <source type="image/avif" srcset="./uploads/resized/retroVision-640.avif 640w, ./uploads/resized/retroVision-1080.avif 1080w" sizes="(min-width: 428px) 380px, calc(100vw - 48px)">
+              <img src="./uploads/resized/retroVision-640.webp" srcset="./uploads/resized/retroVision-640.webp 640w, ./uploads/resized/retroVision-1080.webp 1080w" sizes="(min-width: 428px) 380px, calc(100vw - 48px)" alt="" width="1080" height="608" loading="lazy" decoding="async">
+            </picture>
+          </div>
           <span class="artist-name">RETRO VISION</span>
         </li>
       </ul>
@@ -482,7 +487,12 @@
           <span class="artist-name">Lily</span>
         </li>
         <li class="artist">
-          <div class="artist-photo is-placeholder"><span class="artist-initials grad-text" aria-hidden="true">NA</span></div>
+          <div class="artist-photo">
+            <picture>
+              <source type="image/avif" srcset="./uploads/resized/natsumi-360.avif 360w, ./uploads/resized/natsumi-640.avif 640w" sizes="(min-width: 428px) 121px, calc((100vw - 64px) / 3)">
+              <img src="./uploads/resized/natsumi-360.webp" srcset="./uploads/resized/natsumi-360.webp 360w, ./uploads/resized/natsumi-640.webp 640w" sizes="(min-width: 428px) 121px, calc((100vw - 64px) / 3)" alt="" width="640" height="640" loading="lazy" decoding="async">
+            </picture>
+          </div>
           <span class="artist-name">NATSUMI</span>
         </li>
       </ul>
