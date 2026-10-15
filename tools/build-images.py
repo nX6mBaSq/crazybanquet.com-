@@ -22,6 +22,7 @@ BG = (10, 14, 20, 255)  # サイトの背景色 #0A0E14
 
 # 正方形の写真として扱わないファイル
 NON_PHOTOS = {"logo-landscape-volume5.png", "favicon.png", "video-poster.jpg"}
+# OGP の元画像は photo/ogp.jpg（正方形のフライヤー）。差し替えたらこのスクリプトを実行する
 
 
 def save_pair(img, stem, webp_q, avif_q):
@@ -72,21 +73,30 @@ def build_icons():
 
 
 def build_ogp():
-    w, h = 1200, 630
-    ogp = Image.new("RGBA", (w, h), BG)
-    grid = Image.new("RGBA", (w, h), (0, 0, 0, 0))
-    from PIL import ImageDraw
+    """photo/ogp.jpg（正方形のフライヤー）から SNS シェア用と検索用の画像を作る。
 
-    d = ImageDraw.Draw(grid)
-    for x in range(0, w, 40):
-        d.line([(x, 0), (x, h)], fill=(0, 194, 255, 22))
-    for y in range(0, h, 40):
-        d.line([(0, y), (w, y)], fill=(57, 255, 143, 22))
-    ogp.alpha_composite(grid)
-    logo = resize_w(Image.open(SRC / "logo-landscape-volume5.png").convert("RGBA"), 900)
-    ogp.alpha_composite(logo, ((w - logo.width) // 2, (h - logo.height) // 2))
-    ogp.convert("RGB").save(SRC / "ogp.jpg", "JPEG", quality=88, optimize=True)
-    print("ogp   : ogp.jpg")
+    - uploads/ogp.jpg   : 1200×630。SNS は横長に切り抜くため、フライヤー全体を中央に置き、
+                          左右はフライヤーをぼかして暗くした背景で埋める
+    - uploads/flyer.jpg : 1200×1200。Google のイベント表示用（構造化データの 1:1 画像）
+    """
+    from PIL import ImageEnhance, ImageFilter
+
+    flyer = Image.open(ROOT / "photo" / "ogp.jpg").convert("RGB")
+    w, h = 1200, 630
+
+    bg = flyer.resize((w, round(w * flyer.height / flyer.width)), Image.LANCZOS)
+    top = (bg.height - h) // 2
+    bg = bg.crop((0, top, w, top + h)).filter(ImageFilter.GaussianBlur(28))
+    bg = ImageEnhance.Brightness(bg).enhance(0.45)
+
+    fg = flyer.resize((round(h * flyer.width / flyer.height), h), Image.LANCZOS)
+    bg.paste(fg, ((w - fg.width) // 2, 0))
+    bg.save(SRC / "ogp.jpg", "JPEG", quality=88, optimize=True, progressive=True)
+
+    flyer.resize((1200, 1200), Image.LANCZOS).save(
+        SRC / "flyer.jpg", "JPEG", quality=85, optimize=True, progressive=True
+    )
+    print("ogp   : ogp.jpg / flyer.jpg")
 
 
 if __name__ == "__main__":
