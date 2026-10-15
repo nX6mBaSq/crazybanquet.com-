@@ -567,7 +567,12 @@
           <span class="artist-name">Casparia</span>
         </li>
         <li class="artist">
-          <div class="artist-photo is-placeholder"><span class="artist-initials" aria-hidden="true">CO</span></div>
+          <div class="artist-photo">
+            <picture>
+              <source type="image/avif" srcset="./uploads/resized/cocos-360.avif 360w, ./uploads/resized/cocos-640.avif 640w" sizes="(min-width: 428px) 121px, calc((100vw - 64px) / 3)">
+              <img src="./uploads/resized/cocos-360.webp" srcset="./uploads/resized/cocos-360.webp 360w, ./uploads/resized/cocos-640.webp 640w" sizes="(min-width: 428px) 121px, calc((100vw - 64px) / 3)" alt="" width="640" height="640" loading="lazy" decoding="async">
+            </picture>
+          </div>
           <span class="artist-name">cocos</span>
         </li>
       </ul>
