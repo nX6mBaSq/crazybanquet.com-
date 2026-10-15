@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>CRAZY BANQUET Vol.5｜大阪・梅田最大級のナイトクラブフェス</title>
-<meta name="description" content="2026年11月8日(日) 20:00〜翌3:00、大阪・梅田 PICCADILLY PREMIUMにて開催。SPECIAL GUEST・RETRO VISION、CYBERJAPAN DANCERSほか、オールジャンルの注目DJが集結する関西最大級のナイトクラブフェス「CRAZY BANQUET Vol.5」。料金は当日精算 WOMEN ¥1,000 / MEN ¥2,000（18歳以上）。">
+<meta name="description" content="2026年11月8日(日) 20:00〜翌3:00、大阪・梅田 PICCADILLY PREMIUMにて開催。SPECIAL GUEST・RETRO VISION、CYBERJAPAN DANCERSほか、オールジャンルの注目DJが集結する関西最大級のナイトクラブフェス「CRAZY BANQUET Vol.5」。18歳以上限定。">
 <meta name="theme-color" content="#0A0E14">
 <meta name="format-detection" content="telephone=no">
 <meta name="robots" content="index, follow, max-image-preview:large">
@@ -40,7 +40,7 @@
   "@context": "https://schema.org",
   "@type": "MusicEvent",
   "name": "CRAZY BANQUET Vol.5",
-  "description": "CRAZY BANQUET＝狂宴。SPECIAL GUEST・RETRO VISION、CYBERJAPAN DANCERSほか、オールジャンルの注目アーティストが集結する関西最大級のナイトクラブフェス。18歳以上限定・料金は当日精算。",
+  "description": "CRAZY BANQUET＝狂宴。SPECIAL GUEST・RETRO VISION、CYBERJAPAN DANCERSほか、オールジャンルの注目アーティストが集結する関西最大級のナイトクラブフェス。18歳以上限定。",
   "inLanguage": "ja",
   "url": "https://crazybanquet.com/",
   "image": ["https://crazybanquet.com/uploads/flyer.jpg", "https://crazybanquet.com/uploads/ogp.jpg"],
@@ -61,10 +61,6 @@
       "addressCountry": "JP"
     }
   },
-  "offers": [
-    { "@type": "Offer", "name": "WOMEN（当日精算）", "price": "1000", "priceCurrency": "JPY", "url": "https://crazybanquet.com/", "availability": "https://schema.org/InStock" },
-    { "@type": "Offer", "name": "MEN（当日精算）", "price": "2000", "priceCurrency": "JPY", "url": "https://crazybanquet.com/", "availability": "https://schema.org/InStock" }
-  ],
   "organizer": { "@type": "Person", "name": "DJ-G", "url": "https://www.instagram.com/dj_g_platinum" },
   "performer": [
     { "@type": "MusicGroup", "name": "RETRO VISION" },
@@ -309,6 +305,7 @@
   .price.is-women .price-label{color:var(--green-soft);}
   .price.is-men{background:rgba(var(--blue-rgb),0.08); border:1px solid rgba(var(--blue-rgb),0.3);}
   .price.is-men .price-label{color:var(--blue-soft);}
+  .detail-row .price-soon{padding:12px 0; border-radius:10px; border:1px dashed var(--border); text-align:center; font-family:var(--font-display); font-size:18px; font-weight:700; letter-spacing:0.24em; color:var(--text-sub);}
 
   /* ---------- ACCESS ---------- */
   .map-frame{border-radius:14px; overflow:hidden; border:1px solid var(--border); margin-bottom:14px; aspect-ratio:16/10; background:var(--surface);}
@@ -637,6 +634,9 @@
           </dd>
         </div>
         <div class="detail-row is-stacked">
+          <dt>CHARGE</dt>
+          <dd class="price-soon">COMING SOON</dd>
+          <!-- 料金公開時に戻す
           <dt>CHARGE<span class="dt-note">当日精算</span></dt>
           <dd class="prices">
             <div class="price is-women">
@@ -648,6 +648,7 @@
               <div class="price-value num"><span class="yen">¥</span>2,000</div>
             </div>
           </dd>
+          -->
         </div>
         <div class="detail-row">
           <dt>VENUE</dt>
@@ -675,7 +676,7 @@
       <ul>
         <li>ご入場は18歳以上の方に限らせていただきます。</li>
         <li>入場時に顔写真付き身分証明書のご提示をお願いいたします。</li>
-        <li>料金は当日精算制です（WOMEN ¥1,000 / MEN ¥2,000）。</li>
+        <!-- <li>料金は当日精算制です（WOMEN ¥1,000 / MEN ¥2,000）。</li> -->
       </ul>
     </section>
 
@@ -758,7 +759,7 @@
       text: 'CRAZY BANQUET Vol.5',
       dates: '20261108T110000Z/20261108T180000Z',
       location: 'PICCADILLY PREMIUM, 大阪市北区太融寺町8-17 プラザ梅田ビル 8F',
-      details: '関西最大級のナイトクラブフェス。料金は当日精算（WOMEN ¥1,000 / MEN ¥2,000）。\nhttps://crazybanquet.com/'
+      details: '関西最大級のナイトクラブフェス。\nhttps://crazybanquet.com/'
     });
     document.querySelectorAll('a[data-calendar]').forEach(function (a) {
       a.href = 'https://calendar.google.com/calendar/render?' + params.toString();
