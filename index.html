@@ -3,6 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<!-- Google アナリティクス（GA4）。外部リンク（Instagram・Google マップ）のクリックは拡張計測機能で自動記録 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DGYM87GLTH"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DGYM87GLTH');
+</script>
 <title>CRAZY BANQUET Vol.5｜大阪・梅田最大級のナイトクラブフェス</title>
 <meta name="description" content="2026年11月8日(日) 20:00〜翌3:00、大阪・梅田 PICCADILLY PREMIUMにて開催。SPECIAL GUEST・RETRO VISION、CYBERJAPAN DANCERSほか、オールジャンルの注目DJが集結する関西最大級のナイトクラブフェス「CRAZY BANQUET Vol.5」。18歳以上限定。">
 <meta name="theme-color" content="#0A0E14">
@@ -326,6 +335,7 @@
   .footer .btn-primary{animation:none;}
   .copyright{font-family:var(--font-display); font-size:11px; letter-spacing:0.12em; color:var(--text-dim); margin:0;}
   .copyright small{font-size:inherit;}
+  .analytics-note{font-size:11px; line-height:1.7; color:var(--text-dim); margin:0 0 8px;}
 
   /* ---------- Scroll reveal（JS有効時のみ隠す） ---------- */
   .js .reveal{opacity:0; transform:translateY(24px); transition:opacity 0.8s ease, transform 0.8s ease;}
@@ -685,6 +695,7 @@
   <footer class="footer reveal">
     <p class="footer-lead">最新情報はInstagramでチェック</p>
     <a class="btn-primary" href="https://www.instagram.com/dj_g_platinum" target="_blank" rel="noopener">Instagramをフォロー</a>
+    <p class="analytics-note">当サイトではアクセス解析のため Google アナリティクスを使用しています。</p>
     <p class="copyright"><small>© 2026 CRAZY BANQUET</small></p>
   </footer>
 
